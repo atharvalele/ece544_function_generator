@@ -1,1 +1,1 @@
-# ece544_logic_analyzer
+# ece544_function_generator
