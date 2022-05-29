@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="function_gen_app" location="/home/atharva/Work/ece544_function_generator/vitis_workspace/function_gen_app" platform="/home/atharva/Work/ece544_function_generator/vitis_workspace/function_gen_platform/export/function_gen_platform/function_gen_platform.xpfm" platformUID="xilinx:::0.0(custom)" systemProject="function_gen_app_system" sysConfig="function_gen_platform" runtime="C/C++" cpu="standalone_domain" cpuInstance="microblaze_0" os="standalone" mssSignature="9f5ae76df94b774f1ba096aa800841c1">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.212879268">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.mb.exe.release.1490223550" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>

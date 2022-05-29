@@ -30,6 +30,7 @@ PmodOLEDrgb	pmodOLEDrgb_inst;
 PmodENC 	pmodENC_inst;
 XIntc 		IntrptCtlrInst;				// Interrupt Controller instance
 XTmrCtr		AXITimerInst;				// PWM timer instance
+XWdtTb		WDTTimerInst;				// Watchdog timer instance
 
 /**************************** HELPER FUNCTIONS ******************************/
 
@@ -87,8 +88,14 @@ int do_init(void)
 		return XST_FAILURE;
 	}
 
-	// enable the FIT interrupt
-	//XIntc_Enable(&IntrptCtlrInst, FIT_INTERRUPT_ID);
+	// initialize and start the watchdog timer
+	status = XWdtTb_Initialize(&WDTTimerInst, XPAR_WDTTB_0_DEVICE_ID);
+	if (status != XST_SUCCESS)
+	{
+		return XST_FAILURE;
+	}
+	XWdtTb_Start(&WDTTimerInst);
+
 	return XST_SUCCESS;
 }
 /*

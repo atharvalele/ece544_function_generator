@@ -24,6 +24,7 @@
 #include "xparameters.h"
 #include "xintc.h"
 #include "xtmrctr.h"
+#include "xwdttb.h"
 /***************************** System Defines *********************************/
 // Clock frequencies
 #define CPU_CLOCK_FREQ_HZ		XPAR_CPU_CORE_CLOCK_FREQ_HZ
@@ -73,6 +74,7 @@ extern PmodOLEDrgb	pmodOLEDrgb_inst;
 extern PmodENC 	pmodENC_inst;
 extern XIntc 		IntrptCtlrInst;				// Interrupt Controller instance
 extern XTmrCtr		AXITimerInst;				// PWM timer instance
+extern XWdtTb		WDTTimerInst;				// Watchdog timer instance
 
 /************************** Function Prototypes *******************************/
 void PMDIO_itoa(int32_t value, char *string, int32_t radix);
