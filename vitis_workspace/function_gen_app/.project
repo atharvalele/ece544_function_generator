@@ -26,14 +26,94 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>src/display.c</name>
+			<name>src/aps.h</name>
 			<type>1</type>
-			<locationURI>PARENT-1-WORKSPACE_LOC/software/display.c</locationURI>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/aps.h</locationURI>
 		</link>
 		<link>
-			<name>src/display.h</name>
+			<name>src/bitmap.c</name>
 			<type>1</type>
-			<locationURI>PARENT-1-WORKSPACE_LOC/software/display.h</locationURI>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/bitmap.c</locationURI>
+		</link>
+		<link>
+			<name>src/bitmap.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/bitmap.h</locationURI>
+		</link>
+		<link>
+			<name>src/clip.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/clip.c</locationURI>
+		</link>
+		<link>
+			<name>src/clip.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/clip.h</locationURI>
+		</link>
+		<link>
+			<name>src/config.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/config.h</locationURI>
+		</link>
+		<link>
+			<name>src/font5x7.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/font5x7.h</locationURI>
+		</link>
+		<link>
+			<name>src/font5x8.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/font5x8.h</locationURI>
+		</link>
+		<link>
+			<name>src/font6x9.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/font6x9.h</locationURI>
+		</link>
+		<link>
+			<name>src/fontx.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/fontx.c</locationURI>
+		</link>
+		<link>
+			<name>src/fontx.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/fontx.h</locationURI>
+		</link>
+		<link>
+			<name>src/fps.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/fps.h</locationURI>
+		</link>
+		<link>
+			<name>src/hagl.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/hagl.c</locationURI>
+		</link>
+		<link>
+			<name>src/hagl.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/hagl.h</locationURI>
+		</link>
+		<link>
+			<name>src/hagl_hal.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/hagl_hal.c</locationURI>
+		</link>
+		<link>
+			<name>src/hagl_hal.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/hagl_hal.h</locationURI>
+		</link>
+		<link>
+			<name>src/hsl.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/hsl.c</locationURI>
+		</link>
+		<link>
+			<name>src/hsl.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/hsl.h</locationURI>
 		</link>
 		<link>
 			<name>src/input.c</name>
@@ -61,6 +141,31 @@
 			<locationURI>PARENT-1-WORKSPACE_LOC/software/platform.h</locationURI>
 		</link>
 		<link>
+			<name>src/rgb332.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/rgb332.h</locationURI>
+		</link>
+		<link>
+			<name>src/rgb565.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/rgb565.c</locationURI>
+		</link>
+		<link>
+			<name>src/rgb565.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/rgb565.h</locationURI>
+		</link>
+		<link>
+			<name>src/rgb888.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/rgb888.c</locationURI>
+		</link>
+		<link>
+			<name>src/rgb888.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/rgb888.h</locationURI>
+		</link>
+		<link>
 			<name>src/system.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-WORKSPACE_LOC/software/system.c</locationURI>
@@ -74,6 +179,21 @@
 			<name>src/system_interrupts.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-WORKSPACE_LOC/software/system_interrupts.c</locationURI>
+		</link>
+		<link>
+			<name>src/tjpgd.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/tjpgd.c</locationURI>
+		</link>
+		<link>
+			<name>src/tjpgd.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/tjpgd.h</locationURI>
+		</link>
+		<link>
+			<name>src/window.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-WORKSPACE_LOC/software/hagl-lib/window.h</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

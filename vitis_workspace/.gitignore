@@ -1,0 +1,5 @@
+# Ignore metadata dir
+.metadata
+
+# Ignore logs
+IDE.log
