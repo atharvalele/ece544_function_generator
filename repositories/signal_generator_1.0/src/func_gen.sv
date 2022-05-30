@@ -73,7 +73,7 @@ always_ff @(posedge clk) begin
             case (sig_type)
                 SINE: begin
                     addr_start <= 16'h0000;
-                    addr_end <= 16'h0400;
+                    addr_end <= 16'h03FF;
                 end
                 TRIANGLE: begin
                     addr_start <= 16'h0400;

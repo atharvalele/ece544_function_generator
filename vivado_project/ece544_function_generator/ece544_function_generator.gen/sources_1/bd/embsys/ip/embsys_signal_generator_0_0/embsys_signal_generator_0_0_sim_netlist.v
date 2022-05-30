@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-// Date        : Sun May 29 18:07:10 2022
+// Date        : Sun May 29 19:01:22 2022
 // Host        : sentinel running 64-bit EndeavourOS Linux
 // Command     : write_verilog -force -mode funcsim
 //               /home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/vivado_project/ece544_function_generator/ece544_function_generator.gen/sources_1/bd/embsys/ip/embsys_signal_generator_0_0/embsys_signal_generator_0_0_sim_netlist.v
@@ -143,6 +143,20 @@ module embsys_signal_generator_0_0_func_gen
   wire [15:0]Q;
   wire [0:0]SR;
   wire [15:1]addr0;
+  wire addr0_carry__0_n_0;
+  wire addr0_carry__0_n_1;
+  wire addr0_carry__0_n_2;
+  wire addr0_carry__0_n_3;
+  wire addr0_carry__1_n_0;
+  wire addr0_carry__1_n_1;
+  wire addr0_carry__1_n_2;
+  wire addr0_carry__1_n_3;
+  wire addr0_carry__2_n_2;
+  wire addr0_carry__2_n_3;
+  wire addr0_carry_n_0;
+  wire addr0_carry_n_1;
+  wire addr0_carry_n_2;
+  wire addr0_carry_n_3;
   wire \addr0_inferred__0/i__carry_n_1 ;
   wire \addr0_inferred__0/i__carry_n_2 ;
   wire \addr0_inferred__0/i__carry_n_3 ;
@@ -177,39 +191,9 @@ module embsys_signal_generator_0_0_func_gen
   wire \addr1_inferred__0/i__carry_n_1 ;
   wire \addr1_inferred__0/i__carry_n_2 ;
   wire \addr1_inferred__0/i__carry_n_3 ;
-  wire \addr[0]_i_1_n_0 ;
-  wire \addr[10]_i_1_n_0 ;
-  wire \addr[11]_i_1_n_0 ;
-  wire \addr[12]_i_1_n_0 ;
-  wire \addr[13]_i_1_n_0 ;
-  wire \addr[14]_i_1_n_0 ;
   wire \addr[15]_i_2_n_0 ;
-  wire \addr[15]_i_3_n_0 ;
-  wire \addr[1]_i_1_n_0 ;
-  wire \addr[2]_i_1_n_0 ;
-  wire \addr[3]_i_1_n_0 ;
-  wire \addr[4]_i_1_n_0 ;
-  wire \addr[5]_i_1_n_0 ;
-  wire \addr[6]_i_1_n_0 ;
-  wire \addr[7]_i_1_n_0 ;
-  wire \addr[8]_i_1_n_0 ;
-  wire \addr[9]_i_1_n_0 ;
-  wire [10:10]addr_end;
-  wire \addr_end[10]_i_1_n_0 ;
-  wire \addr_reg[12]_i_2_n_0 ;
-  wire \addr_reg[12]_i_2_n_1 ;
-  wire \addr_reg[12]_i_2_n_2 ;
-  wire \addr_reg[12]_i_2_n_3 ;
-  wire \addr_reg[15]_i_4_n_2 ;
-  wire \addr_reg[15]_i_4_n_3 ;
-  wire \addr_reg[4]_i_2_n_0 ;
-  wire \addr_reg[4]_i_2_n_1 ;
-  wire \addr_reg[4]_i_2_n_2 ;
-  wire \addr_reg[4]_i_2_n_3 ;
-  wire \addr_reg[8]_i_2_n_0 ;
-  wire \addr_reg[8]_i_2_n_1 ;
-  wire \addr_reg[8]_i_2_n_2 ;
-  wire \addr_reg[8]_i_2_n_3 ;
+  wire [9:9]addr_end;
+  wire \addr_end[9]_i_1_n_0 ;
   wire [10:10]addr_start;
   wire \addr_start[10]_i_1_n_0 ;
   wire clk_10;
@@ -335,6 +319,7 @@ module embsys_signal_generator_0_0_func_gen
   wire i__carry_i_7_n_0;
   wire i__carry_i_8_n_0;
   wire [7:0]p_0_in__0;
+  wire [15:0]p_2_in;
   wire s00_axi_aresetn;
   wire [7:6]signal_data;
   wire signal_data1;
@@ -356,6 +341,8 @@ module embsys_signal_generator_0_0_func_gen
   wire \signal_data[7]_i_1_n_0 ;
   wire [1:0]\signal_data_reg[7]_0 ;
   wire [7:0]signal_waveform;
+  wire [3:2]NLW_addr0_carry__2_CO_UNCONNECTED;
+  wire [3:3]NLW_addr0_carry__2_O_UNCONNECTED;
   wire [3:3]\NLW_addr0_inferred__0/i__carry_CO_UNCONNECTED ;
   wire [3:0]\NLW_addr0_inferred__0/i__carry_O_UNCONNECTED ;
   wire [3:0]NLW_addr1_carry_O_UNCONNECTED;
@@ -364,11 +351,41 @@ module embsys_signal_generator_0_0_func_gen
   wire [3:0]NLW_addr1_carry__1_O_UNCONNECTED;
   wire [3:0]\NLW_addr1_inferred__0/i__carry_O_UNCONNECTED ;
   wire [3:0]\NLW_addr1_inferred__0/i__carry__0_O_UNCONNECTED ;
-  wire [3:2]\NLW_addr_reg[15]_i_4_CO_UNCONNECTED ;
-  wire [3:3]\NLW_addr_reg[15]_i_4_O_UNCONNECTED ;
   wire [3:3]\NLW_counter_reg[28]_i_1_CO_UNCONNECTED ;
   wire [3:0]NLW_signal_data1_carry_O_UNCONNECTED;
 
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 addr0_carry
+       (.CI(1'b0),
+        .CO({addr0_carry_n_0,addr0_carry_n_1,addr0_carry_n_2,addr0_carry_n_3}),
+        .CYINIT(Q[0]),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(addr0[4:1]),
+        .S(Q[4:1]));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 addr0_carry__0
+       (.CI(addr0_carry_n_0),
+        .CO({addr0_carry__0_n_0,addr0_carry__0_n_1,addr0_carry__0_n_2,addr0_carry__0_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(addr0[8:5]),
+        .S(Q[8:5]));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 addr0_carry__1
+       (.CI(addr0_carry__0_n_0),
+        .CO({addr0_carry__1_n_0,addr0_carry__1_n_1,addr0_carry__1_n_2,addr0_carry__1_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O(addr0[12:9]),
+        .S(Q[12:9]));
+  (* ADDER_THRESHOLD = "35" *) 
+  CARRY4 addr0_carry__2
+       (.CI(addr0_carry__1_n_0),
+        .CO({NLW_addr0_carry__2_CO_UNCONNECTED[3:2],addr0_carry__2_n_2,addr0_carry__2_n_3}),
+        .CYINIT(1'b0),
+        .DI({1'b0,1'b0,1'b0,1'b0}),
+        .O({NLW_addr0_carry__2_O_UNCONNECTED[3],addr0[15:13]}),
+        .S({1'b0,Q[15:13]}));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 \addr0_inferred__0/i__carry 
        (.CI(1'b0),
@@ -529,7 +546,7 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(addr1_carry__1_n_1),
         .I1(Q[0]),
         .I2(addr1),
-        .O(\addr[0]_i_1_n_0 ));
+        .O(p_2_in[0]));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'hEF40)) 
@@ -538,7 +555,7 @@ module embsys_signal_generator_0_0_func_gen
         .I1(addr0[10]),
         .I2(addr1_carry__1_n_1),
         .I3(addr_start),
-        .O(\addr[10]_i_1_n_0 ));
+        .O(p_2_in[10]));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'h20)) 
@@ -546,7 +563,7 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(addr1_carry__1_n_1),
         .I1(addr1),
         .I2(addr0[11]),
-        .O(\addr[11]_i_1_n_0 ));
+        .O(p_2_in[11]));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
     .INIT(8'h20)) 
@@ -554,7 +571,7 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(addr1_carry__1_n_1),
         .I1(addr1),
         .I2(addr0[12]),
-        .O(\addr[12]_i_1_n_0 ));
+        .O(p_2_in[12]));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'h20)) 
@@ -562,7 +579,7 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(addr1_carry__1_n_1),
         .I1(addr1),
         .I2(addr0[13]),
-        .O(\addr[13]_i_1_n_0 ));
+        .O(p_2_in[13]));
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'h20)) 
@@ -570,7 +587,7 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(addr1_carry__1_n_1),
         .I1(addr1),
         .I2(addr0[14]),
-        .O(\addr[14]_i_1_n_0 ));
+        .O(p_2_in[14]));
   LUT1 #(
     .INIT(2'h1)) 
     \addr[15]_i_1 
@@ -590,7 +607,7 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(addr1_carry__1_n_1),
         .I1(addr1),
         .I2(addr0[15]),
-        .O(\addr[15]_i_3_n_0 ));
+        .O(p_2_in[15]));
   (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT3 #(
     .INIT(8'h20)) 
@@ -598,7 +615,7 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(addr1_carry__1_n_1),
         .I1(addr1),
         .I2(addr0[1]),
-        .O(\addr[1]_i_1_n_0 ));
+        .O(p_2_in[1]));
   (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
     .INIT(8'h20)) 
@@ -606,7 +623,7 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(addr1_carry__1_n_1),
         .I1(addr1),
         .I2(addr0[2]),
-        .O(\addr[2]_i_1_n_0 ));
+        .O(p_2_in[2]));
   (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
     .INIT(8'h20)) 
@@ -614,7 +631,7 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(addr1_carry__1_n_1),
         .I1(addr1),
         .I2(addr0[3]),
-        .O(\addr[3]_i_1_n_0 ));
+        .O(p_2_in[3]));
   (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'h20)) 
@@ -622,7 +639,7 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(addr1_carry__1_n_1),
         .I1(addr1),
         .I2(addr0[4]),
-        .O(\addr[4]_i_1_n_0 ));
+        .O(p_2_in[4]));
   (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'h20)) 
@@ -630,7 +647,7 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(addr1_carry__1_n_1),
         .I1(addr1),
         .I2(addr0[5]),
-        .O(\addr[5]_i_1_n_0 ));
+        .O(p_2_in[5]));
   (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'h20)) 
@@ -638,7 +655,7 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(addr1_carry__1_n_1),
         .I1(addr1),
         .I2(addr0[6]),
-        .O(\addr[6]_i_1_n_0 ));
+        .O(p_2_in[6]));
   (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT3 #(
     .INIT(8'h20)) 
@@ -646,7 +663,7 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(addr1_carry__1_n_1),
         .I1(addr1),
         .I2(addr0[7]),
-        .O(\addr[7]_i_1_n_0 ));
+        .O(p_2_in[7]));
   (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'h20)) 
@@ -654,7 +671,7 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(addr1_carry__1_n_1),
         .I1(addr1),
         .I2(addr0[8]),
-        .O(\addr[8]_i_1_n_0 ));
+        .O(p_2_in[8]));
   (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
     .INIT(8'h20)) 
@@ -662,147 +679,115 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(addr1_carry__1_n_1),
         .I1(addr1),
         .I2(addr0[9]),
-        .O(\addr[9]_i_1_n_0 ));
+        .O(p_2_in[9]));
   (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
     .INIT(8'hD1)) 
-    \addr_end[10]_i_1 
+    \addr_end[9]_i_1 
        (.I0(\signal_data_reg[7]_0 [0]),
         .I1(\signal_data_reg[7]_0 [1]),
         .I2(addr_end),
-        .O(\addr_end[10]_i_1_n_0 ));
-  FDRE \addr_end_reg[10] 
+        .O(\addr_end[9]_i_1_n_0 ));
+  FDRE \addr_end_reg[9] 
        (.C(clk_10),
         .CE(1'b1),
-        .D(\addr_end[10]_i_1_n_0 ),
+        .D(\addr_end[9]_i_1_n_0 ),
         .Q(addr_end),
         .R(SR));
   FDRE \addr_reg[0] 
        (.C(clk_10),
         .CE(\addr[15]_i_2_n_0 ),
-        .D(\addr[0]_i_1_n_0 ),
+        .D(p_2_in[0]),
         .Q(Q[0]),
         .R(SR));
   FDRE \addr_reg[10] 
        (.C(clk_10),
         .CE(\addr[15]_i_2_n_0 ),
-        .D(\addr[10]_i_1_n_0 ),
+        .D(p_2_in[10]),
         .Q(Q[10]),
         .R(SR));
   FDRE \addr_reg[11] 
        (.C(clk_10),
         .CE(\addr[15]_i_2_n_0 ),
-        .D(\addr[11]_i_1_n_0 ),
+        .D(p_2_in[11]),
         .Q(Q[11]),
         .R(SR));
   FDRE \addr_reg[12] 
        (.C(clk_10),
         .CE(\addr[15]_i_2_n_0 ),
-        .D(\addr[12]_i_1_n_0 ),
+        .D(p_2_in[12]),
         .Q(Q[12]),
         .R(SR));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \addr_reg[12]_i_2 
-       (.CI(\addr_reg[8]_i_2_n_0 ),
-        .CO({\addr_reg[12]_i_2_n_0 ,\addr_reg[12]_i_2_n_1 ,\addr_reg[12]_i_2_n_2 ,\addr_reg[12]_i_2_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(addr0[12:9]),
-        .S(Q[12:9]));
   FDRE \addr_reg[13] 
        (.C(clk_10),
         .CE(\addr[15]_i_2_n_0 ),
-        .D(\addr[13]_i_1_n_0 ),
+        .D(p_2_in[13]),
         .Q(Q[13]),
         .R(SR));
   FDRE \addr_reg[14] 
        (.C(clk_10),
         .CE(\addr[15]_i_2_n_0 ),
-        .D(\addr[14]_i_1_n_0 ),
+        .D(p_2_in[14]),
         .Q(Q[14]),
         .R(SR));
   FDRE \addr_reg[15] 
        (.C(clk_10),
         .CE(\addr[15]_i_2_n_0 ),
-        .D(\addr[15]_i_3_n_0 ),
+        .D(p_2_in[15]),
         .Q(Q[15]),
         .R(SR));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \addr_reg[15]_i_4 
-       (.CI(\addr_reg[12]_i_2_n_0 ),
-        .CO({\NLW_addr_reg[15]_i_4_CO_UNCONNECTED [3:2],\addr_reg[15]_i_4_n_2 ,\addr_reg[15]_i_4_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O({\NLW_addr_reg[15]_i_4_O_UNCONNECTED [3],addr0[15:13]}),
-        .S({1'b0,Q[15:13]}));
   FDRE \addr_reg[1] 
        (.C(clk_10),
         .CE(\addr[15]_i_2_n_0 ),
-        .D(\addr[1]_i_1_n_0 ),
+        .D(p_2_in[1]),
         .Q(Q[1]),
         .R(SR));
   FDRE \addr_reg[2] 
        (.C(clk_10),
         .CE(\addr[15]_i_2_n_0 ),
-        .D(\addr[2]_i_1_n_0 ),
+        .D(p_2_in[2]),
         .Q(Q[2]),
         .R(SR));
   FDRE \addr_reg[3] 
        (.C(clk_10),
         .CE(\addr[15]_i_2_n_0 ),
-        .D(\addr[3]_i_1_n_0 ),
+        .D(p_2_in[3]),
         .Q(Q[3]),
         .R(SR));
   FDRE \addr_reg[4] 
        (.C(clk_10),
         .CE(\addr[15]_i_2_n_0 ),
-        .D(\addr[4]_i_1_n_0 ),
+        .D(p_2_in[4]),
         .Q(Q[4]),
         .R(SR));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \addr_reg[4]_i_2 
-       (.CI(1'b0),
-        .CO({\addr_reg[4]_i_2_n_0 ,\addr_reg[4]_i_2_n_1 ,\addr_reg[4]_i_2_n_2 ,\addr_reg[4]_i_2_n_3 }),
-        .CYINIT(Q[0]),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(addr0[4:1]),
-        .S(Q[4:1]));
   FDRE \addr_reg[5] 
        (.C(clk_10),
         .CE(\addr[15]_i_2_n_0 ),
-        .D(\addr[5]_i_1_n_0 ),
+        .D(p_2_in[5]),
         .Q(Q[5]),
         .R(SR));
   FDRE \addr_reg[6] 
        (.C(clk_10),
         .CE(\addr[15]_i_2_n_0 ),
-        .D(\addr[6]_i_1_n_0 ),
+        .D(p_2_in[6]),
         .Q(Q[6]),
         .R(SR));
   FDRE \addr_reg[7] 
        (.C(clk_10),
         .CE(\addr[15]_i_2_n_0 ),
-        .D(\addr[7]_i_1_n_0 ),
+        .D(p_2_in[7]),
         .Q(Q[7]),
         .R(SR));
   FDRE \addr_reg[8] 
        (.C(clk_10),
         .CE(\addr[15]_i_2_n_0 ),
-        .D(\addr[8]_i_1_n_0 ),
+        .D(p_2_in[8]),
         .Q(Q[8]),
         .R(SR));
-  (* ADDER_THRESHOLD = "35" *) 
-  CARRY4 \addr_reg[8]_i_2 
-       (.CI(\addr_reg[4]_i_2_n_0 ),
-        .CO({\addr_reg[8]_i_2_n_0 ,\addr_reg[8]_i_2_n_1 ,\addr_reg[8]_i_2_n_2 ,\addr_reg[8]_i_2_n_3 }),
-        .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(addr0[8:5]),
-        .S(Q[8:5]));
   FDRE \addr_reg[9] 
        (.C(clk_10),
         .CE(\addr[15]_i_2_n_0 ),
-        .D(\addr[9]_i_1_n_0 ),
+        .D(p_2_in[9]),
         .Q(Q[9]),
         .R(SR));
   (* SOFT_HLUTNM = "soft_lutpair15" *) 
@@ -1414,19 +1399,19 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(Q[12]),
         .I1(Q[13]),
         .O(i__carry__0_i_2_n_0));
-  LUT4 #(
-    .INIT(16'h2F02)) 
+  LUT3 #(
+    .INIT(8'hB2)) 
     i__carry__0_i_3
        (.I0(Q[10]),
-        .I1(addr_end),
-        .I2(addr_start),
-        .I3(Q[11]),
+        .I1(addr_start),
+        .I2(Q[11]),
         .O(i__carry__0_i_3_n_0));
-  LUT2 #(
-    .INIT(4'hE)) 
+  LUT3 #(
+    .INIT(8'h32)) 
     i__carry__0_i_4
        (.I0(Q[8]),
-        .I1(Q[9]),
+        .I1(addr_end),
+        .I2(Q[9]),
         .O(i__carry__0_i_4_n_0));
   LUT2 #(
     .INIT(4'h1)) 
@@ -1440,25 +1425,26 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(Q[12]),
         .I1(Q[13]),
         .O(i__carry__0_i_6_n_0));
-  LUT4 #(
-    .INIT(16'h9009)) 
+  LUT3 #(
+    .INIT(8'h09)) 
     i__carry__0_i_7
-       (.I0(Q[10]),
-        .I1(addr_end),
-        .I2(Q[11]),
-        .I3(addr_start),
+       (.I0(Q[11]),
+        .I1(addr_start),
+        .I2(Q[10]),
         .O(i__carry__0_i_7_n_0));
-  LUT2 #(
-    .INIT(4'h1)) 
+  LUT3 #(
+    .INIT(8'h81)) 
     i__carry__0_i_8
        (.I0(Q[8]),
         .I1(Q[9]),
+        .I2(addr_end),
         .O(i__carry__0_i_8_n_0));
-  LUT2 #(
-    .INIT(4'hE)) 
+  LUT3 #(
+    .INIT(8'h32)) 
     i__carry_i_1
        (.I0(Q[6]),
-        .I1(Q[7]),
+        .I1(addr_end),
+        .I2(Q[7]),
         .O(i__carry_i_1_n_0));
   LUT3 #(
     .INIT(8'h04)) 
@@ -1467,11 +1453,12 @@ module embsys_signal_generator_0_0_func_gen
         .I1(addr_start),
         .I2(Q[11]),
         .O(i__carry_i_1__0_n_0));
-  LUT2 #(
-    .INIT(4'hE)) 
+  LUT3 #(
+    .INIT(8'h32)) 
     i__carry_i_2
        (.I0(Q[4]),
-        .I1(Q[5]),
+        .I1(addr_end),
+        .I2(Q[5]),
         .O(i__carry_i_2_n_0));
   LUT2 #(
     .INIT(4'h1)) 
@@ -1479,11 +1466,12 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(Q[14]),
         .I1(Q[15]),
         .O(i__carry_i_2__0_n_0));
-  LUT2 #(
-    .INIT(4'hE)) 
+  LUT3 #(
+    .INIT(8'h32)) 
     i__carry_i_3
        (.I0(Q[2]),
-        .I1(Q[3]),
+        .I1(addr_end),
+        .I2(Q[3]),
         .O(i__carry_i_3_n_0));
   LUT2 #(
     .INIT(4'h1)) 
@@ -1491,11 +1479,12 @@ module embsys_signal_generator_0_0_func_gen
        (.I0(Q[12]),
         .I1(Q[13]),
         .O(i__carry_i_3__0_n_0));
-  LUT2 #(
-    .INIT(4'hE)) 
+  LUT3 #(
+    .INIT(8'h32)) 
     i__carry_i_4
        (.I0(Q[0]),
-        .I1(Q[1]),
+        .I1(addr_end),
+        .I2(Q[1]),
         .O(i__carry_i_4_n_0));
   LUT3 #(
     .INIT(8'h09)) 
@@ -1504,29 +1493,33 @@ module embsys_signal_generator_0_0_func_gen
         .I1(Q[10]),
         .I2(Q[11]),
         .O(i__carry_i_4__0_n_0));
-  LUT2 #(
-    .INIT(4'h1)) 
+  LUT3 #(
+    .INIT(8'h81)) 
     i__carry_i_5
        (.I0(Q[6]),
         .I1(Q[7]),
+        .I2(addr_end),
         .O(i__carry_i_5_n_0));
-  LUT2 #(
-    .INIT(4'h1)) 
+  LUT3 #(
+    .INIT(8'h81)) 
     i__carry_i_6
        (.I0(Q[4]),
         .I1(Q[5]),
+        .I2(addr_end),
         .O(i__carry_i_6_n_0));
-  LUT2 #(
-    .INIT(4'h1)) 
+  LUT3 #(
+    .INIT(8'h81)) 
     i__carry_i_7
        (.I0(Q[2]),
         .I1(Q[3]),
+        .I2(addr_end),
         .O(i__carry_i_7_n_0));
-  LUT2 #(
-    .INIT(4'h1)) 
+  LUT3 #(
+    .INIT(8'h81)) 
     i__carry_i_8
        (.I0(Q[0]),
         .I1(Q[1]),
+        .I2(addr_end),
         .O(i__carry_i_8_n_0));
   (* COMPARATOR_THRESHOLD = "11" *) 
   CARRY4 signal_data1_carry
