@@ -8,14 +8,14 @@ typedef enum logic [1:0]{
     
 module func_gen 
 (   
-    input         clk,
-    input         rst_n,
-    input  [31:0] set_count,
-    input  [7:0]  duty_cycle,
-    input  [1:0]  sig_type,
-    input logic [7:0] din,
+    input  logic        clk,
+    input  logic        rst_n,
+    input  logic [31:0] set_count,
+    input  logic [7:0]  duty_cycle,
+    input  logic [1:0]  sig_type,
+    input  logic [7:0]  din,
     output logic [15:0] addr,
-    output logic [7:0] signal_waveform
+    output logic [7:0]  signal_waveform
 );
 
 logic [31:0] counter;
