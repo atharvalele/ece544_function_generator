@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-//Date        : Sat May 28 23:19:35 2022
+//Date        : Sun May 29 18:11:54 2022
 //Host        : sentinel running 64-bit EndeavourOS Linux
 //Command     : generate_target embsys.bd
 //Design      : embsys
@@ -139,7 +139,7 @@ module embsys
   output RGB2_Blue_0;
   output RGB2_Green_0;
   output RGB2_Red_0;
-  input [9:0]addra_0;
+  input [15:0]addra_0;
   output [7:0]an_0;
   input btnC_0;
   input btnD_0;
@@ -208,7 +208,7 @@ module embsys
   wire PmodOLEDrgb_0_PmodOLEDrgb_out_PIN9_I;
   wire PmodOLEDrgb_0_PmodOLEDrgb_out_PIN9_O;
   wire PmodOLEDrgb_0_PmodOLEDrgb_out_PIN9_T;
-  wire [9:0]addra_0_1;
+  wire [15:0]addra_0_1;
   wire [7:0]axi_gpio_0_GPIO2_TRI_O;
   wire [7:0]axi_gpio_0_GPIO_TRI_I;
   wire axi_timebase_wdt_0_wdt_interrupt;
@@ -490,7 +490,8 @@ module embsys
   wire [0:0]rst_clk_wiz_1_100M_bus_struct_reset;
   wire rst_clk_wiz_1_100M_mb_reset;
   wire [0:0]rst_clk_wiz_1_100M_peripheral_aresetn;
-  wire [9:0]signal_generator_0_addr;
+  wire [15:0]signal_generator_0_addr;
+  wire [7:0]signal_generator_0_signal_waveform;
   wire [15:0]sw_0_1;
   wire [0:0]wea_0_1;
 
@@ -548,7 +549,7 @@ module embsys
   assign RGB2_Blue_0 = nexys4io_0_RGB2_Blue;
   assign RGB2_Green_0 = nexys4io_0_RGB2_Green;
   assign RGB2_Red_0 = nexys4io_0_RGB2_Red;
-  assign addra_0_1 = addra_0[9:0];
+  assign addra_0_1 = addra_0[15:0];
   assign an_0[7:0] = nexys4io_0_an;
   assign axi_gpio_0_GPIO_TRI_I = gpio_rtl_0_tri_i[7:0];
   assign axi_uartlite_0_UART_RxD = uart_rtl_0_rxd;
@@ -564,7 +565,7 @@ module embsys
   assign led_0[15:0] = nexys4io_0_led;
   assign reset_rtl_0_1 = sysreset_n;
   assign seg_0[6:0] = nexys4io_0_seg;
-  assign signal_waveform_0[7:0] = blk_mem_gen_0_doutb;
+  assign signal_waveform_0[7:0] = signal_generator_0_signal_waveform;
   assign sw_0_1 = sw_0[15:0];
   assign uart_rtl_0_txd = axi_uartlite_0_UART_TxD;
   assign wea_0_1 = wea_0[0];
@@ -1214,6 +1215,7 @@ module embsys
   embsys_signal_generator_0_0 signal_generator_0
        (.addr(signal_generator_0_addr),
         .clk_10(clk_wiz_1_clk_out3),
+        .din(blk_mem_gen_0_doutb),
         .s00_axi_aclk(clk_wiz_1_clk_out1),
         .s00_axi_araddr(microblaze_0_axi_periph_M10_AXI_ARADDR[3:0]),
         .s00_axi_aresetn(rst_clk_wiz_1_100M_peripheral_aresetn),
@@ -1234,7 +1236,8 @@ module embsys
         .s00_axi_wdata(microblaze_0_axi_periph_M10_AXI_WDATA),
         .s00_axi_wready(microblaze_0_axi_periph_M10_AXI_WREADY),
         .s00_axi_wstrb(microblaze_0_axi_periph_M10_AXI_WSTRB),
-        .s00_axi_wvalid(microblaze_0_axi_periph_M10_AXI_WVALID));
+        .s00_axi_wvalid(microblaze_0_axi_periph_M10_AXI_WVALID),
+        .signal_waveform(signal_generator_0_signal_waveform));
 endmodule
 
 module embsys_microblaze_0_axi_periph_0

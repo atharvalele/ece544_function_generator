@@ -16,7 +16,9 @@
 	(
 		// Users to add ports here
         input wire clk_10,
-        output wire [9:0] addr,
+        output wire [15:0] addr,
+        input wire [7:0] din,
+        output wire [7:0] signal_waveform,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -51,6 +53,8 @@
 	) signal_generator_v1_0_S00_AXI_inst (
 	    .clk_10(clk_10),
 	    .addr(addr),
+	    .din(din),
+	    .signal_waveform(signal_waveform),
 		.S_AXI_ACLK(s00_axi_aclk),
 		.S_AXI_ARESETN(s00_axi_aresetn),
 		.S_AXI_AWADDR(s00_axi_awaddr),

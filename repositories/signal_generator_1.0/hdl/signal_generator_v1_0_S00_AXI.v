@@ -16,7 +16,9 @@
 	(
 		// Users to add ports here
         input wire clk_10,
-        output wire [9:0] addr,
+        input wire [7:0] din,
+        output wire [15:0] addr,
+        output wire [7:0] signal_waveform,
 		// User ports ends
 		// Do not modify the ports beyond this line
 
@@ -403,7 +405,11 @@
         .clk(clk_10),
         .rst_n(S_AXI_ARESETN),
         .set_count(slv_reg0),
-        .addr(addr)
+        .addr(addr),
+        .din(din),
+        .duty_cycle(slv_reg1[7:0]),
+        .signal_waveform(signal_waveform),
+        .sig_type(slv_reg2[1:0])
      );
 	// User logic ends
 
