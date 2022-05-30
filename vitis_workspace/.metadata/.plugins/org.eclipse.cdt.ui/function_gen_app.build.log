@@ -1,5 +1,10 @@
-11:49:29 **** Incremental Build of configuration Debug for project function_gen_app ****
+11:18:35 **** Incremental Build of configuration Debug for project function_gen_app ****
 make all 
+Building file: /home/atharva/Work/ece544_function_generator/software/display.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/display.o" -I/home/atharva/Work/ece544_function_generator/vitis_workspace/function_gen_platform/export/function_gen_platform/sw/function_gen_platform/standalone_domain/bspinclude/include -mlittle-endian -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/display.d" -MT"src/display.o" -o "src/display.o" "/home/atharva/Work/ece544_function_generator/software/display.c"
+Finished building: /home/atharva/Work/ece544_function_generator/software/display.c
+ 
 Building file: /home/atharva/Work/ece544_function_generator/software/main.c
 Invoking: MicroBlaze gcc compiler
 mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I/home/atharva/Work/ece544_function_generator/vitis_workspace/function_gen_platform/export/function_gen_platform/sw/function_gen_platform/standalone_domain/bspinclude/include -mlittle-endian -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "/home/atharva/Work/ece544_function_generator/software/main.c"
@@ -7,15 +12,15 @@ Finished building: /home/atharva/Work/ece544_function_generator/software/main.c
  
 Building target: function_gen_app.elf
 Invoking: MicroBlaze gcc linker
-mb-gcc -Wl,-T -Wl,../src/lscript.ld -L/home/atharva/Work/ece544_function_generator/vitis_workspace/function_gen_platform/export/function_gen_platform/sw/function_gen_platform/standalone_domain/bsplib/lib -mlittle-endian -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "function_gen_app.elf" ./src/bitmap.o ./src/clip.o ./src/fontx.o ./src/hagl.o ./src/hagl_hal.o ./src/hsl.o ./src/input.o ./src/main.o ./src/platform.o ./src/rgb565.o ./src/rgb888.o ./src/system.o ./src/system_interrupts.o ./src/tjpgd.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L/home/atharva/Work/ece544_function_generator/vitis_workspace/function_gen_platform/export/function_gen_platform/sw/function_gen_platform/standalone_domain/bsplib/lib -mlittle-endian -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "function_gen_app.elf" ./src/display.o ./src/input.o ./src/main.o ./src/platform.o ./src/system.o ./src/system_interrupts.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
 Finished building target: function_gen_app.elf
  
 Invoking: MicroBlaze Print Size
 mb-size function_gen_app.elf  |tee "function_gen_app.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  17084	    404	   3752	  21240	   52f8	function_gen_app.elf
+  15228	    396	   3752	  19376	   4bb0	function_gen_app.elf
 Finished building: function_gen_app.elf.size
  
 
-11:49:29 Build Finished (took 523ms)
+11:18:35 Build Finished (took 571ms)
 

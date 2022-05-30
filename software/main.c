@@ -12,8 +12,7 @@
 
 #include "nexys4io.h"
 #include "xwdttb.h"
-
-#include "hagl-lib/hagl.h"
+#include "display.h"
 
 int main(void)
 {
@@ -37,8 +36,7 @@ int main(void)
 	NX410_SSEG_setAllDigits(SSEGHI, CC_BLANK, CC_BLANK, CC_BLANK, CC_BLANK, 0);
 
 	/* Set up and clear OLED */
-	hagl_init();
-	hagl_clear_screen();
+	display_clear();
 
 	while (1) {
 		// Reset WDT if expired
