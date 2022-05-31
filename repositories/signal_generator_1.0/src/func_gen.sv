@@ -27,6 +27,30 @@ logic [7:0]  signal_data;
 // Decide signal output
 assign signal_waveform = ((sig_type == SQUARE) || (sig_type == PWM)) ? signal_data: din;
 
+always_ff @(sig_type) begin
+    // Set Start and end address of the digitized data
+    // Stored in the BRAM 
+    case (sig_type)
+        SINE: begin
+            addr_start <= 16'h0000;
+            addr_end <= 16'h03E7;
+        end
+        TRIANGLE: begin
+            addr_start <= 16'h03E8;
+            addr_end <= 16'h07CF;
+        end
+        SQUARE: begin
+            addr_start <= 16'h0000;
+            addr_end <= 16'h0000;
+        end
+        PWM: begin
+            addr_start <= 16'h0000;
+            addr_end <= 16'h0000;
+        end
+    endcase
+end
+
+
 always_ff @(posedge clk) begin
     if (rst_n == 0) begin
         addr <= 0;
@@ -68,19 +92,6 @@ always_ff @(posedge clk) begin
         end
         // Logic For Sine and Triangle Waves
         else begin
-            // Set Start and end address of the digitized data
-            // Stored in the BRAM 
-            case (sig_type)
-                SINE: begin
-                    addr_start <= 16'h0000;
-                    addr_end <= 16'h03FF;
-                end
-                TRIANGLE: begin
-                    addr_start <= 16'h0400;
-                    addr_end <= 16'h0800;
-                end
-            endcase
-            
             // Repoint starting address if it is wrong
             if (addr < addr_start) begin
                 addr <= addr_start;

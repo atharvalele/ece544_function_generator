@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-//Date        : Sun May 29 19:37:28 2022
+//Date        : Mon May 30 17:47:11 2022
 //Host        : sentinel running 64-bit EndeavourOS Linux
 //Command     : generate_target embsys.bd
 //Design      : embsys
@@ -226,7 +226,6 @@ module embsys
   wire clk_100MHz_1;
   wire clk_wiz_1_clk_out1;
   wire clk_wiz_1_clk_out2;
-  wire clk_wiz_1_clk_out3;
   wire clk_wiz_1_locked;
   wire [7:0]dina_0_1;
   wire mdm_1_debug_sys_rst;
@@ -775,8 +774,8 @@ module embsys
   embsys_blk_mem_gen_0_0 blk_mem_gen_0
        (.addra(addra_0_1),
         .addrb(signal_generator_0_addr),
-        .clka(clk_wiz_1_clk_out3),
-        .clkb(clk_wiz_1_clk_out3),
+        .clka(clk_wiz_1_clk_out1),
+        .clkb(clk_wiz_1_clk_out1),
         .dina(dina_0_1),
         .doutb(blk_mem_gen_0_doutb),
         .wea(wea_0_1));
@@ -784,7 +783,6 @@ module embsys
        (.clk_in1(clk_100MHz_1),
         .clk_out1(clk_wiz_1_clk_out1),
         .clk_out2(clk_wiz_1_clk_out2),
-        .clk_out3(clk_wiz_1_clk_out3),
         .locked(clk_wiz_1_locked));
   embsys_mdm_1_0 mdm_1
        (.Dbg_Capture_0(microblaze_0_debug_CAPTURE),
@@ -1214,7 +1212,6 @@ module embsys
         .slowest_sync_clk(clk_wiz_1_clk_out1));
   embsys_signal_generator_0_0 signal_generator_0
        (.addr(signal_generator_0_addr),
-        .clk_10(clk_wiz_1_clk_out3),
         .din(blk_mem_gen_0_doutb),
         .s00_axi_aclk(clk_wiz_1_clk_out1),
         .s00_axi_araddr(microblaze_0_axi_periph_M10_AXI_ARADDR[3:0]),
