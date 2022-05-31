@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-//Date        : Mon May 30 22:59:00 2022
+//Date        : Mon May 30 23:11:12 2022
 //Host        : sentinel running 64-bit EndeavourOS Linux
 //Command     : generate_target embsys.bd
 //Design      : embsys

@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-// Date        : Mon May 30 22:59:51 2022
+// Date        : Mon May 30 23:11:56 2022
 // Host        : sentinel running 64-bit EndeavourOS Linux
 // Command     : write_verilog -force -mode funcsim
 //               /home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/vivado_project/ece544_function_generator/ece544_function_generator.gen/sources_1/bd/embsys/ip/embsys_fit_timer_0_0/embsys_fit_timer_0_0_sim_netlist.v
@@ -29,7 +29,7 @@ module embsys_fit_timer_0_0
   (* C_EXT_RESET_HIGH = "1" *) 
   (* C_FAMILY = "artix7" *) 
   (* C_INACCURACY = "0" *) 
-  (* C_NO_CLOCKS = "2500" *) 
+  (* C_NO_CLOCKS = "1000000" *) 
   embsys_fit_timer_0_0_FIT_timer U0
        (.Clk(Clk),
         .Interrupt(Interrupt),
@@ -44,35 +44,53 @@ module embsys_fit_timer_0_0_Divide_part
     Rst_d1_reg_0,
     Rst_d1_reg_1,
     Rst_d1_reg_2,
+    Rst_d1_reg_3,
+    Rst_d1_reg_4,
+    Rst_d1_reg_5,
     Clk,
     Rst,
     loop_Bit_0,
     loop_Bit_1,
-    loop_Bit_2);
+    loop_Bit_2,
+    loop_Bit_3,
+    loop_Bit_4,
+    loop_Bit_5);
   output loop_Bit;
   output Rst_d1;
   output CE;
   output Rst_d1_reg_0;
   output Rst_d1_reg_1;
   output Rst_d1_reg_2;
+  output Rst_d1_reg_3;
+  output Rst_d1_reg_4;
+  output Rst_d1_reg_5;
   input Clk;
   input Rst;
   input loop_Bit_0;
   input loop_Bit_1;
   input loop_Bit_2;
+  input loop_Bit_3;
+  input loop_Bit_4;
+  input loop_Bit_5;
 
   wire CE;
   wire Clk;
-  wire \One_SRL16.SRL16E_I_i_1__2_n_0 ;
+  wire \One_SRL16.SRL16E_I_i_1__5_n_0 ;
   wire Rst;
   wire Rst_d1;
   wire Rst_d1_reg_0;
   wire Rst_d1_reg_1;
   wire Rst_d1_reg_2;
+  wire Rst_d1_reg_3;
+  wire Rst_d1_reg_4;
+  wire Rst_d1_reg_5;
   wire loop_Bit;
   wire loop_Bit_0;
   wire loop_Bit_1;
   wire loop_Bit_2;
+  wire loop_Bit_3;
+  wire loop_Bit_4;
+  wire loop_Bit_5;
 
   (* box_type = "PRIMITIVE" *) 
   (* srl_bus_name = "U0/\Using_SRL16s.SRL16s " *) 
@@ -82,16 +100,16 @@ module embsys_fit_timer_0_0_Divide_part
     .IS_CLK_INVERTED(1'b0)) 
     \One_SRL16.SRL16E_I 
        (.A0(1'b1),
-        .A1(1'b0),
-        .A2(1'b0),
+        .A1(1'b1),
+        .A2(1'b1),
         .A3(1'b1),
         .CE(1'b1),
         .CLK(Clk),
-        .D(\One_SRL16.SRL16E_I_i_1__2_n_0 ),
+        .D(\One_SRL16.SRL16E_I_i_1__5_n_0 ),
         .Q(loop_Bit));
   LUT3 #(
     .INIT(8'hFE)) 
-    \One_SRL16.SRL16E_I_i_1__0 
+    \One_SRL16.SRL16E_I_i_1__1 
        (.I0(loop_Bit),
         .I1(Rst),
         .I2(Rst_d1),
@@ -99,11 +117,11 @@ module embsys_fit_timer_0_0_Divide_part
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT3 #(
     .INIT(8'h0E)) 
-    \One_SRL16.SRL16E_I_i_1__2 
+    \One_SRL16.SRL16E_I_i_1__5 
        (.I0(Rst_d1),
         .I1(loop_Bit),
         .I2(Rst),
-        .O(\One_SRL16.SRL16E_I_i_1__2_n_0 ));
+        .O(\One_SRL16.SRL16E_I_i_1__5_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT3 #(
     .INIT(8'h0E)) 
@@ -128,6 +146,29 @@ module embsys_fit_timer_0_0_Divide_part
         .I1(loop_Bit_2),
         .I2(Rst),
         .O(Rst_d1_reg_2));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT3 #(
+    .INIT(8'h0E)) 
+    \One_SRL16.SRL16E_I_i_2__2 
+       (.I0(Rst_d1),
+        .I1(loop_Bit_3),
+        .I2(Rst),
+        .O(Rst_d1_reg_3));
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  LUT3 #(
+    .INIT(8'h0E)) 
+    \One_SRL16.SRL16E_I_i_2__3 
+       (.I0(Rst_d1),
+        .I1(loop_Bit_4),
+        .I2(Rst),
+        .O(Rst_d1_reg_4));
+  LUT3 #(
+    .INIT(8'h0E)) 
+    \One_SRL16.SRL16E_I_i_2__4 
+       (.I0(Rst_d1),
+        .I1(loop_Bit_5),
+        .I2(Rst),
+        .O(Rst_d1_reg_5));
   FDRE #(
     .INIT(1'b0)) 
     Rst_d1_reg
@@ -141,7 +182,7 @@ endmodule
 (* ORIG_REF_NAME = "Divide_part" *) 
 module embsys_fit_timer_0_0_Divide_part__parameterized0
    (loop_Bit,
-    Clk_En_I_2,
+    Clk_En_I_5,
     CE,
     CE_0,
     \not_First.Out1_reg_0 ,
@@ -150,7 +191,7 @@ module embsys_fit_timer_0_0_Divide_part__parameterized0
     Rst_d1,
     loop_Bit_1);
   output loop_Bit;
-  output Clk_En_I_2;
+  output Clk_En_I_5;
   output CE;
   input CE_0;
   input \not_First.Out1_reg_0 ;
@@ -162,14 +203,13 @@ module embsys_fit_timer_0_0_Divide_part__parameterized0
   wire CE;
   wire CE_0;
   wire Clk;
-  wire Clk_En_I_2;
+  wire Clk_En_I_5;
   wire Out1;
   wire Rst;
   wire Rst_d1;
   wire loop_Bit;
   wire loop_Bit_1;
   wire \not_First.Clk_En_Out_i_i_1_n_0 ;
-  wire \not_First.Out1_i_1__1_n_0 ;
   wire \not_First.Out1_reg_0 ;
 
   (* box_type = "PRIMITIVE" *) 
@@ -189,19 +229,18 @@ module embsys_fit_timer_0_0_Divide_part__parameterized0
         .Q(loop_Bit));
   LUT3 #(
     .INIT(8'hFE)) 
-    \One_SRL16.SRL16E_I_i_1 
-       (.I0(Clk_En_I_2),
+    \One_SRL16.SRL16E_I_i_1__2 
+       (.I0(Clk_En_I_5),
         .I1(Rst),
         .I2(Rst_d1),
         .O(CE));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     \not_First.Clk_En_Out_i_i_1 
        (.I0(loop_Bit_1),
         .I1(Rst),
         .I2(Out1),
-        .I3(Clk_En_I_2),
+        .I3(Clk_En_I_5),
         .O(\not_First.Clk_En_Out_i_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
@@ -209,25 +248,252 @@ module embsys_fit_timer_0_0_Divide_part__parameterized0
        (.C(Clk),
         .CE(1'b1),
         .D(\not_First.Clk_En_Out_i_i_1_n_0 ),
-        .Q(Clk_En_I_2),
+        .Q(Clk_En_I_5),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT2 #(
-    .INIT(4'h2)) 
-    \not_First.Out1_i_1__1 
-       (.I0(loop_Bit),
-        .I1(Rst),
-        .O(\not_First.Out1_i_1__1_n_0 ));
   FDRE \not_First.Out1_reg 
        (.C(Clk),
         .CE(1'b1),
-        .D(\not_First.Out1_i_1__1_n_0 ),
+        .D(loop_Bit),
         .Q(Out1),
+        .R(Rst));
+endmodule
+
+(* ORIG_REF_NAME = "Divide_part" *) 
+module embsys_fit_timer_0_0_Divide_part__parameterized0_0
+   (loop_Bit,
+    Clk_En_I_4,
+    CE,
+    CE_0,
+    \not_First.Out1_reg_0 ,
+    Clk,
+    Rst,
+    Rst_d1,
+    Clk_En_I_5);
+  output loop_Bit;
+  output Clk_En_I_4;
+  output CE;
+  input CE_0;
+  input \not_First.Out1_reg_0 ;
+  input Clk;
+  input Rst;
+  input Rst_d1;
+  input Clk_En_I_5;
+
+  wire CE;
+  wire CE_0;
+  wire Clk;
+  wire Clk_En_I_4;
+  wire Clk_En_I_5;
+  wire Rst;
+  wire Rst_d1;
+  wire loop_Bit;
+  wire \not_First.Clk_En_Out_i_i_1__0_n_0 ;
+  wire \not_First.Out1_reg_0 ;
+  wire \not_First.Out1_reg_n_0 ;
+
+  (* box_type = "PRIMITIVE" *) 
+  (* srl_bus_name = "U0/\Using_SRL16s.SRL16s " *) 
+  (* srl_name = "U0/\Using_SRL16s.SRL16s[3].Divide_I/One_SRL16.SRL16E_I " *) 
+  SRL16E #(
+    .INIT(16'h0001),
+    .IS_CLK_INVERTED(1'b0)) 
+    \One_SRL16.SRL16E_I 
+       (.A0(1'b1),
+        .A1(1'b0),
+        .A2(1'b0),
+        .A3(1'b1),
+        .CE(CE_0),
+        .CLK(Clk),
+        .D(\not_First.Out1_reg_0 ),
+        .Q(loop_Bit));
+  LUT3 #(
+    .INIT(8'hFE)) 
+    \One_SRL16.SRL16E_I_i_1__0 
+       (.I0(Clk_En_I_4),
+        .I1(Rst),
+        .I2(Rst_d1),
+        .O(CE));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \not_First.Clk_En_Out_i_i_1__0 
+       (.I0(Clk_En_I_5),
+        .I1(\not_First.Out1_reg_n_0 ),
+        .I2(Clk_En_I_4),
+        .O(\not_First.Clk_En_Out_i_i_1__0_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \not_First.Clk_En_Out_i_reg 
+       (.C(Clk),
+        .CE(1'b1),
+        .D(\not_First.Clk_En_Out_i_i_1__0_n_0 ),
+        .Q(Clk_En_I_4),
         .R(1'b0));
+  FDRE \not_First.Out1_reg 
+       (.C(Clk),
+        .CE(1'b1),
+        .D(loop_Bit),
+        .Q(\not_First.Out1_reg_n_0 ),
+        .R(Rst));
 endmodule
 
 (* ORIG_REF_NAME = "Divide_part" *) 
 module embsys_fit_timer_0_0_Divide_part__parameterized1
+   (loop_Bit,
+    Clk_En_I_3,
+    CE,
+    CE_0,
+    \not_First.Out1_reg_0 ,
+    Clk,
+    Rst,
+    Rst_d1,
+    Clk_En_I_4);
+  output loop_Bit;
+  output Clk_En_I_3;
+  output CE;
+  input CE_0;
+  input \not_First.Out1_reg_0 ;
+  input Clk;
+  input Rst;
+  input Rst_d1;
+  input Clk_En_I_4;
+
+  wire CE;
+  wire CE_0;
+  wire Clk;
+  wire Clk_En_I_3;
+  wire Clk_En_I_4;
+  wire Rst;
+  wire Rst_d1;
+  wire loop_Bit;
+  wire \not_First.Clk_En_Out_i_i_1__1_n_0 ;
+  wire \not_First.Out1_reg_0 ;
+  wire \not_First.Out1_reg_n_0 ;
+
+  (* box_type = "PRIMITIVE" *) 
+  (* srl_bus_name = "U0/\Using_SRL16s.SRL16s " *) 
+  (* srl_name = "U0/\Using_SRL16s.SRL16s[4].Divide_I/One_SRL16.SRL16E_I " *) 
+  SRL16E #(
+    .INIT(16'h0001),
+    .IS_CLK_INVERTED(1'b0)) 
+    \One_SRL16.SRL16E_I 
+       (.A0(1'b0),
+        .A1(1'b0),
+        .A2(1'b1),
+        .A3(1'b0),
+        .CE(CE_0),
+        .CLK(Clk),
+        .D(\not_First.Out1_reg_0 ),
+        .Q(loop_Bit));
+  LUT3 #(
+    .INIT(8'hFE)) 
+    \One_SRL16.SRL16E_I_i_1__3 
+       (.I0(Clk_En_I_3),
+        .I1(Rst),
+        .I2(Rst_d1),
+        .O(CE));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \not_First.Clk_En_Out_i_i_1__1 
+       (.I0(Clk_En_I_4),
+        .I1(\not_First.Out1_reg_n_0 ),
+        .I2(Clk_En_I_3),
+        .O(\not_First.Clk_En_Out_i_i_1__1_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \not_First.Clk_En_Out_i_reg 
+       (.C(Clk),
+        .CE(1'b1),
+        .D(\not_First.Clk_En_Out_i_i_1__1_n_0 ),
+        .Q(Clk_En_I_3),
+        .R(1'b0));
+  FDRE \not_First.Out1_reg 
+       (.C(Clk),
+        .CE(1'b1),
+        .D(loop_Bit),
+        .Q(\not_First.Out1_reg_n_0 ),
+        .R(Rst));
+endmodule
+
+(* ORIG_REF_NAME = "Divide_part" *) 
+module embsys_fit_timer_0_0_Divide_part__parameterized1_1
+   (loop_Bit,
+    Clk_En_I_2,
+    CE,
+    CE_0,
+    \not_First.Out1_reg_0 ,
+    Clk,
+    Rst,
+    Rst_d1,
+    Clk_En_I_3);
+  output loop_Bit;
+  output Clk_En_I_2;
+  output CE;
+  input CE_0;
+  input \not_First.Out1_reg_0 ;
+  input Clk;
+  input Rst;
+  input Rst_d1;
+  input Clk_En_I_3;
+
+  wire CE;
+  wire CE_0;
+  wire Clk;
+  wire Clk_En_I_2;
+  wire Clk_En_I_3;
+  wire Rst;
+  wire Rst_d1;
+  wire loop_Bit;
+  wire \not_First.Clk_En_Out_i_i_1__2_n_0 ;
+  wire \not_First.Out1_reg_0 ;
+  wire \not_First.Out1_reg_n_0 ;
+
+  (* box_type = "PRIMITIVE" *) 
+  (* srl_bus_name = "U0/\Using_SRL16s.SRL16s " *) 
+  (* srl_name = "U0/\Using_SRL16s.SRL16s[5].Divide_I/One_SRL16.SRL16E_I " *) 
+  SRL16E #(
+    .INIT(16'h0001),
+    .IS_CLK_INVERTED(1'b0)) 
+    \One_SRL16.SRL16E_I 
+       (.A0(1'b0),
+        .A1(1'b0),
+        .A2(1'b1),
+        .A3(1'b0),
+        .CE(CE_0),
+        .CLK(Clk),
+        .D(\not_First.Out1_reg_0 ),
+        .Q(loop_Bit));
+  LUT3 #(
+    .INIT(8'hFE)) 
+    \One_SRL16.SRL16E_I_i_1 
+       (.I0(Clk_En_I_2),
+        .I1(Rst),
+        .I2(Rst_d1),
+        .O(CE));
+  LUT3 #(
+    .INIT(8'hB8)) 
+    \not_First.Clk_En_Out_i_i_1__2 
+       (.I0(Clk_En_I_3),
+        .I1(\not_First.Out1_reg_n_0 ),
+        .I2(Clk_En_I_2),
+        .O(\not_First.Clk_En_Out_i_i_1__2_n_0 ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \not_First.Clk_En_Out_i_reg 
+       (.C(Clk),
+        .CE(1'b1),
+        .D(\not_First.Clk_En_Out_i_i_1__2_n_0 ),
+        .Q(Clk_En_I_2),
+        .R(1'b0));
+  FDRE \not_First.Out1_reg 
+       (.C(Clk),
+        .CE(1'b1),
+        .D(loop_Bit),
+        .Q(\not_First.Out1_reg_n_0 ),
+        .R(Rst));
+endmodule
+
+(* ORIG_REF_NAME = "Divide_part" *) 
+module embsys_fit_timer_0_0_Divide_part__parameterized1_2
    (loop_Bit,
     Clk_En_I_1,
     CE,
@@ -255,14 +521,13 @@ module embsys_fit_timer_0_0_Divide_part__parameterized1
   wire Rst;
   wire Rst_d1;
   wire loop_Bit;
-  wire \not_First.Clk_En_Out_i_i_1__0_n_0 ;
-  wire \not_First.Out1_i_1__0_n_0 ;
+  wire \not_First.Clk_En_Out_i_i_1__3_n_0 ;
   wire \not_First.Out1_reg_0 ;
   wire \not_First.Out1_reg_n_0 ;
 
   (* box_type = "PRIMITIVE" *) 
   (* srl_bus_name = "U0/\Using_SRL16s.SRL16s " *) 
-  (* srl_name = "U0/\Using_SRL16s.SRL16s[3].Divide_I/One_SRL16.SRL16E_I " *) 
+  (* srl_name = "U0/\Using_SRL16s.SRL16s[6].Divide_I/One_SRL16.SRL16E_I " *) 
   SRL16E #(
     .INIT(16'h0001),
     .IS_CLK_INVERTED(1'b0)) 
@@ -277,56 +542,50 @@ module embsys_fit_timer_0_0_Divide_part__parameterized1
         .Q(loop_Bit));
   LUT3 #(
     .INIT(8'hFE)) 
-    \One_SRL16.SRL16E_I_i_1__1 
+    \One_SRL16.SRL16E_I_i_1__4 
        (.I0(Clk_En_I_1),
         .I1(Rst),
         .I2(Rst_d1),
         .O(CE));
   LUT3 #(
     .INIT(8'hB8)) 
-    \not_First.Clk_En_Out_i_i_1__0 
+    \not_First.Clk_En_Out_i_i_1__3 
        (.I0(Clk_En_I_2),
         .I1(\not_First.Out1_reg_n_0 ),
         .I2(Clk_En_I_1),
-        .O(\not_First.Clk_En_Out_i_i_1__0_n_0 ));
+        .O(\not_First.Clk_En_Out_i_i_1__3_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \not_First.Clk_En_Out_i_reg 
        (.C(Clk),
         .CE(1'b1),
-        .D(\not_First.Clk_En_Out_i_i_1__0_n_0 ),
+        .D(\not_First.Clk_En_Out_i_i_1__3_n_0 ),
         .Q(Clk_En_I_1),
         .R(1'b0));
-  LUT2 #(
-    .INIT(4'h2)) 
-    \not_First.Out1_i_1__0 
-       (.I0(loop_Bit),
-        .I1(Rst),
-        .O(\not_First.Out1_i_1__0_n_0 ));
   FDRE \not_First.Out1_reg 
        (.C(Clk),
         .CE(1'b1),
-        .D(\not_First.Out1_i_1__0_n_0 ),
+        .D(loop_Bit),
         .Q(\not_First.Out1_reg_n_0 ),
-        .R(1'b0));
+        .R(Rst));
 endmodule
 
 (* ORIG_REF_NAME = "Divide_part" *) 
-module embsys_fit_timer_0_0_Divide_part__parameterized1_0
+module embsys_fit_timer_0_0_Divide_part__parameterized1_3
    (loop_Bit,
     Interrupt,
     CE,
     \not_First.Out1_reg_0 ,
     Clk,
-    Clk_En_I_1,
-    Rst);
+    Rst,
+    Clk_En_I_1);
   output loop_Bit;
   output Interrupt;
   input CE;
   input \not_First.Out1_reg_0 ;
   input Clk;
-  input Clk_En_I_1;
   input Rst;
+  input Clk_En_I_1;
 
   wire CE;
   wire Clk;
@@ -334,14 +593,13 @@ module embsys_fit_timer_0_0_Divide_part__parameterized1_0
   wire Interrupt;
   wire Rst;
   wire loop_Bit;
-  wire \not_First.Clk_En_Out_i_i_1__1_n_0 ;
-  wire \not_First.Out1_i_1_n_0 ;
+  wire \not_First.Clk_En_Out_i_i_1__4_n_0 ;
   wire \not_First.Out1_reg_0 ;
   wire \not_First.Out1_reg_n_0 ;
 
   (* box_type = "PRIMITIVE" *) 
   (* srl_bus_name = "U0/\Using_SRL16s.SRL16s " *) 
-  (* srl_name = "U0/\Using_SRL16s.SRL16s[4].Divide_I/One_SRL16.SRL16E_I " *) 
+  (* srl_name = "U0/\Using_SRL16s.SRL16s[7].Divide_I/One_SRL16.SRL16E_I " *) 
   SRL16E #(
     .INIT(16'h0001),
     .IS_CLK_INVERTED(1'b0)) 
@@ -356,35 +614,29 @@ module embsys_fit_timer_0_0_Divide_part__parameterized1_0
         .Q(loop_Bit));
   LUT3 #(
     .INIT(8'hB8)) 
-    \not_First.Clk_En_Out_i_i_1__1 
+    \not_First.Clk_En_Out_i_i_1__4 
        (.I0(Clk_En_I_1),
         .I1(\not_First.Out1_reg_n_0 ),
         .I2(Interrupt),
-        .O(\not_First.Clk_En_Out_i_i_1__1_n_0 ));
+        .O(\not_First.Clk_En_Out_i_i_1__4_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \not_First.Clk_En_Out_i_reg 
        (.C(Clk),
         .CE(1'b1),
-        .D(\not_First.Clk_En_Out_i_i_1__1_n_0 ),
+        .D(\not_First.Clk_En_Out_i_i_1__4_n_0 ),
         .Q(Interrupt),
         .R(1'b0));
-  LUT2 #(
-    .INIT(4'h2)) 
-    \not_First.Out1_i_1 
-       (.I0(loop_Bit),
-        .I1(Rst),
-        .O(\not_First.Out1_i_1_n_0 ));
   FDRE \not_First.Out1_reg 
        (.C(Clk),
         .CE(1'b1),
-        .D(\not_First.Out1_i_1_n_0 ),
+        .D(loop_Bit),
         .Q(\not_First.Out1_reg_n_0 ),
-        .R(1'b0));
+        .R(Rst));
 endmodule
 
 (* C_EXT_RESET_HIGH = "1" *) (* C_FAMILY = "artix7" *) (* C_INACCURACY = "0" *) 
-(* C_NO_CLOCKS = "2500" *) (* ORIG_REF_NAME = "FIT_timer" *) 
+(* C_NO_CLOCKS = "1000000" *) (* ORIG_REF_NAME = "FIT_timer" *) 
 module embsys_fit_timer_0_0_FIT_timer
    (Clk,
     Rst,
@@ -396,19 +648,31 @@ module embsys_fit_timer_0_0_FIT_timer
   wire CE;
   wire CE_0;
   wire CE_2;
+  wire CE_4;
+  wire CE_6;
+  wire CE_8;
   wire Clk;
   wire Clk_En_I_1;
   wire Clk_En_I_2;
+  wire Clk_En_I_3;
+  wire Clk_En_I_4;
+  wire Clk_En_I_5;
   wire Interrupt;
   wire Rst;
   wire Rst_d1;
   wire \Using_SRL16s.SRL16s[1].Divide_I_n_3 ;
   wire \Using_SRL16s.SRL16s[1].Divide_I_n_4 ;
   wire \Using_SRL16s.SRL16s[1].Divide_I_n_5 ;
+  wire \Using_SRL16s.SRL16s[1].Divide_I_n_6 ;
+  wire \Using_SRL16s.SRL16s[1].Divide_I_n_7 ;
+  wire \Using_SRL16s.SRL16s[1].Divide_I_n_8 ;
   wire loop_Bit;
   wire loop_Bit_1;
+  wire loop_Bit_10;
   wire loop_Bit_3;
-  wire loop_Bit_4;
+  wire loop_Bit_5;
+  wire loop_Bit_7;
+  wire loop_Bit_9;
 
   embsys_fit_timer_0_0_Divide_part \Using_SRL16s.SRL16s[1].Divide_I 
        (.CE(CE),
@@ -418,38 +682,74 @@ module embsys_fit_timer_0_0_FIT_timer
         .Rst_d1_reg_0(\Using_SRL16s.SRL16s[1].Divide_I_n_3 ),
         .Rst_d1_reg_1(\Using_SRL16s.SRL16s[1].Divide_I_n_4 ),
         .Rst_d1_reg_2(\Using_SRL16s.SRL16s[1].Divide_I_n_5 ),
+        .Rst_d1_reg_3(\Using_SRL16s.SRL16s[1].Divide_I_n_6 ),
+        .Rst_d1_reg_4(\Using_SRL16s.SRL16s[1].Divide_I_n_7 ),
+        .Rst_d1_reg_5(\Using_SRL16s.SRL16s[1].Divide_I_n_8 ),
         .loop_Bit(loop_Bit),
         .loop_Bit_0(loop_Bit_1),
         .loop_Bit_1(loop_Bit_3),
-        .loop_Bit_2(loop_Bit_4));
+        .loop_Bit_2(loop_Bit_5),
+        .loop_Bit_3(loop_Bit_7),
+        .loop_Bit_4(loop_Bit_9),
+        .loop_Bit_5(loop_Bit_10));
   embsys_fit_timer_0_0_Divide_part__parameterized0 \Using_SRL16s.SRL16s[2].Divide_I 
        (.CE(CE_0),
         .CE_0(CE),
         .Clk(Clk),
-        .Clk_En_I_2(Clk_En_I_2),
+        .Clk_En_I_5(Clk_En_I_5),
         .Rst(Rst),
         .Rst_d1(Rst_d1),
         .loop_Bit(loop_Bit_1),
         .loop_Bit_1(loop_Bit),
         .\not_First.Out1_reg_0 (\Using_SRL16s.SRL16s[1].Divide_I_n_3 ));
-  embsys_fit_timer_0_0_Divide_part__parameterized1 \Using_SRL16s.SRL16s[3].Divide_I 
+  embsys_fit_timer_0_0_Divide_part__parameterized0_0 \Using_SRL16s.SRL16s[3].Divide_I 
        (.CE(CE_2),
         .CE_0(CE_0),
+        .Clk(Clk),
+        .Clk_En_I_4(Clk_En_I_4),
+        .Clk_En_I_5(Clk_En_I_5),
+        .Rst(Rst),
+        .Rst_d1(Rst_d1),
+        .loop_Bit(loop_Bit_3),
+        .\not_First.Out1_reg_0 (\Using_SRL16s.SRL16s[1].Divide_I_n_4 ));
+  embsys_fit_timer_0_0_Divide_part__parameterized1 \Using_SRL16s.SRL16s[4].Divide_I 
+       (.CE(CE_4),
+        .CE_0(CE_2),
+        .Clk(Clk),
+        .Clk_En_I_3(Clk_En_I_3),
+        .Clk_En_I_4(Clk_En_I_4),
+        .Rst(Rst),
+        .Rst_d1(Rst_d1),
+        .loop_Bit(loop_Bit_5),
+        .\not_First.Out1_reg_0 (\Using_SRL16s.SRL16s[1].Divide_I_n_5 ));
+  embsys_fit_timer_0_0_Divide_part__parameterized1_1 \Using_SRL16s.SRL16s[5].Divide_I 
+       (.CE(CE_6),
+        .CE_0(CE_4),
+        .Clk(Clk),
+        .Clk_En_I_2(Clk_En_I_2),
+        .Clk_En_I_3(Clk_En_I_3),
+        .Rst(Rst),
+        .Rst_d1(Rst_d1),
+        .loop_Bit(loop_Bit_7),
+        .\not_First.Out1_reg_0 (\Using_SRL16s.SRL16s[1].Divide_I_n_6 ));
+  embsys_fit_timer_0_0_Divide_part__parameterized1_2 \Using_SRL16s.SRL16s[6].Divide_I 
+       (.CE(CE_8),
+        .CE_0(CE_6),
         .Clk(Clk),
         .Clk_En_I_1(Clk_En_I_1),
         .Clk_En_I_2(Clk_En_I_2),
         .Rst(Rst),
         .Rst_d1(Rst_d1),
-        .loop_Bit(loop_Bit_3),
-        .\not_First.Out1_reg_0 (\Using_SRL16s.SRL16s[1].Divide_I_n_4 ));
-  embsys_fit_timer_0_0_Divide_part__parameterized1_0 \Using_SRL16s.SRL16s[4].Divide_I 
-       (.CE(CE_2),
+        .loop_Bit(loop_Bit_9),
+        .\not_First.Out1_reg_0 (\Using_SRL16s.SRL16s[1].Divide_I_n_7 ));
+  embsys_fit_timer_0_0_Divide_part__parameterized1_3 \Using_SRL16s.SRL16s[7].Divide_I 
+       (.CE(CE_8),
         .Clk(Clk),
         .Clk_En_I_1(Clk_En_I_1),
         .Interrupt(Interrupt),
         .Rst(Rst),
-        .loop_Bit(loop_Bit_4),
-        .\not_First.Out1_reg_0 (\Using_SRL16s.SRL16s[1].Divide_I_n_5 ));
+        .loop_Bit(loop_Bit_10),
+        .\not_First.Out1_reg_0 (\Using_SRL16s.SRL16s[1].Divide_I_n_8 ));
 endmodule
 `ifndef GLBL
 `define GLBL
