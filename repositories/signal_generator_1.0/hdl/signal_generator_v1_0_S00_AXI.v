@@ -16,7 +16,7 @@
 	(
 		// Users to add ports here
         input wire [7:0] din,
-        output wire [15:0] addr,
+        output wire [7:0] addr,
         output wire [7:0] signal_waveform,
 		// User ports ends
 		// Do not modify the ports beyond this line

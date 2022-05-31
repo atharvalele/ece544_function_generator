@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-//Date        : Mon May 30 18:10:26 2022
+//Date        : Mon May 30 18:40:23 2022
 //Host        : sentinel running 64-bit EndeavourOS Linux
 //Command     : generate_target embsys.bd
 //Design      : embsys
@@ -489,7 +489,7 @@ module embsys
   wire [0:0]rst_clk_wiz_1_100M_bus_struct_reset;
   wire rst_clk_wiz_1_100M_mb_reset;
   wire [0:0]rst_clk_wiz_1_100M_peripheral_aresetn;
-  wire [15:0]signal_generator_0_addr;
+  wire [7:0]signal_generator_0_addr;
   wire [7:0]signal_generator_0_signal_waveform;
   wire [15:0]sw_0_1;
   wire [0:0]wea_0_1;
@@ -772,7 +772,7 @@ module embsys
         .s_axi_wvalid(microblaze_0_axi_periph_M05_AXI_WVALID),
         .tx(axi_uartlite_0_UART_TxD));
   embsys_blk_mem_gen_0_0 blk_mem_gen_0
-       (.addra(addra_0_1),
+       (.addra(addra_0_1[7:0]),
         .addrb(signal_generator_0_addr),
         .clka(clk_wiz_1_clk_out1),
         .clkb(clk_wiz_1_clk_out1),

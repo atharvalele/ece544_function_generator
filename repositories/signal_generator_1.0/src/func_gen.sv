@@ -14,14 +14,14 @@ module func_gen
     input  logic [7:0]  duty_cycle,
     input  logic [1:0]  sig_type,
     input  logic [7:0]  din,
-    output logic [15:0] addr,
+    output logic [7:0] addr,
     output logic [7:0]  signal_waveform
 );
 
 logic [31:0] counter;
 logic [7:0]  duty_count;
-logic [15:0] addr_start;
-logic [15:0] addr_end;
+logic [7:0]  addr_start;
+logic [7:0]  addr_end;
 logic [7:0]  signal_data;
 
 // Decide signal output
@@ -73,12 +73,12 @@ always_ff @(posedge clk) begin
             // Stored in the BRAM 
             case (sig_type)
                 SINE: begin
-                    addr_start <= 16'h0000;
-                    addr_end <= 16'h03E7;
+                    addr_start <= 8'h00;
+                    addr_end <= 8'h63;
                 end
                 TRIANGLE: begin
-                    addr_start <= 16'h03E8;
-                    addr_end <= 16'h07CF;
+                    addr_start <= 8'h64;
+                    addr_end <= 8'hC7;
                 end
             endcase
             if (addr < addr_start) begin

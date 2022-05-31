@@ -1,0 +1,33 @@
+; This coe file is generated using third party script 
+; maintained at the github repository
+; By using this script, you are considered
+; as accepted the disclaimer and MIT license specified on
+; https://github.com/kooltzh/xilinx-coe-generator
+
+memory_initialization_radix=16;
+memory_initialization_vector=80 88 8f 97 9f a7 ae b6 bd c4
+ca d1 d7 dc e2 e7 eb ef f3 f6
+f9 fb fd fe ff ff ff fe fd fb
+f9 f6 f3 ef eb e7 e2 dc d7 d1
+ca c4 bd b6 ae a7 9f 97 8f 88
+80 77 70 68 60 58 51 49 42 3b
+35 2e 28 23 1d 18 14 10 c 9
+6 4 2 1 0 0 0 1 2 4
+6 9 c 10 14 18 1d 23 28 2e
+35 3b 42 49 51 58 60 68 70 77
+5 a f 14 1a 1f 24 29 2e 33
+38 3d 42 47 4d 52 57 5c 61 66
+6b 70 75 7a 80 85 8a 8f 94 99
+9e a3 a8 ad b3 b8 bd c2 c7 cc
+d1 d6 db e0 e6 eb f0 f5 fa ff
+fa f5 f0 eb e6 e0 db d6 d1 cc
+c7 c2 bd b8 b3 ad a8 a3 9e 99
+94 8f 8a 85 80 7a 75 70 6b 66
+61 5c 57 52 4d 47 42 3d 38 33
+2e 29 24 1f 1a 14 f a 5 0
+0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 ;
