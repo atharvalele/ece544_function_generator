@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-//Date        : Mon May 30 23:11:12 2022
+//Date        : Mon May 30 23:24:15 2022
 //Host        : sentinel running 64-bit EndeavourOS Linux
 //Command     : generate_target embsys.bd
 //Design      : embsys
@@ -1165,9 +1165,9 @@ module embsys
         .LMB_Clk(clk_wiz_1_clk_out1),
         .SYS_Rst(rst_clk_wiz_1_100M_bus_struct_reset));
   embsys_microblaze_0_xlconcat_0 microblaze_0_xlconcat
-       (.In0(axi_timebase_wdt_0_wdt_interrupt),
+       (.In0(fit_timer_0_Interrupt),
         .In1(axi_timer_0_interrupt),
-        .In2(fit_timer_0_Interrupt),
+        .In2(axi_timebase_wdt_0_wdt_interrupt),
         .dout(microblaze_0_intr));
   embsys_nexys4io_0_0 nexys4io_0
        (.RGB1_Blue(nexys4io_0_RGB1_Blue),
