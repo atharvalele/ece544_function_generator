@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-//Date        : Mon May 30 18:40:23 2022
+//Date        : Mon May 30 22:59:00 2022
 //Host        : sentinel running 64-bit EndeavourOS Linux
 //Command     : generate_target embsys.bd
 //Design      : embsys
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "embsys,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=embsys,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=35,numReposBlks=21,numNonXlnxBlks=4,numHierBlks=14,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=10,da_board_cnt=7,da_clkrst_cnt=30,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "embsys.hwdef" *) 
+(* CORE_GENERATION_INFO = "embsys,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=embsys,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=36,numReposBlks=22,numNonXlnxBlks=4,numHierBlks=14,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=10,da_board_cnt=7,da_clkrst_cnt=31,da_mb_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "embsys.hwdef" *) 
 module embsys
    (PmodOLEDrgb_out_0_pin10_i,
     PmodOLEDrgb_out_0_pin10_o,
@@ -228,6 +228,7 @@ module embsys
   wire clk_wiz_1_clk_out2;
   wire clk_wiz_1_locked;
   wire [7:0]dina_0_1;
+  wire fit_timer_0_Interrupt;
   wire mdm_1_debug_sys_rst;
   wire [31:0]microblaze_0_axi_dp_ARADDR;
   wire [2:0]microblaze_0_axi_dp_ARPROT;
@@ -457,7 +458,7 @@ module embsys
   wire [0:1]microblaze_0_interrupt_ACK;
   wire [31:0]microblaze_0_interrupt_ADDRESS;
   wire microblaze_0_interrupt_INTERRUPT;
-  wire [1:0]microblaze_0_intr;
+  wire [2:0]microblaze_0_intr;
   wire [31:0]microblaze_0_mdm_axi_ARADDR;
   wire microblaze_0_mdm_axi_ARREADY;
   wire microblaze_0_mdm_axi_ARVALID;
@@ -489,6 +490,7 @@ module embsys
   wire [0:0]rst_clk_wiz_1_100M_bus_struct_reset;
   wire rst_clk_wiz_1_100M_mb_reset;
   wire [0:0]rst_clk_wiz_1_100M_peripheral_aresetn;
+  wire [0:0]rst_clk_wiz_1_100M_peripheral_reset;
   wire [7:0]signal_generator_0_addr;
   wire [7:0]signal_generator_0_signal_waveform;
   wire [15:0]sw_0_1;
@@ -784,6 +786,10 @@ module embsys
         .clk_out1(clk_wiz_1_clk_out1),
         .clk_out2(clk_wiz_1_clk_out2),
         .locked(clk_wiz_1_locked));
+  embsys_fit_timer_0_0 fit_timer_0
+       (.Clk(clk_wiz_1_clk_out1),
+        .Interrupt(fit_timer_0_Interrupt),
+        .Rst(rst_clk_wiz_1_100M_peripheral_reset));
   embsys_mdm_1_0 mdm_1
        (.Dbg_Capture_0(microblaze_0_debug_CAPTURE),
         .Dbg_Clk_0(microblaze_0_debug_CLK),
@@ -1161,6 +1167,7 @@ module embsys
   embsys_microblaze_0_xlconcat_0 microblaze_0_xlconcat
        (.In0(axi_timebase_wdt_0_wdt_interrupt),
         .In1(axi_timer_0_interrupt),
+        .In2(fit_timer_0_Interrupt),
         .dout(microblaze_0_intr));
   embsys_nexys4io_0_0 nexys4io_0
        (.RGB1_Blue(nexys4io_0_RGB1_Blue),
@@ -1209,6 +1216,7 @@ module embsys
         .mb_debug_sys_rst(mdm_1_debug_sys_rst),
         .mb_reset(rst_clk_wiz_1_100M_mb_reset),
         .peripheral_aresetn(rst_clk_wiz_1_100M_peripheral_aresetn),
+        .peripheral_reset(rst_clk_wiz_1_100M_peripheral_reset),
         .slowest_sync_clk(clk_wiz_1_clk_out1));
   embsys_signal_generator_0_0 signal_generator_0
        (.addr(signal_generator_0_addr),
