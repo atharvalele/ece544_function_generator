@@ -23,6 +23,8 @@ logic [7:0]  duty_count;
 logic [7:0]  addr_start;
 logic [7:0]  addr_end;
 logic [7:0]  signal_data;
+logic [1:0]  set_sig_type;
+logic [31:0] set_freq;
 
 // Decide signal output
 assign signal_waveform = ((sig_type == SQUARE) || (sig_type == PWM)) ? signal_data: din;
@@ -37,9 +39,43 @@ always_ff @(posedge clk) begin
         addr_end <= 0;
     end     
     else begin
-    // Sqaure Wave Logic
-        if (sig_type == SQUARE) begin
-            if (counter == set_count) begin
+        // Validate Signal Types
+        if (set_sig_type != sig_type) begin
+            if (sig_type >= 0 && sig_type <= 3)
+                set_sig_type <= sig_type;
+            else 
+                set_sig_type <= set_sig_type;
+        end
+        else 
+            set_sig_type <= set_sig_type;
+            
+        // Validate Frequency 
+        
+        // Sine and Triangle 9999
+        // Square and PWM 499999
+        
+        if (set_freq != set_count) begin
+            if (set_sig_type == SINE && set_sig_type == TRIANGLE) begin
+                if (set_freq >= 0 && set_freq <= 9999)
+                    set_freq <= set_count;
+                else 
+                    set_freq <= set_freq;
+            end
+            else begin
+                if (set_freq >= 0 && set_freq <= 499999)
+                    set_freq <= set_count;
+                else 
+                    set_freq <= set_freq;
+            end
+        end
+        else 
+            set_freq <= set_freq;
+        
+        
+        
+        // Sqaure Wave Logic
+        if (set_sig_type == SQUARE) begin
+            if (counter == set_freq) begin
                 counter <= 0;
                 // Generate Sqaure wave
                 if (signal_data > 128)
@@ -52,9 +88,9 @@ always_ff @(posedge clk) begin
             end
         end
         // PWM Logic
-        else if (sig_type == PWM) begin
+        else if (set_sig_type == PWM) begin
         // Check frequency of signal
-            if (counter == set_count) begin
+            if (counter == set_freq) begin
                 counter <= 0;
                 duty_count <= duty_count + 1;
                 // Check for PWM duty cycle
@@ -69,18 +105,6 @@ always_ff @(posedge clk) begin
         // Logic For Sine and Triangle Waves
         else begin
             // Repoint starting address if it is wrong
-            // Set Start and end address of the digitized data
-            // Stored in the BRAM 
-            case (sig_type)
-                SINE: begin
-                    addr_start <= 8'h00;
-                    addr_end <= 8'h63;
-                end
-                TRIANGLE: begin
-                    addr_start <= 8'h64;
-                    addr_end <= 8'hC7;
-                end
-            endcase
             if (addr < addr_start) begin
                 addr <= addr_start;
             end
@@ -89,7 +113,7 @@ always_ff @(posedge clk) begin
             end
             
             // Start incrementing address to traverse digitzed data
-            if (counter == set_count) begin
+            if (counter == set_freq) begin
                 counter <= 0;
                 if (addr >= addr_end)
                     addr <= addr_start;
