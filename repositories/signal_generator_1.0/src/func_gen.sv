@@ -27,7 +27,7 @@ logic [1:0]  set_sig_type;
 logic [31:0] set_freq;
 
 
-//assign signal_waveform = ((sig_type == SQUARE) || (sig_type == PWM)) ? signal_data: din;
+assign signal_waveform = ((sig_type == SQUARE) || (sig_type == PWM)) ? signal_data: din;
 
 always_ff @(posedge clk) begin
     if (rst_n == 0) begin
@@ -41,13 +41,13 @@ always_ff @(posedge clk) begin
         set_freq <= 999;
     end     
     else begin
-        // Decide signal output
-        if ((set_sig_type == SQUARE) || set_sig_type == PWM) begin
-            signal_waveform <= signal_data;
-        end
-        else begin
-            signal_waveform <= din;
-        end
+//        // Decide signal output
+//        if ((set_sig_type == SQUARE) || set_sig_type == PWM) begin
+//            signal_waveform <= signal_data;
+//        end
+//        else begin
+//            signal_waveform <= din;
+//        end
         // Validate Signal Types
         if (set_sig_type != sig_type) begin
             if (sig_type >= 0 && sig_type <= 3) 

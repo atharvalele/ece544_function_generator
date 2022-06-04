@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-// Date        : Sat Jun  4 15:38:55 2022
+// Date        : Sat Jun  4 15:59:44 2022
 // Host        : sentinel running 64-bit EndeavourOS Linux
 // Command     : write_verilog -force -mode funcsim
 //               /home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/vivado_project/ece544_function_generator/ece544_function_generator.gen/sources_1/bd/embsys/ip/embsys_signal_generator_0_0/embsys_signal_generator_0_0_sim_netlist.v
@@ -122,19 +122,19 @@ module embsys_signal_generator_0_0_func_gen
     signal_waveform,
     s00_axi_aclk,
     Q,
-    din,
     s00_axi_aresetn,
     \set_freq_reg[31]_0 ,
-    signal_data1_carry_0);
+    signal_data1_carry_0,
+    din);
   output [0:0]SR;
   output [7:0]\addr_reg[7]_0 ;
   output [7:0]signal_waveform;
   input s00_axi_aclk;
   input [1:0]Q;
-  input [7:0]din;
   input s00_axi_aresetn;
   input [31:0]\set_freq_reg[31]_0 ;
   input [7:0]signal_data1_carry_0;
+  input [7:0]din;
 
   wire [1:0]Q;
   wire [0:0]SR;
@@ -375,14 +375,6 @@ module embsys_signal_generator_0_0_func_gen
   wire \signal_data[6]_i_3_n_0 ;
   wire \signal_data[7]_i_1_n_0 ;
   wire [7:0]signal_waveform;
-  wire \signal_waveform[0]_i_1_n_0 ;
-  wire \signal_waveform[1]_i_1_n_0 ;
-  wire \signal_waveform[2]_i_1_n_0 ;
-  wire \signal_waveform[3]_i_1_n_0 ;
-  wire \signal_waveform[4]_i_1_n_0 ;
-  wire \signal_waveform[5]_i_1_n_0 ;
-  wire \signal_waveform[6]_i_1_n_0 ;
-  wire \signal_waveform[7]_i_1_n_0 ;
   wire [3:3]NLW_addr0_carry_CO_UNCONNECTED;
   wire [3:0]NLW_addr0_carry_O_UNCONNECTED;
   wire [3:0]NLW_addr1_carry_O_UNCONNECTED;
@@ -841,21 +833,19 @@ module embsys_signal_generator_0_0_func_gen
         .I2(\addr_reg[7]_0 [1]),
         .I3(\addr_reg[7]_0 [3]),
         .O(\addr[7]_i_4_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \addr[7]_i_5 
        (.I0(addr1),
         .I1(addr1_carry__2_n_0),
         .O(\addr[7]_i_5_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \addr_end[5]_i_1 
-       (.I0(Q[0]),
-        .I1(Q[1]),
+       (.I0(Q[1]),
+        .I1(Q[0]),
         .O(\addr_end[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \addr_end[6]_i_1 
@@ -921,6 +911,7 @@ module embsys_signal_generator_0_0_func_gen
         .D(p_2_in[7]),
         .Q(\addr_reg[7]_0 [7]),
         .R(SR));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \addr_start[6]_i_1 
@@ -1386,13 +1377,13 @@ module embsys_signal_generator_0_0_func_gen
         .D(\counter_reg[8]_i_1_n_6 ),
         .Q(counter_reg[9]),
         .R(SR));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \duty_count[0]_i_1 
        (.I0(duty_count_reg[0]),
         .O(p_0_in__0[0]));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \duty_count[1]_i_1 
@@ -2072,7 +2063,7 @@ module embsys_signal_generator_0_0_func_gen
         .I2(\set_sig_type_reg_n_0_[1] ),
         .I3(s00_axi_aresetn),
         .O(\signal_data[6]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
     .INIT(4'h7)) 
     \signal_data[6]_i_3 
@@ -2101,160 +2092,111 @@ module embsys_signal_generator_0_0_func_gen
         .D(\signal_data[7]_i_1_n_0 ),
         .Q(signal_data[7]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT3 #(
-    .INIT(8'hD8)) 
-    \signal_waveform[0]_i_1 
-       (.I0(\set_sig_type_reg_n_0_[1] ),
-        .I1(signal_data[6]),
-        .I2(din[0]),
-        .O(\signal_waveform[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
-  LUT3 #(
-    .INIT(8'hD8)) 
-    \signal_waveform[1]_i_1 
-       (.I0(\set_sig_type_reg_n_0_[1] ),
-        .I1(signal_data[6]),
-        .I2(din[1]),
-        .O(\signal_waveform[1]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
-    .INIT(8'hD8)) 
-    \signal_waveform[2]_i_1 
-       (.I0(\set_sig_type_reg_n_0_[1] ),
+    .INIT(8'hCA)) 
+    \signal_waveform[0]_INST_0 
+       (.I0(din[0]),
         .I1(signal_data[6]),
-        .I2(din[2]),
-        .O(\signal_waveform[2]_i_1_n_0 ));
+        .I2(Q[1]),
+        .O(signal_waveform[0]));
   (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT3 #(
-    .INIT(8'hD8)) 
-    \signal_waveform[3]_i_1 
-       (.I0(\set_sig_type_reg_n_0_[1] ),
+    .INIT(8'hCA)) 
+    \signal_waveform[1]_INST_0 
+       (.I0(din[1]),
         .I1(signal_data[6]),
-        .I2(din[3]),
-        .O(\signal_waveform[3]_i_1_n_0 ));
+        .I2(Q[1]),
+        .O(signal_waveform[1]));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT3 #(
+    .INIT(8'hCA)) 
+    \signal_waveform[2]_INST_0 
+       (.I0(din[2]),
+        .I1(signal_data[6]),
+        .I2(Q[1]),
+        .O(signal_waveform[2]));
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT3 #(
+    .INIT(8'hCA)) 
+    \signal_waveform[3]_INST_0 
+       (.I0(din[3]),
+        .I1(signal_data[6]),
+        .I2(Q[1]),
+        .O(signal_waveform[3]));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT3 #(
+    .INIT(8'hCA)) 
+    \signal_waveform[4]_INST_0 
+       (.I0(din[4]),
+        .I1(signal_data[6]),
+        .I2(Q[1]),
+        .O(signal_waveform[4]));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  LUT3 #(
+    .INIT(8'hCA)) 
+    \signal_waveform[5]_INST_0 
+       (.I0(din[5]),
+        .I1(signal_data[6]),
+        .I2(Q[1]),
+        .O(signal_waveform[5]));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT3 #(
+    .INIT(8'hCA)) 
+    \signal_waveform[6]_INST_0 
+       (.I0(din[6]),
+        .I1(signal_data[6]),
+        .I2(Q[1]),
+        .O(signal_waveform[6]));
   (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT3 #(
-    .INIT(8'hD8)) 
-    \signal_waveform[4]_i_1 
-       (.I0(\set_sig_type_reg_n_0_[1] ),
-        .I1(signal_data[6]),
-        .I2(din[4]),
-        .O(\signal_waveform[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
-  LUT3 #(
-    .INIT(8'hD8)) 
-    \signal_waveform[5]_i_1 
-       (.I0(\set_sig_type_reg_n_0_[1] ),
-        .I1(signal_data[6]),
-        .I2(din[5]),
-        .O(\signal_waveform[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT3 #(
-    .INIT(8'hD8)) 
-    \signal_waveform[6]_i_1 
-       (.I0(\set_sig_type_reg_n_0_[1] ),
-        .I1(signal_data[6]),
-        .I2(din[6]),
-        .O(\signal_waveform[6]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hB8FFB800)) 
-    \signal_waveform[7]_i_1 
+    .INIT(8'hB8)) 
+    \signal_waveform[7]_INST_0 
        (.I0(signal_data[7]),
-        .I1(\set_sig_type_reg_n_0_[1] ),
+        .I1(Q[1]),
         .I2(din[7]),
-        .I3(s00_axi_aresetn),
-        .I4(signal_waveform[7]),
-        .O(\signal_waveform[7]_i_1_n_0 ));
-  FDSE \signal_waveform_reg[0] 
-       (.C(s00_axi_aclk),
-        .CE(s00_axi_aresetn),
-        .D(\signal_waveform[0]_i_1_n_0 ),
-        .Q(signal_waveform[0]),
-        .S(1'b0));
-  FDSE \signal_waveform_reg[1] 
-       (.C(s00_axi_aclk),
-        .CE(s00_axi_aresetn),
-        .D(\signal_waveform[1]_i_1_n_0 ),
-        .Q(signal_waveform[1]),
-        .S(1'b0));
-  FDSE \signal_waveform_reg[2] 
-       (.C(s00_axi_aclk),
-        .CE(s00_axi_aresetn),
-        .D(\signal_waveform[2]_i_1_n_0 ),
-        .Q(signal_waveform[2]),
-        .S(1'b0));
-  FDSE \signal_waveform_reg[3] 
-       (.C(s00_axi_aclk),
-        .CE(s00_axi_aresetn),
-        .D(\signal_waveform[3]_i_1_n_0 ),
-        .Q(signal_waveform[3]),
-        .S(1'b0));
-  FDSE \signal_waveform_reg[4] 
-       (.C(s00_axi_aclk),
-        .CE(s00_axi_aresetn),
-        .D(\signal_waveform[4]_i_1_n_0 ),
-        .Q(signal_waveform[4]),
-        .S(1'b0));
-  FDSE \signal_waveform_reg[5] 
-       (.C(s00_axi_aclk),
-        .CE(s00_axi_aresetn),
-        .D(\signal_waveform[5]_i_1_n_0 ),
-        .Q(signal_waveform[5]),
-        .S(1'b0));
-  FDSE \signal_waveform_reg[6] 
-       (.C(s00_axi_aclk),
-        .CE(s00_axi_aresetn),
-        .D(\signal_waveform[6]_i_1_n_0 ),
-        .Q(signal_waveform[6]),
-        .S(1'b0));
-  FDRE \signal_waveform_reg[7] 
-       (.C(s00_axi_aclk),
-        .CE(1'b1),
-        .D(\signal_waveform[7]_i_1_n_0 ),
-        .Q(signal_waveform[7]),
-        .R(1'b0));
+        .O(signal_waveform[7]));
 endmodule
 
 (* ORIG_REF_NAME = "signal_generator_v1_0" *) 
 module embsys_signal_generator_0_0_signal_generator_v1_0
    (S_AXI_AWREADY,
     Q,
-    signal_waveform,
     S_AXI_WREADY,
     S_AXI_ARREADY,
     s00_axi_rdata,
+    signal_waveform,
     s00_axi_rvalid,
     s00_axi_bvalid,
-    din,
     s00_axi_awaddr,
     s00_axi_wvalid,
     s00_axi_awvalid,
     s00_axi_aclk,
     s00_axi_wdata,
-    s00_axi_aresetn,
     s00_axi_araddr,
     s00_axi_arvalid,
+    s00_axi_aresetn,
+    din,
     s00_axi_wstrb,
     s00_axi_bready,
     s00_axi_rready);
   output S_AXI_AWREADY;
   output [7:0]Q;
-  output [7:0]signal_waveform;
   output S_AXI_WREADY;
   output S_AXI_ARREADY;
   output [31:0]s00_axi_rdata;
+  output [7:0]signal_waveform;
   output s00_axi_rvalid;
   output s00_axi_bvalid;
-  input [7:0]din;
   input [1:0]s00_axi_awaddr;
   input s00_axi_wvalid;
   input s00_axi_awvalid;
   input s00_axi_aclk;
   input [31:0]s00_axi_wdata;
-  input s00_axi_aresetn;
   input [1:0]s00_axi_araddr;
   input s00_axi_arvalid;
+  input s00_axi_aresetn;
+  input [7:0]din;
   input [3:0]s00_axi_wstrb;
   input s00_axi_bready;
   input s00_axi_rready;
@@ -2307,41 +2249,41 @@ endmodule
 module embsys_signal_generator_0_0_signal_generator_v1_0_S00_AXI
    (S_AXI_AWREADY,
     addr,
-    signal_waveform,
     S_AXI_WREADY,
     S_AXI_ARREADY,
     s00_axi_rdata,
+    signal_waveform,
     s00_axi_rvalid,
     s00_axi_bvalid,
-    din,
     s00_axi_awaddr,
     s00_axi_wvalid,
     s00_axi_awvalid,
     s00_axi_aclk,
     s00_axi_wdata,
-    s00_axi_aresetn,
     s00_axi_araddr,
     s00_axi_arvalid,
+    s00_axi_aresetn,
+    din,
     s00_axi_wstrb,
     s00_axi_bready,
     s00_axi_rready);
   output S_AXI_AWREADY;
   output [7:0]addr;
-  output [7:0]signal_waveform;
   output S_AXI_WREADY;
   output S_AXI_ARREADY;
   output [31:0]s00_axi_rdata;
+  output [7:0]signal_waveform;
   output s00_axi_rvalid;
   output s00_axi_bvalid;
-  input [7:0]din;
   input [1:0]s00_axi_awaddr;
   input s00_axi_wvalid;
   input s00_axi_awvalid;
   input s00_axi_aclk;
   input [31:0]s00_axi_wdata;
-  input s00_axi_aresetn;
   input [1:0]s00_axi_araddr;
   input s00_axi_arvalid;
+  input s00_axi_aresetn;
+  input [7:0]din;
   input [3:0]s00_axi_wstrb;
   input s00_axi_bready;
   input s00_axi_rready;
@@ -3354,12 +3296,12 @@ module embsys_signal_generator_0_0_signal_generator_v1_0_S00_AXI
         .I3(p_0_in[0]),
         .O(\slv_reg1[31]_i_1_n_0 ));
   LUT4 #(
-    .INIT(16'h2000)) 
+    .INIT(16'h0080)) 
     \slv_reg1[7]_i_1 
        (.I0(slv_reg_wren__0),
-        .I1(p_0_in[1]),
-        .I2(s00_axi_wstrb[0]),
-        .I3(p_0_in[0]),
+        .I1(s00_axi_wstrb[0]),
+        .I2(p_0_in[0]),
+        .I3(p_0_in[1]),
         .O(\slv_reg1[7]_i_1_n_0 ));
   FDRE \slv_reg1_reg[0] 
        (.C(s00_axi_aclk),

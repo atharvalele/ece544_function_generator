@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Sat Jun  4 15:38:55 2022
+-- Date        : Sat Jun  4 15:59:44 2022
 -- Host        : sentinel running 64-bit EndeavourOS Linux
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/vivado_project/ece544_function_generator/ece544_function_generator.gen/sources_1/bd/embsys/ip/embsys_signal_generator_0_0/embsys_signal_generator_0_0_sim_netlist.vhdl
@@ -21,10 +21,10 @@ entity embsys_signal_generator_0_0_func_gen is
     signal_waveform : out STD_LOGIC_VECTOR ( 7 downto 0 );
     s00_axi_aclk : in STD_LOGIC;
     Q : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    din : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s00_axi_aresetn : in STD_LOGIC;
     \set_freq_reg[31]_0\ : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    signal_data1_carry_0 : in STD_LOGIC_VECTOR ( 7 downto 0 )
+    signal_data1_carry_0 : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    din : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of embsys_signal_generator_0_0_func_gen : entity is "func_gen";
@@ -263,15 +263,6 @@ architecture STRUCTURE of embsys_signal_generator_0_0_func_gen is
   signal \signal_data[6]_i_2_n_0\ : STD_LOGIC;
   signal \signal_data[6]_i_3_n_0\ : STD_LOGIC;
   signal \signal_data[7]_i_1_n_0\ : STD_LOGIC;
-  signal \^signal_waveform\ : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal \signal_waveform[0]_i_1_n_0\ : STD_LOGIC;
-  signal \signal_waveform[1]_i_1_n_0\ : STD_LOGIC;
-  signal \signal_waveform[2]_i_1_n_0\ : STD_LOGIC;
-  signal \signal_waveform[3]_i_1_n_0\ : STD_LOGIC;
-  signal \signal_waveform[4]_i_1_n_0\ : STD_LOGIC;
-  signal \signal_waveform[5]_i_1_n_0\ : STD_LOGIC;
-  signal \signal_waveform[6]_i_1_n_0\ : STD_LOGIC;
-  signal \signal_waveform[7]_i_1_n_0\ : STD_LOGIC;
   signal NLW_addr0_carry_CO_UNCONNECTED : STD_LOGIC_VECTOR ( 3 to 3 );
   signal NLW_addr0_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_addr1_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -297,9 +288,8 @@ architecture STRUCTURE of embsys_signal_generator_0_0_func_gen is
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \addr[0]_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \addr[1]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \addr[7]_i_5\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \addr_end[5]_i_1\ : label is "soft_lutpair8";
-  attribute SOFT_HLUTNM of \addr_end[6]_i_1\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \addr_end[5]_i_1\ : label is "soft_lutpair5";
+  attribute SOFT_HLUTNM of \addr_start[6]_i_1\ : label is "soft_lutpair9";
   attribute ADDER_THRESHOLD : integer;
   attribute ADDER_THRESHOLD of \counter_reg[0]_i_1\ : label is 11;
   attribute ADDER_THRESHOLD of \counter_reg[12]_i_1\ : label is 11;
@@ -309,8 +299,8 @@ architecture STRUCTURE of embsys_signal_generator_0_0_func_gen is
   attribute ADDER_THRESHOLD of \counter_reg[28]_i_1\ : label is 11;
   attribute ADDER_THRESHOLD of \counter_reg[4]_i_1\ : label is 11;
   attribute ADDER_THRESHOLD of \counter_reg[8]_i_1\ : label is 11;
-  attribute SOFT_HLUTNM of \duty_count[0]_i_1\ : label is "soft_lutpair9";
-  attribute SOFT_HLUTNM of \duty_count[1]_i_1\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \duty_count[0]_i_1\ : label is "soft_lutpair10";
+  attribute SOFT_HLUTNM of \duty_count[1]_i_1\ : label is "soft_lutpair10";
   attribute SOFT_HLUTNM of \duty_count[2]_i_1\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \duty_count[3]_i_1\ : label is "soft_lutpair2";
   attribute SOFT_HLUTNM of \duty_count[4]_i_1\ : label is "soft_lutpair1";
@@ -318,18 +308,18 @@ architecture STRUCTURE of embsys_signal_generator_0_0_func_gen is
   attribute SOFT_HLUTNM of \duty_count[7]_i_2\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \duty_count[7]_i_3\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \signal_data[6]_i_2\ : label is "soft_lutpair4";
-  attribute SOFT_HLUTNM of \signal_data[6]_i_3\ : label is "soft_lutpair10";
-  attribute SOFT_HLUTNM of \signal_waveform[0]_i_1\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \signal_waveform[1]_i_1\ : label is "soft_lutpair7";
-  attribute SOFT_HLUTNM of \signal_waveform[2]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \signal_waveform[3]_i_1\ : label is "soft_lutpair6";
-  attribute SOFT_HLUTNM of \signal_waveform[4]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \signal_waveform[5]_i_1\ : label is "soft_lutpair5";
-  attribute SOFT_HLUTNM of \signal_waveform[6]_i_1\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \signal_data[6]_i_3\ : label is "soft_lutpair4";
+  attribute SOFT_HLUTNM of \signal_waveform[0]_INST_0\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \signal_waveform[1]_INST_0\ : label is "soft_lutpair6";
+  attribute SOFT_HLUTNM of \signal_waveform[2]_INST_0\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \signal_waveform[3]_INST_0\ : label is "soft_lutpair7";
+  attribute SOFT_HLUTNM of \signal_waveform[4]_INST_0\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \signal_waveform[5]_INST_0\ : label is "soft_lutpair8";
+  attribute SOFT_HLUTNM of \signal_waveform[6]_INST_0\ : label is "soft_lutpair9";
+  attribute SOFT_HLUTNM of \signal_waveform[7]_INST_0\ : label is "soft_lutpair5";
 begin
   SR(0) <= \^sr\(0);
   \addr_reg[7]_0\(7 downto 0) <= \^addr_reg[7]_0\(7 downto 0);
-  signal_waveform(7 downto 0) <= \^signal_waveform\(7 downto 0);
 addr0_carry: unisim.vcomponents.CARRY4
      port map (
       CI => '0',
@@ -991,8 +981,8 @@ addr1_carry_i_8: unisim.vcomponents.LUT4
       INIT => X"1"
     )
         port map (
-      I0 => Q(0),
-      I1 => Q(1),
+      I0 => Q(1),
+      I1 => Q(0),
       O => \addr_end[5]_i_1_n_0\
     );
 \addr_end[6]_i_1\: unisim.vcomponents.LUT1
@@ -2772,151 +2762,85 @@ signal_data1_carry_i_8: unisim.vcomponents.LUT4
       Q => signal_data(7),
       R => '0'
     );
-\signal_waveform[0]_i_1\: unisim.vcomponents.LUT3
+\signal_waveform[0]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"D8"
+      INIT => X"CA"
     )
         port map (
-      I0 => \set_sig_type_reg_n_0_[1]\,
+      I0 => din(0),
       I1 => signal_data(6),
-      I2 => din(0),
-      O => \signal_waveform[0]_i_1_n_0\
+      I2 => Q(1),
+      O => signal_waveform(0)
     );
-\signal_waveform[1]_i_1\: unisim.vcomponents.LUT3
+\signal_waveform[1]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"D8"
+      INIT => X"CA"
     )
         port map (
-      I0 => \set_sig_type_reg_n_0_[1]\,
+      I0 => din(1),
       I1 => signal_data(6),
-      I2 => din(1),
-      O => \signal_waveform[1]_i_1_n_0\
+      I2 => Q(1),
+      O => signal_waveform(1)
     );
-\signal_waveform[2]_i_1\: unisim.vcomponents.LUT3
+\signal_waveform[2]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"D8"
+      INIT => X"CA"
     )
         port map (
-      I0 => \set_sig_type_reg_n_0_[1]\,
+      I0 => din(2),
       I1 => signal_data(6),
-      I2 => din(2),
-      O => \signal_waveform[2]_i_1_n_0\
+      I2 => Q(1),
+      O => signal_waveform(2)
     );
-\signal_waveform[3]_i_1\: unisim.vcomponents.LUT3
+\signal_waveform[3]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"D8"
+      INIT => X"CA"
     )
         port map (
-      I0 => \set_sig_type_reg_n_0_[1]\,
+      I0 => din(3),
       I1 => signal_data(6),
-      I2 => din(3),
-      O => \signal_waveform[3]_i_1_n_0\
+      I2 => Q(1),
+      O => signal_waveform(3)
     );
-\signal_waveform[4]_i_1\: unisim.vcomponents.LUT3
+\signal_waveform[4]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"D8"
+      INIT => X"CA"
     )
         port map (
-      I0 => \set_sig_type_reg_n_0_[1]\,
+      I0 => din(4),
       I1 => signal_data(6),
-      I2 => din(4),
-      O => \signal_waveform[4]_i_1_n_0\
+      I2 => Q(1),
+      O => signal_waveform(4)
     );
-\signal_waveform[5]_i_1\: unisim.vcomponents.LUT3
+\signal_waveform[5]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"D8"
+      INIT => X"CA"
     )
         port map (
-      I0 => \set_sig_type_reg_n_0_[1]\,
+      I0 => din(5),
       I1 => signal_data(6),
-      I2 => din(5),
-      O => \signal_waveform[5]_i_1_n_0\
+      I2 => Q(1),
+      O => signal_waveform(5)
     );
-\signal_waveform[6]_i_1\: unisim.vcomponents.LUT3
+\signal_waveform[6]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"D8"
+      INIT => X"CA"
     )
         port map (
-      I0 => \set_sig_type_reg_n_0_[1]\,
+      I0 => din(6),
       I1 => signal_data(6),
-      I2 => din(6),
-      O => \signal_waveform[6]_i_1_n_0\
+      I2 => Q(1),
+      O => signal_waveform(6)
     );
-\signal_waveform[7]_i_1\: unisim.vcomponents.LUT5
+\signal_waveform[7]_INST_0\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"B8FFB800"
+      INIT => X"B8"
     )
         port map (
       I0 => signal_data(7),
-      I1 => \set_sig_type_reg_n_0_[1]\,
+      I1 => Q(1),
       I2 => din(7),
-      I3 => s00_axi_aresetn,
-      I4 => \^signal_waveform\(7),
-      O => \signal_waveform[7]_i_1_n_0\
-    );
-\signal_waveform_reg[0]\: unisim.vcomponents.FDSE
-     port map (
-      C => s00_axi_aclk,
-      CE => s00_axi_aresetn,
-      D => \signal_waveform[0]_i_1_n_0\,
-      Q => \^signal_waveform\(0),
-      S => '0'
-    );
-\signal_waveform_reg[1]\: unisim.vcomponents.FDSE
-     port map (
-      C => s00_axi_aclk,
-      CE => s00_axi_aresetn,
-      D => \signal_waveform[1]_i_1_n_0\,
-      Q => \^signal_waveform\(1),
-      S => '0'
-    );
-\signal_waveform_reg[2]\: unisim.vcomponents.FDSE
-     port map (
-      C => s00_axi_aclk,
-      CE => s00_axi_aresetn,
-      D => \signal_waveform[2]_i_1_n_0\,
-      Q => \^signal_waveform\(2),
-      S => '0'
-    );
-\signal_waveform_reg[3]\: unisim.vcomponents.FDSE
-     port map (
-      C => s00_axi_aclk,
-      CE => s00_axi_aresetn,
-      D => \signal_waveform[3]_i_1_n_0\,
-      Q => \^signal_waveform\(3),
-      S => '0'
-    );
-\signal_waveform_reg[4]\: unisim.vcomponents.FDSE
-     port map (
-      C => s00_axi_aclk,
-      CE => s00_axi_aresetn,
-      D => \signal_waveform[4]_i_1_n_0\,
-      Q => \^signal_waveform\(4),
-      S => '0'
-    );
-\signal_waveform_reg[5]\: unisim.vcomponents.FDSE
-     port map (
-      C => s00_axi_aclk,
-      CE => s00_axi_aresetn,
-      D => \signal_waveform[5]_i_1_n_0\,
-      Q => \^signal_waveform\(5),
-      S => '0'
-    );
-\signal_waveform_reg[6]\: unisim.vcomponents.FDSE
-     port map (
-      C => s00_axi_aclk,
-      CE => s00_axi_aresetn,
-      D => \signal_waveform[6]_i_1_n_0\,
-      Q => \^signal_waveform\(6),
-      S => '0'
-    );
-\signal_waveform_reg[7]\: unisim.vcomponents.FDRE
-     port map (
-      C => s00_axi_aclk,
-      CE => '1',
-      D => \signal_waveform[7]_i_1_n_0\,
-      Q => \^signal_waveform\(7),
-      R => '0'
+      O => signal_waveform(7)
     );
 end STRUCTURE;
 library IEEE;
@@ -2927,21 +2851,21 @@ entity embsys_signal_generator_0_0_signal_generator_v1_0_S00_AXI is
   port (
     S_AXI_AWREADY : out STD_LOGIC;
     addr : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    signal_waveform : out STD_LOGIC_VECTOR ( 7 downto 0 );
     S_AXI_WREADY : out STD_LOGIC;
     S_AXI_ARREADY : out STD_LOGIC;
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    signal_waveform : out STD_LOGIC_VECTOR ( 7 downto 0 );
     s00_axi_rvalid : out STD_LOGIC;
     s00_axi_bvalid : out STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_wvalid : in STD_LOGIC;
     s00_axi_awvalid : in STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
     s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_aresetn : in STD_LOGIC;
     s00_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_arvalid : in STD_LOGIC;
+    s00_axi_aresetn : in STD_LOGIC;
+    din : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
@@ -4249,13 +4173,13 @@ sig_inst: entity work.embsys_signal_generator_0_0_func_gen
     );
 \slv_reg1[7]_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"2000"
+      INIT => X"0080"
     )
         port map (
       I0 => \slv_reg_wren__0\,
-      I1 => p_0_in(1),
-      I2 => s00_axi_wstrb(0),
-      I3 => p_0_in(0),
+      I1 => s00_axi_wstrb(0),
+      I2 => p_0_in(0),
+      I3 => p_0_in(1),
       O => \slv_reg1[7]_i_1_n_0\
     );
 \slv_reg1_reg[0]\: unisim.vcomponents.FDRE
@@ -5144,21 +5068,21 @@ entity embsys_signal_generator_0_0_signal_generator_v1_0 is
   port (
     S_AXI_AWREADY : out STD_LOGIC;
     Q : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    signal_waveform : out STD_LOGIC_VECTOR ( 7 downto 0 );
     S_AXI_WREADY : out STD_LOGIC;
     S_AXI_ARREADY : out STD_LOGIC;
     s00_axi_rdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    signal_waveform : out STD_LOGIC_VECTOR ( 7 downto 0 );
     s00_axi_rvalid : out STD_LOGIC;
     s00_axi_bvalid : out STD_LOGIC;
-    din : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s00_axi_awaddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_wvalid : in STD_LOGIC;
     s00_axi_awvalid : in STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC;
     s00_axi_wdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
-    s00_axi_aresetn : in STD_LOGIC;
     s00_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s00_axi_arvalid : in STD_LOGIC;
+    s00_axi_aresetn : in STD_LOGIC;
+    din : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s00_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 );
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
