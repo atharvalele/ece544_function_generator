@@ -26,8 +26,8 @@ logic [7:0]  signal_data;
 logic [1:0]  set_sig_type;
 logic [31:0] set_freq;
 
-// Decide signal output
-assign signal_waveform = ((sig_type == SQUARE) || (sig_type == PWM)) ? signal_data: din;
+
+//assign signal_waveform = ((sig_type == SQUARE) || (sig_type == PWM)) ? signal_data: din;
 
 always_ff @(posedge clk) begin
     if (rst_n == 0) begin
@@ -36,15 +36,41 @@ always_ff @(posedge clk) begin
         signal_data <= 0;
         duty_count <= 0;
         addr_start <= 0;
-        addr_end <= 0;
+        addr_end <= 8'h63;
     end     
     else begin
+        // Decide signal output
+        if ((set_sig_type == SQUARE) || set_sig_type == PWM) begin
+            signal_waveform <= signal_data;
+        end
+        else begin
+            signal_waveform <= din;
+        end
         // Validate Signal Types
         if (set_sig_type != sig_type) begin
             if (sig_type >= 0 && sig_type <= 3)
                 set_sig_type <= sig_type;
             else 
                 set_sig_type <= set_sig_type;
+                
+            case (sig_type)
+                SINE: begin
+                    addr_start <= 8'h00;
+                    addr_end <= 8'h63;
+                end
+                TRIANGLE: begin
+                    addr_start <= 8'h64;
+                    addr_end <= 8'hC7;
+                end
+                SQUARE: begin
+                    addr_start <= 8'h00;
+                    addr_end <= 8'h00;
+                end
+                PWM: begin
+                    addr_start <= 8'h00;
+                    addr_end <= 8'h00;
+                end
+            endcase
         end
         else 
             set_sig_type <= set_sig_type;

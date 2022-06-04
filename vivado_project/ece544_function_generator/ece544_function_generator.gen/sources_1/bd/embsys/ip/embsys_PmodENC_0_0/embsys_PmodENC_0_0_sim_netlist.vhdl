@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Sat May 28 18:46:09 2022
+-- Date        : Fri Jun  3 17:55:42 2022
 -- Host        : sentinel running 64-bit EndeavourOS Linux
--- Command     : write_vhdl -force -mode funcsim -rename_top embsys_PmodENC_0_0 -prefix
---               embsys_PmodENC_0_0_ embsys_PmodENC_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               /home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/vivado_project/ece544_function_generator/ece544_function_generator.gen/sources_1/bd/embsys/ip/embsys_PmodENC_0_0/embsys_PmodENC_0_0_sim_netlist.vhdl
 -- Design      : embsys_PmodENC_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -24,6 +24,8 @@ entity embsys_PmodENC_0_0_PmodENC_xlconcat_0_0 is
   attribute CHECK_LICENSE_TYPE of embsys_PmodENC_0_0_PmodENC_xlconcat_0_0 : entity is "PmodENC_xlconcat_0_0,xlconcat_v2_1_4_xlconcat,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of embsys_PmodENC_0_0_PmodENC_xlconcat_0_0 : entity is "yes";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_PmodENC_0_0_PmodENC_xlconcat_0_0 : entity is "PmodENC_xlconcat_0_0";
   attribute X_CORE_INFO : string;
   attribute X_CORE_INFO of embsys_PmodENC_0_0_PmodENC_xlconcat_0_0 : entity is "xlconcat_v2_1_4_xlconcat,Vivado 2020.2";
 end embsys_PmodENC_0_0_PmodENC_xlconcat_0_0;
@@ -50,6 +52,8 @@ entity embsys_PmodENC_0_0_PmodENC_xlslice_0_0 is
   attribute CHECK_LICENSE_TYPE of embsys_PmodENC_0_0_PmodENC_xlslice_0_0 : entity is "PmodENC_xlslice_0_0,xlslice_v1_0_2_xlslice,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of embsys_PmodENC_0_0_PmodENC_xlslice_0_0 : entity is "yes";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_PmodENC_0_0_PmodENC_xlslice_0_0 : entity is "PmodENC_xlslice_0_0";
   attribute X_CORE_INFO : string;
   attribute X_CORE_INFO of embsys_PmodENC_0_0_PmodENC_xlslice_0_0 : entity is "xlslice_v1_0_2_xlslice,Vivado 2020.2";
 end embsys_PmodENC_0_0_PmodENC_xlslice_0_0;
@@ -73,6 +77,8 @@ entity embsys_PmodENC_0_0_PmodENC_xlslice_0_1 is
   attribute CHECK_LICENSE_TYPE of embsys_PmodENC_0_0_PmodENC_xlslice_0_1 : entity is "PmodENC_xlslice_0_1,xlslice_v1_0_2_xlslice,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of embsys_PmodENC_0_0_PmodENC_xlslice_0_1 : entity is "yes";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_PmodENC_0_0_PmodENC_xlslice_0_1 : entity is "PmodENC_xlslice_0_1";
   attribute X_CORE_INFO : string;
   attribute X_CORE_INFO of embsys_PmodENC_0_0_PmodENC_xlslice_0_1 : entity is "xlslice_v1_0_2_xlslice,Vivado 2020.2";
 end embsys_PmodENC_0_0_PmodENC_xlslice_0_1;
@@ -96,6 +102,8 @@ entity embsys_PmodENC_0_0_PmodENC_xlslice_0_2 is
   attribute CHECK_LICENSE_TYPE of embsys_PmodENC_0_0_PmodENC_xlslice_0_2 : entity is "PmodENC_xlslice_0_2,xlslice_v1_0_2_xlslice,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of embsys_PmodENC_0_0_PmodENC_xlslice_0_2 : entity is "yes";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_PmodENC_0_0_PmodENC_xlslice_0_2 : entity is "PmodENC_xlslice_0_2";
   attribute X_CORE_INFO : string;
   attribute X_CORE_INFO of embsys_PmodENC_0_0_PmodENC_xlslice_0_2 : entity is "xlslice_v1_0_2_xlslice,Vivado 2020.2";
 end embsys_PmodENC_0_0_PmodENC_xlslice_0_2;
@@ -119,6 +127,8 @@ entity embsys_PmodENC_0_0_PmodENC_xlslice_t_0_0 is
   attribute CHECK_LICENSE_TYPE of embsys_PmodENC_0_0_PmodENC_xlslice_t_0_0 : entity is "PmodENC_xlslice_t_0_0,xlslice_v1_0_2_xlslice,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of embsys_PmodENC_0_0_PmodENC_xlslice_t_0_0 : entity is "yes";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_PmodENC_0_0_PmodENC_xlslice_t_0_0 : entity is "PmodENC_xlslice_t_0_0";
   attribute X_CORE_INFO : string;
   attribute X_CORE_INFO of embsys_PmodENC_0_0_PmodENC_xlslice_t_0_0 : entity is "xlslice_v1_0_2_xlslice,Vivado 2020.2";
 end embsys_PmodENC_0_0_PmodENC_xlslice_t_0_0;
@@ -157,6 +167,8 @@ entity embsys_PmodENC_0_0_address_decoder is
     reg1 : in STD_LOGIC_VECTOR ( 7 downto 0 );
     reg2 : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_PmodENC_0_0_address_decoder : entity is "address_decoder";
 end embsys_PmodENC_0_0_address_decoder;
 
 architecture STRUCTURE of embsys_PmodENC_0_0_address_decoder is
@@ -605,6 +617,8 @@ entity embsys_PmodENC_0_0_cdc_sync is
     gpio_io_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
     s_axi_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_PmodENC_0_0_cdc_sync : entity is "cdc_sync";
 end embsys_PmodENC_0_0_cdc_sync;
 
 architecture STRUCTURE of embsys_PmodENC_0_0_cdc_sync is
@@ -1160,6 +1174,8 @@ entity embsys_PmodENC_0_0_pmod_concat is
   );
   attribute Bottom_Row_Interface : string;
   attribute Bottom_Row_Interface of embsys_PmodENC_0_0_pmod_concat : entity is "GPIO";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_PmodENC_0_0_pmod_concat : entity is "pmod_concat";
   attribute Top_Row_Interface : string;
   attribute Top_Row_Interface of embsys_PmodENC_0_0_pmod_concat : entity is "GPIO";
 end embsys_PmodENC_0_0_pmod_concat;
@@ -1259,6 +1275,8 @@ entity embsys_PmodENC_0_0_GPIO_Core is
     D : in STD_LOGIC_VECTOR ( 7 downto 0 );
     \Not_Dual.gpio_OE_reg[0]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_PmodENC_0_0_GPIO_Core : entity is "GPIO_Core";
 end embsys_PmodENC_0_0_GPIO_Core;
 
 architecture STRUCTURE of embsys_PmodENC_0_0_GPIO_Core is
@@ -1964,6 +1982,8 @@ entity embsys_PmodENC_0_0_PmodENC_pmod_bridge_0_0 is
   attribute CHECK_LICENSE_TYPE of embsys_PmodENC_0_0_PmodENC_pmod_bridge_0_0 : entity is "PmodENC_pmod_bridge_0_0,pmod_concat,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of embsys_PmodENC_0_0_PmodENC_pmod_bridge_0_0 : entity is "yes";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_PmodENC_0_0_PmodENC_pmod_bridge_0_0 : entity is "PmodENC_pmod_bridge_0_0";
   attribute X_CORE_INFO : string;
   attribute X_CORE_INFO of embsys_PmodENC_0_0_PmodENC_pmod_bridge_0_0 : entity is "pmod_concat,Vivado 2020.2";
 end embsys_PmodENC_0_0_PmodENC_pmod_bridge_0_0;
@@ -2125,6 +2145,8 @@ entity embsys_PmodENC_0_0_slave_attachment is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_PmodENC_0_0_slave_attachment : entity is "slave_attachment";
 end embsys_PmodENC_0_0_slave_attachment;
 
 architecture STRUCTURE of embsys_PmodENC_0_0_slave_attachment is
@@ -2791,6 +2813,8 @@ entity embsys_PmodENC_0_0_axi_lite_ipif is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 2 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 2 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_PmodENC_0_0_axi_lite_ipif : entity is "axi_lite_ipif";
 end embsys_PmodENC_0_0_axi_lite_ipif;
 
 architecture STRUCTURE of embsys_PmodENC_0_0_axi_lite_ipif is
@@ -2893,6 +2917,8 @@ entity embsys_PmodENC_0_0_axi_gpio is
   attribute C_TRI_DEFAULT_2 of embsys_PmodENC_0_0_axi_gpio : entity is -1;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of embsys_PmodENC_0_0_axi_gpio : entity is "yes";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_PmodENC_0_0_axi_gpio : entity is "axi_gpio";
   attribute ip_group : string;
   attribute ip_group of embsys_PmodENC_0_0_axi_gpio : entity is "LOGICORE";
 end embsys_PmodENC_0_0_axi_gpio;
@@ -3257,6 +3283,8 @@ entity embsys_PmodENC_0_0_PmodENC_axi_gpio_0_0 is
   attribute CHECK_LICENSE_TYPE of embsys_PmodENC_0_0_PmodENC_axi_gpio_0_0 : entity is "PmodENC_axi_gpio_0_0,axi_gpio,{}";
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of embsys_PmodENC_0_0_PmodENC_axi_gpio_0_0 : entity is "yes";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_PmodENC_0_0_PmodENC_axi_gpio_0_0 : entity is "PmodENC_axi_gpio_0_0";
   attribute X_CORE_INFO : string;
   attribute X_CORE_INFO of embsys_PmodENC_0_0_PmodENC_axi_gpio_0_0 : entity is "axi_gpio,Vivado 2020.2";
 end embsys_PmodENC_0_0_PmodENC_axi_gpio_0_0;
@@ -3426,6 +3454,8 @@ entity embsys_PmodENC_0_0_PmodENC is
     s_axi_aclk : in STD_LOGIC;
     s_axi_aresetn : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_PmodENC_0_0_PmodENC : entity is "PmodENC";
 end embsys_PmodENC_0_0_PmodENC;
 
 architecture STRUCTURE of embsys_PmodENC_0_0_PmodENC is

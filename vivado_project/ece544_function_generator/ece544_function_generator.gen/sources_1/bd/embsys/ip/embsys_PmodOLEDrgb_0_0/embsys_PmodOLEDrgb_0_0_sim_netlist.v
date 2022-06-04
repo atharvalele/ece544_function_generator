@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-// Date        : Sat May 28 18:46:55 2022
+// Date        : Fri Jun  3 17:57:28 2022
 // Host        : sentinel running 64-bit EndeavourOS Linux
-// Command     : write_verilog -force -mode funcsim -rename_top embsys_PmodOLEDrgb_0_0 -prefix
-//               embsys_PmodOLEDrgb_0_0_ embsys_PmodOLEDrgb_0_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               /home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/vivado_project/ece544_function_generator/ece544_function_generator.gen/sources_1/bd/embsys/ip/embsys_PmodOLEDrgb_0_0/embsys_PmodOLEDrgb_0_0_sim_netlist.v
 // Design      : embsys_PmodOLEDrgb_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -12,6 +12,313 @@
 // --------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
+(* CHECK_LICENSE_TYPE = "embsys_PmodOLEDrgb_0_0,PmodOLEDrgb_v1_0,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "PmodOLEDrgb_v1_0,Vivado 2020.2" *) 
+(* NotValidForBitStream *)
+module embsys_PmodOLEDrgb_0_0
+   (ext_spi_clk,
+    pmod_out_pin10_i,
+    pmod_out_pin10_o,
+    pmod_out_pin10_t,
+    pmod_out_pin1_i,
+    pmod_out_pin1_o,
+    pmod_out_pin1_t,
+    pmod_out_pin2_i,
+    pmod_out_pin2_o,
+    pmod_out_pin2_t,
+    pmod_out_pin3_i,
+    pmod_out_pin3_o,
+    pmod_out_pin3_t,
+    pmod_out_pin4_i,
+    pmod_out_pin4_o,
+    pmod_out_pin4_t,
+    pmod_out_pin7_i,
+    pmod_out_pin7_o,
+    pmod_out_pin7_t,
+    pmod_out_pin8_i,
+    pmod_out_pin8_o,
+    pmod_out_pin8_t,
+    pmod_out_pin9_i,
+    pmod_out_pin9_o,
+    pmod_out_pin9_t,
+    s_axi_aclk,
+    s_axi_aclk2,
+    s_axi_aresetn,
+    axi_lite_gpio_awaddr,
+    axi_lite_gpio_awprot,
+    axi_lite_gpio_awvalid,
+    axi_lite_gpio_awready,
+    axi_lite_gpio_wdata,
+    axi_lite_gpio_wstrb,
+    axi_lite_gpio_wvalid,
+    axi_lite_gpio_wready,
+    axi_lite_gpio_bresp,
+    axi_lite_gpio_bvalid,
+    axi_lite_gpio_bready,
+    axi_lite_gpio_araddr,
+    axi_lite_gpio_arprot,
+    axi_lite_gpio_arvalid,
+    axi_lite_gpio_arready,
+    axi_lite_gpio_rdata,
+    axi_lite_gpio_rresp,
+    axi_lite_gpio_rvalid,
+    axi_lite_gpio_rready,
+    axi_lite_spi_awaddr,
+    axi_lite_spi_awprot,
+    axi_lite_spi_awvalid,
+    axi_lite_spi_awready,
+    axi_lite_spi_wdata,
+    axi_lite_spi_wstrb,
+    axi_lite_spi_wvalid,
+    axi_lite_spi_wready,
+    axi_lite_spi_bresp,
+    axi_lite_spi_bvalid,
+    axi_lite_spi_bready,
+    axi_lite_spi_araddr,
+    axi_lite_spi_arprot,
+    axi_lite_spi_arvalid,
+    axi_lite_spi_arready,
+    axi_lite_spi_rdata,
+    axi_lite_spi_rresp,
+    axi_lite_spi_rvalid,
+    axi_lite_spi_rready);
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 ext_spi_clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME ext_spi_clk, ASSOCIATED_BUSIF PmodOLEDrgb_out, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0" *) input ext_spi_clk;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN10_I" *) input pmod_out_pin10_i;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN10_O" *) output pmod_out_pin10_o;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN10_T" *) output pmod_out_pin10_t;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN1_I" *) input pmod_out_pin1_i;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN1_O" *) output pmod_out_pin1_o;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN1_T" *) output pmod_out_pin1_t;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN2_I" *) input pmod_out_pin2_i;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN2_O" *) output pmod_out_pin2_o;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN2_T" *) output pmod_out_pin2_t;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN3_I" *) input pmod_out_pin3_i;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN3_O" *) output pmod_out_pin3_o;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN3_T" *) output pmod_out_pin3_t;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN4_I" *) input pmod_out_pin4_i;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN4_O" *) output pmod_out_pin4_o;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN4_T" *) output pmod_out_pin4_t;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN7_I" *) input pmod_out_pin7_i;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN7_O" *) output pmod_out_pin7_o;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN7_T" *) output pmod_out_pin7_t;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN8_I" *) input pmod_out_pin8_i;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN8_O" *) output pmod_out_pin8_o;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN8_T" *) output pmod_out_pin8_t;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN9_I" *) input pmod_out_pin9_i;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN9_O" *) output pmod_out_pin9_o;
+  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN9_T" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME PmodOLEDrgb_out, BOARD.ASSOCIATED_PARAM PMOD" *) output pmod_out_pin9_t;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 AXI_LITE_GPIO_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXI_LITE_GPIO_CLK, ASSOCIATED_BUSIF AXI_LITE_GPIO, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0" *) input s_axi_aclk;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 AXI_LITE_SPI_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXI_LITE_SPI_CLK, ASSOCIATED_BUSIF AXI_LITE_SPI, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0" *) input s_axi_aclk2;
+  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 AXI_LITE_GPIO_RST RST, xilinx.com:signal:reset:1.0 AXI_LITE_SPI_RST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXI_LITE_GPIO_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0, XIL_INTERFACENAME AXI_LITE_SPI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s_axi_aresetn;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO AWADDR" *) input [8:0]axi_lite_gpio_awaddr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO AWPROT" *) input [2:0]axi_lite_gpio_awprot;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO AWVALID" *) input axi_lite_gpio_awvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO AWREADY" *) output axi_lite_gpio_awready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO WDATA" *) input [31:0]axi_lite_gpio_wdata;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO WSTRB" *) input [3:0]axi_lite_gpio_wstrb;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO WVALID" *) input axi_lite_gpio_wvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO WREADY" *) output axi_lite_gpio_wready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO BRESP" *) output [1:0]axi_lite_gpio_bresp;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO BVALID" *) output axi_lite_gpio_bvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO BREADY" *) input axi_lite_gpio_bready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO ARADDR" *) input [8:0]axi_lite_gpio_araddr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO ARPROT" *) input [2:0]axi_lite_gpio_arprot;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO ARVALID" *) input axi_lite_gpio_arvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO ARREADY" *) output axi_lite_gpio_arready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO RDATA" *) output [31:0]axi_lite_gpio_rdata;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO RRESP" *) output [1:0]axi_lite_gpio_rresp;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO RVALID" *) output axi_lite_gpio_rvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXI_LITE_GPIO, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 9, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input axi_lite_gpio_rready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI AWADDR" *) input [6:0]axi_lite_spi_awaddr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI AWPROT" *) input [2:0]axi_lite_spi_awprot;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI AWVALID" *) input axi_lite_spi_awvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI AWREADY" *) output axi_lite_spi_awready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI WDATA" *) input [31:0]axi_lite_spi_wdata;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI WSTRB" *) input [3:0]axi_lite_spi_wstrb;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI WVALID" *) input axi_lite_spi_wvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI WREADY" *) output axi_lite_spi_wready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI BRESP" *) output [1:0]axi_lite_spi_bresp;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI BVALID" *) output axi_lite_spi_bvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI BREADY" *) input axi_lite_spi_bready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI ARADDR" *) input [6:0]axi_lite_spi_araddr;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI ARPROT" *) input [2:0]axi_lite_spi_arprot;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI ARVALID" *) input axi_lite_spi_arvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI ARREADY" *) output axi_lite_spi_arready;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI RDATA" *) output [31:0]axi_lite_spi_rdata;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI RRESP" *) output [1:0]axi_lite_spi_rresp;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI RVALID" *) output axi_lite_spi_rvalid;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXI_LITE_SPI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 7, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input axi_lite_spi_rready;
+
+  wire \<const0> ;
+  wire [8:0]axi_lite_gpio_araddr;
+  wire axi_lite_gpio_arready;
+  wire axi_lite_gpio_arvalid;
+  wire [8:0]axi_lite_gpio_awaddr;
+  wire axi_lite_gpio_awready;
+  wire axi_lite_gpio_awvalid;
+  wire axi_lite_gpio_bready;
+  wire axi_lite_gpio_bvalid;
+  wire [31:0]axi_lite_gpio_rdata;
+  wire axi_lite_gpio_rready;
+  wire axi_lite_gpio_rvalid;
+  wire [31:0]axi_lite_gpio_wdata;
+  wire axi_lite_gpio_wready;
+  wire axi_lite_gpio_wvalid;
+  wire [6:0]axi_lite_spi_araddr;
+  wire axi_lite_spi_arready;
+  wire axi_lite_spi_arvalid;
+  wire [6:0]axi_lite_spi_awaddr;
+  wire axi_lite_spi_awready;
+  wire axi_lite_spi_awvalid;
+  wire axi_lite_spi_bready;
+  wire [1:1]\^axi_lite_spi_bresp ;
+  wire axi_lite_spi_bvalid;
+  wire [31:0]\^axi_lite_spi_rdata ;
+  wire axi_lite_spi_rready;
+  wire [1:1]\^axi_lite_spi_rresp ;
+  wire axi_lite_spi_rvalid;
+  wire [31:0]axi_lite_spi_wdata;
+  wire axi_lite_spi_wready;
+  wire [3:0]axi_lite_spi_wstrb;
+  wire axi_lite_spi_wvalid;
+  wire ext_spi_clk;
+  wire pmod_out_pin10_i;
+  wire pmod_out_pin10_o;
+  wire pmod_out_pin10_t;
+  wire pmod_out_pin1_o;
+  wire pmod_out_pin1_t;
+  wire pmod_out_pin2_i;
+  wire pmod_out_pin2_o;
+  wire pmod_out_pin2_t;
+  wire pmod_out_pin3_i;
+  wire pmod_out_pin3_o;
+  wire pmod_out_pin3_t;
+  wire pmod_out_pin4_o;
+  wire pmod_out_pin4_t;
+  wire pmod_out_pin7_i;
+  wire pmod_out_pin7_o;
+  wire pmod_out_pin7_t;
+  wire pmod_out_pin8_i;
+  wire pmod_out_pin8_o;
+  wire pmod_out_pin8_t;
+  wire pmod_out_pin9_i;
+  wire pmod_out_pin9_o;
+  wire pmod_out_pin9_t;
+  wire s_axi_aclk;
+  wire s_axi_aclk2;
+  wire s_axi_aresetn;
+  wire [1:0]NLW_inst_axi_lite_gpio_bresp_UNCONNECTED;
+  wire [1:0]NLW_inst_axi_lite_gpio_rresp_UNCONNECTED;
+  wire [0:0]NLW_inst_axi_lite_spi_bresp_UNCONNECTED;
+  wire [30:10]NLW_inst_axi_lite_spi_rdata_UNCONNECTED;
+  wire [0:0]NLW_inst_axi_lite_spi_rresp_UNCONNECTED;
+
+  assign axi_lite_gpio_bresp[1] = \<const0> ;
+  assign axi_lite_gpio_bresp[0] = \<const0> ;
+  assign axi_lite_gpio_rresp[1] = \<const0> ;
+  assign axi_lite_gpio_rresp[0] = \<const0> ;
+  assign axi_lite_spi_bresp[1] = \^axi_lite_spi_bresp [1];
+  assign axi_lite_spi_bresp[0] = \<const0> ;
+  assign axi_lite_spi_rdata[31] = \^axi_lite_spi_rdata [31];
+  assign axi_lite_spi_rdata[30] = \<const0> ;
+  assign axi_lite_spi_rdata[29] = \<const0> ;
+  assign axi_lite_spi_rdata[28] = \<const0> ;
+  assign axi_lite_spi_rdata[27] = \<const0> ;
+  assign axi_lite_spi_rdata[26] = \<const0> ;
+  assign axi_lite_spi_rdata[25] = \<const0> ;
+  assign axi_lite_spi_rdata[24] = \<const0> ;
+  assign axi_lite_spi_rdata[23] = \<const0> ;
+  assign axi_lite_spi_rdata[22] = \<const0> ;
+  assign axi_lite_spi_rdata[21] = \<const0> ;
+  assign axi_lite_spi_rdata[20] = \<const0> ;
+  assign axi_lite_spi_rdata[19] = \<const0> ;
+  assign axi_lite_spi_rdata[18] = \<const0> ;
+  assign axi_lite_spi_rdata[17] = \<const0> ;
+  assign axi_lite_spi_rdata[16] = \<const0> ;
+  assign axi_lite_spi_rdata[15] = \<const0> ;
+  assign axi_lite_spi_rdata[14] = \<const0> ;
+  assign axi_lite_spi_rdata[13] = \<const0> ;
+  assign axi_lite_spi_rdata[12] = \<const0> ;
+  assign axi_lite_spi_rdata[11] = \<const0> ;
+  assign axi_lite_spi_rdata[10] = \<const0> ;
+  assign axi_lite_spi_rdata[9:0] = \^axi_lite_spi_rdata [9:0];
+  assign axi_lite_spi_rresp[1] = \^axi_lite_spi_rresp [1];
+  assign axi_lite_spi_rresp[0] = \<const0> ;
+  GND GND
+       (.G(\<const0> ));
+  (* C_AXI_LITE_GPIO_ADDR_WIDTH = "9" *) 
+  (* C_AXI_LITE_GPIO_DATA_WIDTH = "32" *) 
+  (* C_AXI_LITE_SPI_ADDR_WIDTH = "7" *) 
+  (* C_AXI_LITE_SPI_DATA_WIDTH = "32" *) 
+  embsys_PmodOLEDrgb_0_0_PmodOLEDrgb_v1_0 inst
+       (.axi_lite_gpio_araddr({axi_lite_gpio_araddr[8],1'b0,1'b0,1'b0,1'b0,axi_lite_gpio_araddr[3:2],1'b0,1'b0}),
+        .axi_lite_gpio_arprot({1'b0,1'b0,1'b0}),
+        .axi_lite_gpio_arready(axi_lite_gpio_arready),
+        .axi_lite_gpio_arvalid(axi_lite_gpio_arvalid),
+        .axi_lite_gpio_awaddr({axi_lite_gpio_awaddr[8],1'b0,1'b0,1'b0,1'b0,axi_lite_gpio_awaddr[3:2],1'b0,1'b0}),
+        .axi_lite_gpio_awprot({1'b0,1'b0,1'b0}),
+        .axi_lite_gpio_awready(axi_lite_gpio_awready),
+        .axi_lite_gpio_awvalid(axi_lite_gpio_awvalid),
+        .axi_lite_gpio_bready(axi_lite_gpio_bready),
+        .axi_lite_gpio_bresp(NLW_inst_axi_lite_gpio_bresp_UNCONNECTED[1:0]),
+        .axi_lite_gpio_bvalid(axi_lite_gpio_bvalid),
+        .axi_lite_gpio_rdata(axi_lite_gpio_rdata),
+        .axi_lite_gpio_rready(axi_lite_gpio_rready),
+        .axi_lite_gpio_rresp(NLW_inst_axi_lite_gpio_rresp_UNCONNECTED[1:0]),
+        .axi_lite_gpio_rvalid(axi_lite_gpio_rvalid),
+        .axi_lite_gpio_wdata({axi_lite_gpio_wdata[31:28],1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_lite_gpio_wdata[3:0]}),
+        .axi_lite_gpio_wready(axi_lite_gpio_wready),
+        .axi_lite_gpio_wstrb({1'b0,1'b0,1'b0,1'b0}),
+        .axi_lite_gpio_wvalid(axi_lite_gpio_wvalid),
+        .axi_lite_spi_araddr({axi_lite_spi_araddr[6:2],1'b0,1'b0}),
+        .axi_lite_spi_arprot({1'b0,1'b0,1'b0}),
+        .axi_lite_spi_arready(axi_lite_spi_arready),
+        .axi_lite_spi_arvalid(axi_lite_spi_arvalid),
+        .axi_lite_spi_awaddr({axi_lite_spi_awaddr[6:2],1'b0,1'b0}),
+        .axi_lite_spi_awprot({1'b0,1'b0,1'b0}),
+        .axi_lite_spi_awready(axi_lite_spi_awready),
+        .axi_lite_spi_awvalid(axi_lite_spi_awvalid),
+        .axi_lite_spi_bready(axi_lite_spi_bready),
+        .axi_lite_spi_bresp({\^axi_lite_spi_bresp ,NLW_inst_axi_lite_spi_bresp_UNCONNECTED[0]}),
+        .axi_lite_spi_bvalid(axi_lite_spi_bvalid),
+        .axi_lite_spi_rdata(\^axi_lite_spi_rdata ),
+        .axi_lite_spi_rready(axi_lite_spi_rready),
+        .axi_lite_spi_rresp({\^axi_lite_spi_rresp ,NLW_inst_axi_lite_spi_rresp_UNCONNECTED[0]}),
+        .axi_lite_spi_rvalid(axi_lite_spi_rvalid),
+        .axi_lite_spi_wdata({axi_lite_spi_wdata[31],1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_lite_spi_wdata[9:0]}),
+        .axi_lite_spi_wready(axi_lite_spi_wready),
+        .axi_lite_spi_wstrb({axi_lite_spi_wstrb[3],1'b0,1'b0,axi_lite_spi_wstrb[0]}),
+        .axi_lite_spi_wvalid(axi_lite_spi_wvalid),
+        .ext_spi_clk(ext_spi_clk),
+        .pmod_out_pin10_i(pmod_out_pin10_i),
+        .pmod_out_pin10_o(pmod_out_pin10_o),
+        .pmod_out_pin10_t(pmod_out_pin10_t),
+        .pmod_out_pin1_i(1'b0),
+        .pmod_out_pin1_o(pmod_out_pin1_o),
+        .pmod_out_pin1_t(pmod_out_pin1_t),
+        .pmod_out_pin2_i(pmod_out_pin2_i),
+        .pmod_out_pin2_o(pmod_out_pin2_o),
+        .pmod_out_pin2_t(pmod_out_pin2_t),
+        .pmod_out_pin3_i(pmod_out_pin3_i),
+        .pmod_out_pin3_o(pmod_out_pin3_o),
+        .pmod_out_pin3_t(pmod_out_pin3_t),
+        .pmod_out_pin4_i(1'b0),
+        .pmod_out_pin4_o(pmod_out_pin4_o),
+        .pmod_out_pin4_t(pmod_out_pin4_t),
+        .pmod_out_pin7_i(pmod_out_pin7_i),
+        .pmod_out_pin7_o(pmod_out_pin7_o),
+        .pmod_out_pin7_t(pmod_out_pin7_t),
+        .pmod_out_pin8_i(pmod_out_pin8_i),
+        .pmod_out_pin8_o(pmod_out_pin8_o),
+        .pmod_out_pin8_t(pmod_out_pin8_t),
+        .pmod_out_pin9_i(pmod_out_pin9_i),
+        .pmod_out_pin9_o(pmod_out_pin9_o),
+        .pmod_out_pin9_t(pmod_out_pin9_t),
+        .s_axi_aclk(s_axi_aclk),
+        .s_axi_aclk2(s_axi_aclk2),
+        .s_axi_aresetn(s_axi_aresetn));
+endmodule
+
+(* ORIG_REF_NAME = "GPIO_Core" *) 
 module embsys_PmodOLEDrgb_0_0_GPIO_Core
    (reg1,
     reg2,
@@ -332,7 +639,8 @@ module embsys_PmodOLEDrgb_0_0_GPIO_Core
         .O(ip2bus_wrack_i));
 endmodule
 
-(* CHECK_LICENSE_TYPE = "PmodOLEDrgb_axi_gpio_0_1,axi_gpio,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "axi_gpio,Vivado 2020.2" *) 
+(* CHECK_LICENSE_TYPE = "PmodOLEDrgb_axi_gpio_0_1,axi_gpio,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* ORIG_REF_NAME = "PmodOLEDrgb_axi_gpio_0_1" *) 
+(* X_CORE_INFO = "axi_gpio,Vivado 2020.2" *) 
 module embsys_PmodOLEDrgb_0_0_PmodOLEDrgb_axi_gpio_0_1
    (s_axi_aclk,
     s_axi_aresetn,
@@ -457,7 +765,8 @@ module embsys_PmodOLEDrgb_0_0_PmodOLEDrgb_axi_gpio_0_1
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
-(* CHECK_LICENSE_TYPE = "PmodOLEDrgb_axi_quad_spi_0_0,axi_quad_spi,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "axi_quad_spi,Vivado 2020.2" *) 
+(* CHECK_LICENSE_TYPE = "PmodOLEDrgb_axi_quad_spi_0_0,axi_quad_spi,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* ORIG_REF_NAME = "PmodOLEDrgb_axi_quad_spi_0_0" *) 
+(* X_CORE_INFO = "axi_quad_spi,Vivado 2020.2" *) 
 module embsys_PmodOLEDrgb_0_0_PmodOLEDrgb_axi_quad_spi_0_0
    (ext_spi_clk,
     s_axi_aclk,
@@ -758,7 +1067,8 @@ module embsys_PmodOLEDrgb_0_0_PmodOLEDrgb_axi_quad_spi_0_0
         .usrdonets(1'b0));
 endmodule
 
-(* CHECK_LICENSE_TYPE = "PmodOLEDrgb_pmod_bridge_0_0,pmod_concat,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "pmod_concat,Vivado 2020.2" *) 
+(* CHECK_LICENSE_TYPE = "PmodOLEDrgb_pmod_bridge_0_0,pmod_concat,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* ORIG_REF_NAME = "PmodOLEDrgb_pmod_bridge_0_0" *) 
+(* X_CORE_INFO = "pmod_concat,Vivado 2020.2" *) 
 module embsys_PmodOLEDrgb_0_0_PmodOLEDrgb_pmod_bridge_0_0
    (in0_I,
     in1_I,
@@ -987,7 +1297,7 @@ module embsys_PmodOLEDrgb_0_0_PmodOLEDrgb_pmod_bridge_0_0
 endmodule
 
 (* C_AXI_LITE_GPIO_ADDR_WIDTH = "9" *) (* C_AXI_LITE_GPIO_DATA_WIDTH = "32" *) (* C_AXI_LITE_SPI_ADDR_WIDTH = "7" *) 
-(* C_AXI_LITE_SPI_DATA_WIDTH = "32" *) 
+(* C_AXI_LITE_SPI_DATA_WIDTH = "32" *) (* ORIG_REF_NAME = "PmodOLEDrgb_v1_0" *) 
 module embsys_PmodOLEDrgb_0_0_PmodOLEDrgb_v1_0
    (ext_spi_clk,
     pmod_out_pin10_i,
@@ -1361,6 +1671,7 @@ module embsys_PmodOLEDrgb_0_0_PmodOLEDrgb_v1_0
         .out7_T(pmod_out_pin10_t));
 endmodule
 
+(* ORIG_REF_NAME = "address_decoder" *) 
 module embsys_PmodOLEDrgb_0_0_address_decoder
    (\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 ,
     D,
@@ -2935,6 +3246,7 @@ module embsys_PmodOLEDrgb_0_0_address_decoder__parameterized0
         .O(wr_en));
 endmodule
 
+(* ORIG_REF_NAME = "async_fifo_fg" *) 
 module embsys_PmodOLEDrgb_0_0_async_fifo_fg
    (almost_full,
     dout,
@@ -3173,7 +3485,7 @@ endmodule
 (* C_FAMILY = "artix7" *) (* C_GPIO2_WIDTH = "32" *) (* C_GPIO_WIDTH = "4" *) 
 (* C_INTERRUPT_PRESENT = "0" *) (* C_IS_DUAL = "0" *) (* C_S_AXI_ADDR_WIDTH = "9" *) 
 (* C_S_AXI_DATA_WIDTH = "32" *) (* C_TRI_DEFAULT = "-1" *) (* C_TRI_DEFAULT_2 = "-1" *) 
-(* DowngradeIPIdentifiedWarnings = "yes" *) (* ip_group = "LOGICORE" *) 
+(* DowngradeIPIdentifiedWarnings = "yes" *) (* ORIG_REF_NAME = "axi_gpio" *) (* ip_group = "LOGICORE" *) 
 module embsys_PmodOLEDrgb_0_0_axi_gpio
    (s_axi_aclk,
     s_axi_aresetn,
@@ -3456,6 +3768,7 @@ module embsys_PmodOLEDrgb_0_0_axi_gpio
         .R(bus2ip_reset));
 endmodule
 
+(* ORIG_REF_NAME = "axi_lite_ipif" *) 
 module embsys_PmodOLEDrgb_0_0_axi_lite_ipif
    (bus2ip_reset,
     bus2ip_rnw,
@@ -4402,6 +4715,7 @@ endmodule
 (* C_S_AXI_ADDR_WIDTH = "7" *) (* C_S_AXI_DATA_WIDTH = "32" *) (* C_TYPE_OF_AXI4_INTERFACE = "0" *) 
 (* C_UC_FAMILY = "0" *) (* C_USE_STARTUP = "0" *) (* C_USE_STARTUP_EXT = "0" *) 
 (* C_XIP_MODE = "0" *) (* C_XIP_PERF_MODE = "1" *) (* DowngradeIPIdentifiedWarnings = "yes" *) 
+(* ORIG_REF_NAME = "axi_quad_spi" *) 
 module embsys_PmodOLEDrgb_0_0_axi_quad_spi
    (ext_spi_clk,
     s_axi_aclk,
@@ -4767,6 +5081,7 @@ module embsys_PmodOLEDrgb_0_0_axi_quad_spi
         .ss_t(ss_t));
 endmodule
 
+(* ORIG_REF_NAME = "axi_quad_spi_top" *) 
 module embsys_PmodOLEDrgb_0_0_axi_quad_spi_top
    (sck_t,
     io0_t,
@@ -5169,6 +5484,7 @@ module embsys_PmodOLEDrgb_0_0_axi_quad_spi_top
         .wr_en(IP2Bus_WrAck_transmit_enable));
 endmodule
 
+(* ORIG_REF_NAME = "cdc_sync" *) 
 module embsys_PmodOLEDrgb_0_0_cdc_sync
    (scndry_vect_out,
     gpio_io_i,
@@ -6609,6 +6925,7 @@ module embsys_PmodOLEDrgb_0_0_cdc_sync__parameterized3_0
         .O(Rx_FIFO_Full_Fifo_d1_synced_i));
 endmodule
 
+(* ORIG_REF_NAME = "counter_f" *) 
 module embsys_PmodOLEDrgb_0_0_counter_f
    (\icount_out_reg[1]_0 ,
     tx_fifo_count,
@@ -6752,6 +7069,7 @@ module embsys_PmodOLEDrgb_0_0_counter_f
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "cross_clk_sync_fifo_1" *) 
 module embsys_PmodOLEDrgb_0_0_cross_clk_sync_fifo_1
    (prmry_in,
     \LOGIC_GENERATION_CDC.drr_Overrun_int_cdc_from_spi_int_2_reg_0 ,
@@ -7225,312 +7543,7 @@ module embsys_PmodOLEDrgb_0_0_cross_clk_sync_fifo_1
         .R(1'b0));
 endmodule
 
-(* CHECK_LICENSE_TYPE = "embsys_PmodOLEDrgb_0_0,PmodOLEDrgb_v1_0,{}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* X_CORE_INFO = "PmodOLEDrgb_v1_0,Vivado 2020.2" *) 
-(* NotValidForBitStream *)
-module embsys_PmodOLEDrgb_0_0
-   (ext_spi_clk,
-    pmod_out_pin10_i,
-    pmod_out_pin10_o,
-    pmod_out_pin10_t,
-    pmod_out_pin1_i,
-    pmod_out_pin1_o,
-    pmod_out_pin1_t,
-    pmod_out_pin2_i,
-    pmod_out_pin2_o,
-    pmod_out_pin2_t,
-    pmod_out_pin3_i,
-    pmod_out_pin3_o,
-    pmod_out_pin3_t,
-    pmod_out_pin4_i,
-    pmod_out_pin4_o,
-    pmod_out_pin4_t,
-    pmod_out_pin7_i,
-    pmod_out_pin7_o,
-    pmod_out_pin7_t,
-    pmod_out_pin8_i,
-    pmod_out_pin8_o,
-    pmod_out_pin8_t,
-    pmod_out_pin9_i,
-    pmod_out_pin9_o,
-    pmod_out_pin9_t,
-    s_axi_aclk,
-    s_axi_aclk2,
-    s_axi_aresetn,
-    axi_lite_gpio_awaddr,
-    axi_lite_gpio_awprot,
-    axi_lite_gpio_awvalid,
-    axi_lite_gpio_awready,
-    axi_lite_gpio_wdata,
-    axi_lite_gpio_wstrb,
-    axi_lite_gpio_wvalid,
-    axi_lite_gpio_wready,
-    axi_lite_gpio_bresp,
-    axi_lite_gpio_bvalid,
-    axi_lite_gpio_bready,
-    axi_lite_gpio_araddr,
-    axi_lite_gpio_arprot,
-    axi_lite_gpio_arvalid,
-    axi_lite_gpio_arready,
-    axi_lite_gpio_rdata,
-    axi_lite_gpio_rresp,
-    axi_lite_gpio_rvalid,
-    axi_lite_gpio_rready,
-    axi_lite_spi_awaddr,
-    axi_lite_spi_awprot,
-    axi_lite_spi_awvalid,
-    axi_lite_spi_awready,
-    axi_lite_spi_wdata,
-    axi_lite_spi_wstrb,
-    axi_lite_spi_wvalid,
-    axi_lite_spi_wready,
-    axi_lite_spi_bresp,
-    axi_lite_spi_bvalid,
-    axi_lite_spi_bready,
-    axi_lite_spi_araddr,
-    axi_lite_spi_arprot,
-    axi_lite_spi_arvalid,
-    axi_lite_spi_arready,
-    axi_lite_spi_rdata,
-    axi_lite_spi_rresp,
-    axi_lite_spi_rvalid,
-    axi_lite_spi_rready);
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 ext_spi_clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME ext_spi_clk, ASSOCIATED_BUSIF PmodOLEDrgb_out, FREQ_HZ 50000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0" *) input ext_spi_clk;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN10_I" *) input pmod_out_pin10_i;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN10_O" *) output pmod_out_pin10_o;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN10_T" *) output pmod_out_pin10_t;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN1_I" *) input pmod_out_pin1_i;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN1_O" *) output pmod_out_pin1_o;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN1_T" *) output pmod_out_pin1_t;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN2_I" *) input pmod_out_pin2_i;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN2_O" *) output pmod_out_pin2_o;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN2_T" *) output pmod_out_pin2_t;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN3_I" *) input pmod_out_pin3_i;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN3_O" *) output pmod_out_pin3_o;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN3_T" *) output pmod_out_pin3_t;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN4_I" *) input pmod_out_pin4_i;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN4_O" *) output pmod_out_pin4_o;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN4_T" *) output pmod_out_pin4_t;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN7_I" *) input pmod_out_pin7_i;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN7_O" *) output pmod_out_pin7_o;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN7_T" *) output pmod_out_pin7_t;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN8_I" *) input pmod_out_pin8_i;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN8_O" *) output pmod_out_pin8_o;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN8_T" *) output pmod_out_pin8_t;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN9_I" *) input pmod_out_pin9_i;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN9_O" *) output pmod_out_pin9_o;
-  (* X_INTERFACE_INFO = "digilentinc.com:interface:pmod:1.0 PmodOLEDrgb_out PIN9_T" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME PmodOLEDrgb_out, BOARD.ASSOCIATED_PARAM PMOD" *) output pmod_out_pin9_t;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 AXI_LITE_GPIO_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXI_LITE_GPIO_CLK, ASSOCIATED_BUSIF AXI_LITE_GPIO, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0" *) input s_axi_aclk;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 AXI_LITE_SPI_CLK CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXI_LITE_SPI_CLK, ASSOCIATED_BUSIF AXI_LITE_SPI, ASSOCIATED_RESET s_axi_aresetn, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, INSERT_VIP 0" *) input s_axi_aclk2;
-  (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 AXI_LITE_GPIO_RST RST, xilinx.com:signal:reset:1.0 AXI_LITE_SPI_RST RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXI_LITE_GPIO_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0, XIL_INTERFACENAME AXI_LITE_SPI_RST, POLARITY ACTIVE_LOW, INSERT_VIP 0" *) input s_axi_aresetn;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO AWADDR" *) input [8:0]axi_lite_gpio_awaddr;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO AWPROT" *) input [2:0]axi_lite_gpio_awprot;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO AWVALID" *) input axi_lite_gpio_awvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO AWREADY" *) output axi_lite_gpio_awready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO WDATA" *) input [31:0]axi_lite_gpio_wdata;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO WSTRB" *) input [3:0]axi_lite_gpio_wstrb;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO WVALID" *) input axi_lite_gpio_wvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO WREADY" *) output axi_lite_gpio_wready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO BRESP" *) output [1:0]axi_lite_gpio_bresp;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO BVALID" *) output axi_lite_gpio_bvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO BREADY" *) input axi_lite_gpio_bready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO ARADDR" *) input [8:0]axi_lite_gpio_araddr;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO ARPROT" *) input [2:0]axi_lite_gpio_arprot;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO ARVALID" *) input axi_lite_gpio_arvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO ARREADY" *) output axi_lite_gpio_arready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO RDATA" *) output [31:0]axi_lite_gpio_rdata;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO RRESP" *) output [1:0]axi_lite_gpio_rresp;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO RVALID" *) output axi_lite_gpio_rvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_GPIO RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXI_LITE_GPIO, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 9, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input axi_lite_gpio_rready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI AWADDR" *) input [6:0]axi_lite_spi_awaddr;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI AWPROT" *) input [2:0]axi_lite_spi_awprot;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI AWVALID" *) input axi_lite_spi_awvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI AWREADY" *) output axi_lite_spi_awready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI WDATA" *) input [31:0]axi_lite_spi_wdata;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI WSTRB" *) input [3:0]axi_lite_spi_wstrb;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI WVALID" *) input axi_lite_spi_wvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI WREADY" *) output axi_lite_spi_wready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI BRESP" *) output [1:0]axi_lite_spi_bresp;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI BVALID" *) output axi_lite_spi_bvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI BREADY" *) input axi_lite_spi_bready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI ARADDR" *) input [6:0]axi_lite_spi_araddr;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI ARPROT" *) input [2:0]axi_lite_spi_arprot;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI ARVALID" *) input axi_lite_spi_arvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI ARREADY" *) output axi_lite_spi_arready;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI RDATA" *) output [31:0]axi_lite_spi_rdata;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI RRESP" *) output [1:0]axi_lite_spi_rresp;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI RVALID" *) output axi_lite_spi_rvalid;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:aximm:1.0 AXI_LITE_SPI RREADY" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME AXI_LITE_SPI, WIZ_DATA_WIDTH 32, WIZ_NUM_REG 4, SUPPORTS_NARROW_BURST 0, DATA_WIDTH 32, PROTOCOL AXI4LITE, FREQ_HZ 100000000, ID_WIDTH 0, ADDR_WIDTH 7, AWUSER_WIDTH 0, ARUSER_WIDTH 0, WUSER_WIDTH 0, RUSER_WIDTH 0, BUSER_WIDTH 0, READ_WRITE_MODE READ_WRITE, HAS_BURST 0, HAS_LOCK 0, HAS_PROT 1, HAS_CACHE 0, HAS_QOS 0, HAS_REGION 0, HAS_WSTRB 1, HAS_BRESP 1, HAS_RRESP 1, NUM_READ_OUTSTANDING 2, NUM_WRITE_OUTSTANDING 2, MAX_BURST_LENGTH 1, PHASE 0.0, CLK_DOMAIN /clk_wiz_1_clk_out1, NUM_READ_THREADS 1, NUM_WRITE_THREADS 1, RUSER_BITS_PER_BYTE 0, WUSER_BITS_PER_BYTE 0, INSERT_VIP 0" *) input axi_lite_spi_rready;
-
-  wire \<const0> ;
-  wire [8:0]axi_lite_gpio_araddr;
-  wire axi_lite_gpio_arready;
-  wire axi_lite_gpio_arvalid;
-  wire [8:0]axi_lite_gpio_awaddr;
-  wire axi_lite_gpio_awready;
-  wire axi_lite_gpio_awvalid;
-  wire axi_lite_gpio_bready;
-  wire axi_lite_gpio_bvalid;
-  wire [31:0]axi_lite_gpio_rdata;
-  wire axi_lite_gpio_rready;
-  wire axi_lite_gpio_rvalid;
-  wire [31:0]axi_lite_gpio_wdata;
-  wire axi_lite_gpio_wready;
-  wire axi_lite_gpio_wvalid;
-  wire [6:0]axi_lite_spi_araddr;
-  wire axi_lite_spi_arready;
-  wire axi_lite_spi_arvalid;
-  wire [6:0]axi_lite_spi_awaddr;
-  wire axi_lite_spi_awready;
-  wire axi_lite_spi_awvalid;
-  wire axi_lite_spi_bready;
-  wire [1:1]\^axi_lite_spi_bresp ;
-  wire axi_lite_spi_bvalid;
-  wire [31:0]\^axi_lite_spi_rdata ;
-  wire axi_lite_spi_rready;
-  wire [1:1]\^axi_lite_spi_rresp ;
-  wire axi_lite_spi_rvalid;
-  wire [31:0]axi_lite_spi_wdata;
-  wire axi_lite_spi_wready;
-  wire [3:0]axi_lite_spi_wstrb;
-  wire axi_lite_spi_wvalid;
-  wire ext_spi_clk;
-  wire pmod_out_pin10_i;
-  wire pmod_out_pin10_o;
-  wire pmod_out_pin10_t;
-  wire pmod_out_pin1_o;
-  wire pmod_out_pin1_t;
-  wire pmod_out_pin2_i;
-  wire pmod_out_pin2_o;
-  wire pmod_out_pin2_t;
-  wire pmod_out_pin3_i;
-  wire pmod_out_pin3_o;
-  wire pmod_out_pin3_t;
-  wire pmod_out_pin4_o;
-  wire pmod_out_pin4_t;
-  wire pmod_out_pin7_i;
-  wire pmod_out_pin7_o;
-  wire pmod_out_pin7_t;
-  wire pmod_out_pin8_i;
-  wire pmod_out_pin8_o;
-  wire pmod_out_pin8_t;
-  wire pmod_out_pin9_i;
-  wire pmod_out_pin9_o;
-  wire pmod_out_pin9_t;
-  wire s_axi_aclk;
-  wire s_axi_aclk2;
-  wire s_axi_aresetn;
-  wire [1:0]NLW_inst_axi_lite_gpio_bresp_UNCONNECTED;
-  wire [1:0]NLW_inst_axi_lite_gpio_rresp_UNCONNECTED;
-  wire [0:0]NLW_inst_axi_lite_spi_bresp_UNCONNECTED;
-  wire [30:10]NLW_inst_axi_lite_spi_rdata_UNCONNECTED;
-  wire [0:0]NLW_inst_axi_lite_spi_rresp_UNCONNECTED;
-
-  assign axi_lite_gpio_bresp[1] = \<const0> ;
-  assign axi_lite_gpio_bresp[0] = \<const0> ;
-  assign axi_lite_gpio_rresp[1] = \<const0> ;
-  assign axi_lite_gpio_rresp[0] = \<const0> ;
-  assign axi_lite_spi_bresp[1] = \^axi_lite_spi_bresp [1];
-  assign axi_lite_spi_bresp[0] = \<const0> ;
-  assign axi_lite_spi_rdata[31] = \^axi_lite_spi_rdata [31];
-  assign axi_lite_spi_rdata[30] = \<const0> ;
-  assign axi_lite_spi_rdata[29] = \<const0> ;
-  assign axi_lite_spi_rdata[28] = \<const0> ;
-  assign axi_lite_spi_rdata[27] = \<const0> ;
-  assign axi_lite_spi_rdata[26] = \<const0> ;
-  assign axi_lite_spi_rdata[25] = \<const0> ;
-  assign axi_lite_spi_rdata[24] = \<const0> ;
-  assign axi_lite_spi_rdata[23] = \<const0> ;
-  assign axi_lite_spi_rdata[22] = \<const0> ;
-  assign axi_lite_spi_rdata[21] = \<const0> ;
-  assign axi_lite_spi_rdata[20] = \<const0> ;
-  assign axi_lite_spi_rdata[19] = \<const0> ;
-  assign axi_lite_spi_rdata[18] = \<const0> ;
-  assign axi_lite_spi_rdata[17] = \<const0> ;
-  assign axi_lite_spi_rdata[16] = \<const0> ;
-  assign axi_lite_spi_rdata[15] = \<const0> ;
-  assign axi_lite_spi_rdata[14] = \<const0> ;
-  assign axi_lite_spi_rdata[13] = \<const0> ;
-  assign axi_lite_spi_rdata[12] = \<const0> ;
-  assign axi_lite_spi_rdata[11] = \<const0> ;
-  assign axi_lite_spi_rdata[10] = \<const0> ;
-  assign axi_lite_spi_rdata[9:0] = \^axi_lite_spi_rdata [9:0];
-  assign axi_lite_spi_rresp[1] = \^axi_lite_spi_rresp [1];
-  assign axi_lite_spi_rresp[0] = \<const0> ;
-  GND GND
-       (.G(\<const0> ));
-  (* C_AXI_LITE_GPIO_ADDR_WIDTH = "9" *) 
-  (* C_AXI_LITE_GPIO_DATA_WIDTH = "32" *) 
-  (* C_AXI_LITE_SPI_ADDR_WIDTH = "7" *) 
-  (* C_AXI_LITE_SPI_DATA_WIDTH = "32" *) 
-  embsys_PmodOLEDrgb_0_0_PmodOLEDrgb_v1_0 inst
-       (.axi_lite_gpio_araddr({axi_lite_gpio_araddr[8],1'b0,1'b0,1'b0,1'b0,axi_lite_gpio_araddr[3:2],1'b0,1'b0}),
-        .axi_lite_gpio_arprot({1'b0,1'b0,1'b0}),
-        .axi_lite_gpio_arready(axi_lite_gpio_arready),
-        .axi_lite_gpio_arvalid(axi_lite_gpio_arvalid),
-        .axi_lite_gpio_awaddr({axi_lite_gpio_awaddr[8],1'b0,1'b0,1'b0,1'b0,axi_lite_gpio_awaddr[3:2],1'b0,1'b0}),
-        .axi_lite_gpio_awprot({1'b0,1'b0,1'b0}),
-        .axi_lite_gpio_awready(axi_lite_gpio_awready),
-        .axi_lite_gpio_awvalid(axi_lite_gpio_awvalid),
-        .axi_lite_gpio_bready(axi_lite_gpio_bready),
-        .axi_lite_gpio_bresp(NLW_inst_axi_lite_gpio_bresp_UNCONNECTED[1:0]),
-        .axi_lite_gpio_bvalid(axi_lite_gpio_bvalid),
-        .axi_lite_gpio_rdata(axi_lite_gpio_rdata),
-        .axi_lite_gpio_rready(axi_lite_gpio_rready),
-        .axi_lite_gpio_rresp(NLW_inst_axi_lite_gpio_rresp_UNCONNECTED[1:0]),
-        .axi_lite_gpio_rvalid(axi_lite_gpio_rvalid),
-        .axi_lite_gpio_wdata({axi_lite_gpio_wdata[31:28],1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_lite_gpio_wdata[3:0]}),
-        .axi_lite_gpio_wready(axi_lite_gpio_wready),
-        .axi_lite_gpio_wstrb({1'b0,1'b0,1'b0,1'b0}),
-        .axi_lite_gpio_wvalid(axi_lite_gpio_wvalid),
-        .axi_lite_spi_araddr({axi_lite_spi_araddr[6:2],1'b0,1'b0}),
-        .axi_lite_spi_arprot({1'b0,1'b0,1'b0}),
-        .axi_lite_spi_arready(axi_lite_spi_arready),
-        .axi_lite_spi_arvalid(axi_lite_spi_arvalid),
-        .axi_lite_spi_awaddr({axi_lite_spi_awaddr[6:2],1'b0,1'b0}),
-        .axi_lite_spi_awprot({1'b0,1'b0,1'b0}),
-        .axi_lite_spi_awready(axi_lite_spi_awready),
-        .axi_lite_spi_awvalid(axi_lite_spi_awvalid),
-        .axi_lite_spi_bready(axi_lite_spi_bready),
-        .axi_lite_spi_bresp({\^axi_lite_spi_bresp ,NLW_inst_axi_lite_spi_bresp_UNCONNECTED[0]}),
-        .axi_lite_spi_bvalid(axi_lite_spi_bvalid),
-        .axi_lite_spi_rdata(\^axi_lite_spi_rdata ),
-        .axi_lite_spi_rready(axi_lite_spi_rready),
-        .axi_lite_spi_rresp({\^axi_lite_spi_rresp ,NLW_inst_axi_lite_spi_rresp_UNCONNECTED[0]}),
-        .axi_lite_spi_rvalid(axi_lite_spi_rvalid),
-        .axi_lite_spi_wdata({axi_lite_spi_wdata[31],1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,axi_lite_spi_wdata[9:0]}),
-        .axi_lite_spi_wready(axi_lite_spi_wready),
-        .axi_lite_spi_wstrb({axi_lite_spi_wstrb[3],1'b0,1'b0,axi_lite_spi_wstrb[0]}),
-        .axi_lite_spi_wvalid(axi_lite_spi_wvalid),
-        .ext_spi_clk(ext_spi_clk),
-        .pmod_out_pin10_i(pmod_out_pin10_i),
-        .pmod_out_pin10_o(pmod_out_pin10_o),
-        .pmod_out_pin10_t(pmod_out_pin10_t),
-        .pmod_out_pin1_i(1'b0),
-        .pmod_out_pin1_o(pmod_out_pin1_o),
-        .pmod_out_pin1_t(pmod_out_pin1_t),
-        .pmod_out_pin2_i(pmod_out_pin2_i),
-        .pmod_out_pin2_o(pmod_out_pin2_o),
-        .pmod_out_pin2_t(pmod_out_pin2_t),
-        .pmod_out_pin3_i(pmod_out_pin3_i),
-        .pmod_out_pin3_o(pmod_out_pin3_o),
-        .pmod_out_pin3_t(pmod_out_pin3_t),
-        .pmod_out_pin4_i(1'b0),
-        .pmod_out_pin4_o(pmod_out_pin4_o),
-        .pmod_out_pin4_t(pmod_out_pin4_t),
-        .pmod_out_pin7_i(pmod_out_pin7_i),
-        .pmod_out_pin7_o(pmod_out_pin7_o),
-        .pmod_out_pin7_t(pmod_out_pin7_t),
-        .pmod_out_pin8_i(pmod_out_pin8_i),
-        .pmod_out_pin8_o(pmod_out_pin8_o),
-        .pmod_out_pin8_t(pmod_out_pin8_t),
-        .pmod_out_pin9_i(pmod_out_pin9_i),
-        .pmod_out_pin9_o(pmod_out_pin9_o),
-        .pmod_out_pin9_t(pmod_out_pin9_t),
-        .s_axi_aclk(s_axi_aclk),
-        .s_axi_aclk2(s_axi_aclk2),
-        .s_axi_aresetn(s_axi_aresetn));
-endmodule
-
+(* ORIG_REF_NAME = "interrupt_control" *) 
 module embsys_PmodOLEDrgb_0_0_interrupt_control
    (irpt_wrack_d1,
     \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ,
@@ -7858,7 +7871,7 @@ module embsys_PmodOLEDrgb_0_0_interrupt_control
         .R(reset2ip_reset_int));
 endmodule
 
-(* Bottom_Row_Interface = "None" *) (* Top_Row_Interface = "None" *) 
+(* Bottom_Row_Interface = "None" *) (* ORIG_REF_NAME = "pmod_concat" *) (* Top_Row_Interface = "None" *) 
 module embsys_PmodOLEDrgb_0_0_pmod_concat
    (in_top_bus_I,
     in_top_bus_O,
@@ -8061,6 +8074,7 @@ module embsys_PmodOLEDrgb_0_0_pmod_concat
        (.G(\<const0> ));
 endmodule
 
+(* ORIG_REF_NAME = "qspi_cntrl_reg" *) 
 module embsys_PmodOLEDrgb_0_0_qspi_cntrl_reg
    (spicr_bits_7_8_frm_axi_clk,
     prmry_in,
@@ -8304,6 +8318,7 @@ module embsys_PmodOLEDrgb_0_0_qspi_cntrl_reg
         .O(D));
 endmodule
 
+(* ORIG_REF_NAME = "qspi_core_interface" *) 
 module embsys_PmodOLEDrgb_0_0_qspi_core_interface
    (dout,
     empty,
@@ -9430,6 +9445,7 @@ module embsys_PmodOLEDrgb_0_0_qspi_core_interface
         .R(reset2ip_reset_int));
 endmodule
 
+(* ORIG_REF_NAME = "qspi_fifo_ifmodule" *) 
 module embsys_PmodOLEDrgb_0_0_qspi_fifo_ifmodule
    (receive_ip2bus_error,
     tx_FIFO_Occpncy_MSB_d1,
@@ -9563,6 +9579,7 @@ module embsys_PmodOLEDrgb_0_0_qspi_fifo_ifmodule
         .R(reset2ip_reset_int));
 endmodule
 
+(* ORIG_REF_NAME = "qspi_mode_0_module" *) 
 module embsys_PmodOLEDrgb_0_0_qspi_mode_0_module
    (sck_t,
     io0_t,
@@ -10719,6 +10736,7 @@ module embsys_PmodOLEDrgb_0_0_qspi_mode_0_module
         .O(rd_en));
 endmodule
 
+(* ORIG_REF_NAME = "qspi_status_slave_sel_reg" *) 
 module embsys_PmodOLEDrgb_0_0_qspi_status_slave_sel_reg
    (\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0]_0 ,
     reset2ip_reset_int,
@@ -10742,6 +10760,7 @@ module embsys_PmodOLEDrgb_0_0_qspi_status_slave_sel_reg
         .S(reset2ip_reset_int));
 endmodule
 
+(* ORIG_REF_NAME = "reset_sync_module" *) 
 module embsys_PmodOLEDrgb_0_0_reset_sync_module
    (RESET_SYNC_AX2S_2_0,
     Rst_to_spi,
@@ -10791,6 +10810,7 @@ module embsys_PmodOLEDrgb_0_0_reset_sync_module
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "slave_attachment" *) 
 module embsys_PmodOLEDrgb_0_0_slave_attachment
    (SR,
     bus2ip_rnw_i_reg_0,
@@ -12286,6 +12306,7 @@ module embsys_PmodOLEDrgb_0_0_slave_attachment__parameterized0
         .R(SR));
 endmodule
 
+(* ORIG_REF_NAME = "soft_reset" *) 
 module embsys_PmodOLEDrgb_0_0_soft_reset
    (sw_rst_cond_d1,
     \RESET_FLOPS[15].RST_FLOPS_0 ,
@@ -12773,10 +12794,10 @@ module embsys_PmodOLEDrgb_0_0_soft_reset
         .O(reset_TxFIFO_ptr_int));
 endmodule
 
-(* DEST_SYNC_FF = "2" *) (* INIT_SYNC_FF = "1" *) (* REG_OUTPUT = "0" *) 
-(* SIM_ASSERT_CHK = "0" *) (* SIM_LOSSLESS_GRAY_CHK = "0" *) (* VERSION = "0" *) 
-(* WIDTH = "4" *) (* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "true" *) 
-(* xpm_cdc = "GRAY" *) 
+(* DEST_SYNC_FF = "2" *) (* INIT_SYNC_FF = "1" *) (* ORIG_REF_NAME = "xpm_cdc_gray" *) 
+(* REG_OUTPUT = "0" *) (* SIM_ASSERT_CHK = "0" *) (* SIM_LOSSLESS_GRAY_CHK = "0" *) 
+(* VERSION = "0" *) (* WIDTH = "4" *) (* XPM_MODULE = "TRUE" *) 
+(* keep_hierarchy = "true" *) (* xpm_cdc = "GRAY" *) 
 module embsys_PmodOLEDrgb_0_0_xpm_cdc_gray
    (src_clk,
     src_in_bin,
@@ -14434,8 +14455,9 @@ module embsys_PmodOLEDrgb_0_0_xpm_cdc_gray__parameterized1__2
 endmodule
 
 (* DEF_VAL = "1'b0" *) (* DEST_SYNC_FF = "2" *) (* INIT = "0" *) 
-(* INIT_SYNC_FF = "1" *) (* SIM_ASSERT_CHK = "0" *) (* VERSION = "0" *) 
-(* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "true" *) (* xpm_cdc = "SYNC_RST" *) 
+(* INIT_SYNC_FF = "1" *) (* ORIG_REF_NAME = "xpm_cdc_sync_rst" *) (* SIM_ASSERT_CHK = "0" *) 
+(* VERSION = "0" *) (* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "true" *) 
+(* xpm_cdc = "SYNC_RST" *) 
 module embsys_PmodOLEDrgb_0_0_xpm_cdc_sync_rst
    (src_rst,
     dest_clk,
@@ -14596,6 +14618,7 @@ module embsys_PmodOLEDrgb_0_0_xpm_cdc_sync_rst__6
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "xpm_counter_updn" *) 
 module embsys_PmodOLEDrgb_0_0_xpm_counter_updn
    (Q,
     wrst_busy,
@@ -16320,12 +16343,13 @@ endmodule
 (* CASCADE_HEIGHT = "0" *) (* CDC_SYNC_STAGES = "2" *) (* DOUT_RESET_VALUE = "0" *) 
 (* ECC_MODE = "no_ecc" *) (* EN_ADV_FEATURE_ASYNC = "16'b0001111100011111" *) (* FIFO_MEMORY_TYPE = "auto" *) 
 (* FIFO_READ_LATENCY = "0" *) (* FIFO_WRITE_DEPTH = "16" *) (* FULL_RESET_VALUE = "0" *) 
-(* PROG_EMPTY_THRESH = "10" *) (* PROG_FULL_THRESH = "10" *) (* P_COMMON_CLOCK = "0" *) 
-(* P_ECC_MODE = "0" *) (* P_FIFO_MEMORY_TYPE = "0" *) (* P_READ_MODE = "1" *) 
-(* P_WAKEUP_TIME = "2" *) (* RD_DATA_COUNT_WIDTH = "5" *) (* READ_DATA_WIDTH = "8" *) 
-(* READ_MODE = "fwft" *) (* RELATED_CLOCKS = "0" *) (* SIM_ASSERT_CHK = "0" *) 
-(* USE_ADV_FEATURES = "1f1f" *) (* WAKEUP_TIME = "0" *) (* WRITE_DATA_WIDTH = "8" *) 
-(* WR_DATA_COUNT_WIDTH = "5" *) (* XPM_MODULE = "TRUE" *) (* dont_touch = "true" *) 
+(* ORIG_REF_NAME = "xpm_fifo_async" *) (* PROG_EMPTY_THRESH = "10" *) (* PROG_FULL_THRESH = "10" *) 
+(* P_COMMON_CLOCK = "0" *) (* P_ECC_MODE = "0" *) (* P_FIFO_MEMORY_TYPE = "0" *) 
+(* P_READ_MODE = "1" *) (* P_WAKEUP_TIME = "2" *) (* RD_DATA_COUNT_WIDTH = "5" *) 
+(* READ_DATA_WIDTH = "8" *) (* READ_MODE = "fwft" *) (* RELATED_CLOCKS = "0" *) 
+(* SIM_ASSERT_CHK = "0" *) (* USE_ADV_FEATURES = "1f1f" *) (* WAKEUP_TIME = "0" *) 
+(* WRITE_DATA_WIDTH = "8" *) (* WR_DATA_COUNT_WIDTH = "5" *) (* XPM_MODULE = "TRUE" *) 
+(* dont_touch = "true" *) 
 module embsys_PmodOLEDrgb_0_0_xpm_fifo_async
    (sleep,
     rst,
@@ -16698,19 +16722,19 @@ endmodule
 (* EN_WACK = "1'b1" *) (* EN_WDC = "1'b1" *) (* FG_EQ_ASYM_DOUT = "1'b0" *) 
 (* FIFO_MEMORY_TYPE = "0" *) (* FIFO_MEM_TYPE = "0" *) (* FIFO_READ_DEPTH = "16" *) 
 (* FIFO_READ_LATENCY = "0" *) (* FIFO_SIZE = "128" *) (* FIFO_WRITE_DEPTH = "16" *) 
-(* FULL_RESET_VALUE = "0" *) (* FULL_RST_VAL = "1'b0" *) (* PE_THRESH_ADJ = "8" *) 
-(* PE_THRESH_MAX = "11" *) (* PE_THRESH_MIN = "5" *) (* PF_THRESH_ADJ = "8" *) 
-(* PF_THRESH_MAX = "11" *) (* PF_THRESH_MIN = "7" *) (* PROG_EMPTY_THRESH = "10" *) 
-(* PROG_FULL_THRESH = "10" *) (* RD_DATA_COUNT_WIDTH = "5" *) (* RD_DC_WIDTH_EXT = "5" *) 
-(* RD_LATENCY = "2" *) (* RD_MODE = "1" *) (* RD_PNTR_WIDTH = "4" *) 
-(* READ_DATA_WIDTH = "8" *) (* READ_MODE = "1" *) (* READ_MODE_LL = "1" *) 
-(* RELATED_CLOCKS = "0" *) (* REMOVE_WR_RD_PROT_LOGIC = "0" *) (* SIM_ASSERT_CHK = "0" *) 
-(* USE_ADV_FEATURES = "1f1f" *) (* VERSION = "0" *) (* WAKEUP_TIME = "0" *) 
-(* WIDTH_RATIO = "1" *) (* WRITE_DATA_WIDTH = "8" *) (* WR_DATA_COUNT_WIDTH = "5" *) 
-(* WR_DC_WIDTH_EXT = "5" *) (* WR_DEPTH_LOG = "4" *) (* WR_PNTR_WIDTH = "4" *) 
-(* WR_RD_RATIO = "0" *) (* WR_WIDTH_LOG = "3" *) (* XPM_MODULE = "TRUE" *) 
-(* both_stages_valid = "3" *) (* invalid = "0" *) (* keep_hierarchy = "soft" *) 
-(* stage1_valid = "2" *) (* stage2_valid = "1" *) 
+(* FULL_RESET_VALUE = "0" *) (* FULL_RST_VAL = "1'b0" *) (* ORIG_REF_NAME = "xpm_fifo_base" *) 
+(* PE_THRESH_ADJ = "8" *) (* PE_THRESH_MAX = "11" *) (* PE_THRESH_MIN = "5" *) 
+(* PF_THRESH_ADJ = "8" *) (* PF_THRESH_MAX = "11" *) (* PF_THRESH_MIN = "7" *) 
+(* PROG_EMPTY_THRESH = "10" *) (* PROG_FULL_THRESH = "10" *) (* RD_DATA_COUNT_WIDTH = "5" *) 
+(* RD_DC_WIDTH_EXT = "5" *) (* RD_LATENCY = "2" *) (* RD_MODE = "1" *) 
+(* RD_PNTR_WIDTH = "4" *) (* READ_DATA_WIDTH = "8" *) (* READ_MODE = "1" *) 
+(* READ_MODE_LL = "1" *) (* RELATED_CLOCKS = "0" *) (* REMOVE_WR_RD_PROT_LOGIC = "0" *) 
+(* SIM_ASSERT_CHK = "0" *) (* USE_ADV_FEATURES = "1f1f" *) (* VERSION = "0" *) 
+(* WAKEUP_TIME = "0" *) (* WIDTH_RATIO = "1" *) (* WRITE_DATA_WIDTH = "8" *) 
+(* WR_DATA_COUNT_WIDTH = "5" *) (* WR_DC_WIDTH_EXT = "5" *) (* WR_DEPTH_LOG = "4" *) 
+(* WR_PNTR_WIDTH = "4" *) (* WR_RD_RATIO = "0" *) (* WR_WIDTH_LOG = "3" *) 
+(* XPM_MODULE = "TRUE" *) (* both_stages_valid = "3" *) (* invalid = "0" *) 
+(* keep_hierarchy = "soft" *) (* stage1_valid = "2" *) (* stage2_valid = "1" *) 
 module embsys_PmodOLEDrgb_0_0_xpm_fifo_base
    (sleep,
     rst,
@@ -18155,6 +18179,7 @@ module embsys_PmodOLEDrgb_0_0_xpm_fifo_base__parameterized0
         .wrst_busy(wrst_busy));
 endmodule
 
+(* ORIG_REF_NAME = "xpm_fifo_reg_bit" *) 
 module embsys_PmodOLEDrgb_0_0_xpm_fifo_reg_bit
    (rst_d1,
     \gen_pf_ic_rc.gpf_ic.diff_pntr_pf_q_reg[4] ,
@@ -18289,6 +18314,7 @@ module embsys_PmodOLEDrgb_0_0_xpm_fifo_reg_bit_26
         .O(overflow_i0));
 endmodule
 
+(* ORIG_REF_NAME = "xpm_fifo_reg_vec" *) 
 module embsys_PmodOLEDrgb_0_0_xpm_fifo_reg_vec
    (\gen_pf_ic_rc.gen_full_rst_val.ram_full_i_reg ,
     diff_pntr_pf_q0,
@@ -19260,6 +19286,7 @@ module embsys_PmodOLEDrgb_0_0_xpm_fifo_reg_vec__parameterized0_22
         .R(\reg_out_i_reg[4]_0 ));
 endmodule
 
+(* ORIG_REF_NAME = "xpm_fifo_rst" *) 
 module embsys_PmodOLEDrgb_0_0_xpm_fifo_rst
    (\gen_rst_ic.fifo_rd_rst_ic_reg_0 ,
     wrst_busy,
@@ -20096,24 +20123,25 @@ endmodule
 (* CLOCKING_MODE = "1" *) (* ECC_MODE = "0" *) (* MAX_NUM_CHAR = "0" *) 
 (* MEMORY_INIT_FILE = "none" *) (* MEMORY_INIT_PARAM = "" *) (* MEMORY_OPTIMIZATION = "true" *) 
 (* MEMORY_PRIMITIVE = "0" *) (* MEMORY_SIZE = "128" *) (* MEMORY_TYPE = "1" *) 
-(* MESSAGE_CONTROL = "0" *) (* NUM_CHAR_LOC = "0" *) (* P_ECC_MODE = "no_ecc" *) 
-(* P_ENABLE_BYTE_WRITE_A = "0" *) (* P_ENABLE_BYTE_WRITE_B = "0" *) (* P_MAX_DEPTH_DATA = "16" *) 
-(* P_MEMORY_OPT = "yes" *) (* P_MEMORY_PRIMITIVE = "auto" *) (* P_MIN_WIDTH_DATA = "8" *) 
-(* P_MIN_WIDTH_DATA_A = "8" *) (* P_MIN_WIDTH_DATA_B = "8" *) (* P_MIN_WIDTH_DATA_ECC = "8" *) 
-(* P_MIN_WIDTH_DATA_LDW = "4" *) (* P_MIN_WIDTH_DATA_SHFT = "8" *) (* P_NUM_COLS_WRITE_A = "1" *) 
-(* P_NUM_COLS_WRITE_B = "1" *) (* P_NUM_ROWS_READ_A = "1" *) (* P_NUM_ROWS_READ_B = "1" *) 
-(* P_NUM_ROWS_WRITE_A = "1" *) (* P_NUM_ROWS_WRITE_B = "1" *) (* P_SDP_WRITE_MODE = "yes" *) 
-(* P_WIDTH_ADDR_LSB_READ_A = "0" *) (* P_WIDTH_ADDR_LSB_READ_B = "0" *) (* P_WIDTH_ADDR_LSB_WRITE_A = "0" *) 
-(* P_WIDTH_ADDR_LSB_WRITE_B = "0" *) (* P_WIDTH_ADDR_READ_A = "4" *) (* P_WIDTH_ADDR_READ_B = "4" *) 
-(* P_WIDTH_ADDR_WRITE_A = "4" *) (* P_WIDTH_ADDR_WRITE_B = "4" *) (* P_WIDTH_COL_WRITE_A = "8" *) 
-(* P_WIDTH_COL_WRITE_B = "8" *) (* READ_DATA_WIDTH_A = "8" *) (* READ_DATA_WIDTH_B = "8" *) 
-(* READ_LATENCY_A = "2" *) (* READ_LATENCY_B = "2" *) (* READ_RESET_VALUE_A = "0" *) 
-(* READ_RESET_VALUE_B = "0" *) (* RST_MODE_A = "SYNC" *) (* RST_MODE_B = "SYNC" *) 
-(* SIM_ASSERT_CHK = "0" *) (* USE_EMBEDDED_CONSTRAINT = "0" *) (* USE_MEM_INIT = "0" *) 
-(* USE_MEM_INIT_MMI = "0" *) (* VERSION = "0" *) (* WAKEUP_TIME = "0" *) 
-(* WRITE_DATA_WIDTH_A = "8" *) (* WRITE_DATA_WIDTH_B = "8" *) (* WRITE_MODE_A = "2" *) 
-(* WRITE_MODE_B = "2" *) (* WRITE_PROTECT = "1" *) (* XPM_MODULE = "TRUE" *) 
-(* keep_hierarchy = "soft" *) (* rsta_loop_iter = "8" *) (* rstb_loop_iter = "8" *) 
+(* MESSAGE_CONTROL = "0" *) (* NUM_CHAR_LOC = "0" *) (* ORIG_REF_NAME = "xpm_memory_base" *) 
+(* P_ECC_MODE = "no_ecc" *) (* P_ENABLE_BYTE_WRITE_A = "0" *) (* P_ENABLE_BYTE_WRITE_B = "0" *) 
+(* P_MAX_DEPTH_DATA = "16" *) (* P_MEMORY_OPT = "yes" *) (* P_MEMORY_PRIMITIVE = "auto" *) 
+(* P_MIN_WIDTH_DATA = "8" *) (* P_MIN_WIDTH_DATA_A = "8" *) (* P_MIN_WIDTH_DATA_B = "8" *) 
+(* P_MIN_WIDTH_DATA_ECC = "8" *) (* P_MIN_WIDTH_DATA_LDW = "4" *) (* P_MIN_WIDTH_DATA_SHFT = "8" *) 
+(* P_NUM_COLS_WRITE_A = "1" *) (* P_NUM_COLS_WRITE_B = "1" *) (* P_NUM_ROWS_READ_A = "1" *) 
+(* P_NUM_ROWS_READ_B = "1" *) (* P_NUM_ROWS_WRITE_A = "1" *) (* P_NUM_ROWS_WRITE_B = "1" *) 
+(* P_SDP_WRITE_MODE = "yes" *) (* P_WIDTH_ADDR_LSB_READ_A = "0" *) (* P_WIDTH_ADDR_LSB_READ_B = "0" *) 
+(* P_WIDTH_ADDR_LSB_WRITE_A = "0" *) (* P_WIDTH_ADDR_LSB_WRITE_B = "0" *) (* P_WIDTH_ADDR_READ_A = "4" *) 
+(* P_WIDTH_ADDR_READ_B = "4" *) (* P_WIDTH_ADDR_WRITE_A = "4" *) (* P_WIDTH_ADDR_WRITE_B = "4" *) 
+(* P_WIDTH_COL_WRITE_A = "8" *) (* P_WIDTH_COL_WRITE_B = "8" *) (* READ_DATA_WIDTH_A = "8" *) 
+(* READ_DATA_WIDTH_B = "8" *) (* READ_LATENCY_A = "2" *) (* READ_LATENCY_B = "2" *) 
+(* READ_RESET_VALUE_A = "0" *) (* READ_RESET_VALUE_B = "0" *) (* RST_MODE_A = "SYNC" *) 
+(* RST_MODE_B = "SYNC" *) (* SIM_ASSERT_CHK = "0" *) (* USE_EMBEDDED_CONSTRAINT = "0" *) 
+(* USE_MEM_INIT = "0" *) (* USE_MEM_INIT_MMI = "0" *) (* VERSION = "0" *) 
+(* WAKEUP_TIME = "0" *) (* WRITE_DATA_WIDTH_A = "8" *) (* WRITE_DATA_WIDTH_B = "8" *) 
+(* WRITE_MODE_A = "2" *) (* WRITE_MODE_B = "2" *) (* WRITE_PROTECT = "1" *) 
+(* XPM_MODULE = "TRUE" *) (* keep_hierarchy = "soft" *) (* rsta_loop_iter = "8" *) 
+(* rstb_loop_iter = "8" *) 
 module embsys_PmodOLEDrgb_0_0_xpm_memory_base
    (sleep,
     clka,

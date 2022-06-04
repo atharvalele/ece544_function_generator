@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Sat May 28 18:45:02 2022
+-- Date        : Fri Jun  3 17:55:12 2022
 -- Host        : sentinel running 64-bit EndeavourOS Linux
--- Command     : write_vhdl -force -mode funcsim -rename_top embsys_axi_timebase_wdt_0_0 -prefix
---               embsys_axi_timebase_wdt_0_0_ embsys_axi_timebase_wdt_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               /home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/vivado_project/ece544_function_generator/ece544_function_generator.gen/sources_1/bd/embsys/ip/embsys_axi_timebase_wdt_0_0/embsys_axi_timebase_wdt_0_0_sim_netlist.vhdl
 -- Design      : embsys_axi_timebase_wdt_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,6 +20,8 @@ entity embsys_axi_timebase_wdt_0_0_cdc_sync is
     freeze : in STD_LOGIC;
     s_axi_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_axi_timebase_wdt_0_0_cdc_sync : entity is "cdc_sync";
 end embsys_axi_timebase_wdt_0_0_cdc_sync;
 
 architecture STRUCTURE of embsys_axi_timebase_wdt_0_0_cdc_sync is
@@ -106,6 +108,8 @@ entity embsys_axi_timebase_wdt_0_0_pselect_f is
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0]\ : in STD_LOGIC;
     \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0]_0\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_axi_timebase_wdt_0_0_pselect_f : entity is "pselect_f";
 end embsys_axi_timebase_wdt_0_0_pselect_f;
 
 architecture STRUCTURE of embsys_axi_timebase_wdt_0_0_pselect_f is
@@ -226,6 +230,8 @@ entity embsys_axi_timebase_wdt_0_0_address_decoder is
     \GEN_BKEND_CE_REGISTERS[2].ce_out_i_reg[2]_0\ : in STD_LOGIC;
     \GEN_BKEND_CE_REGISTERS[2].ce_out_i_reg[2]_1\ : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_axi_timebase_wdt_0_0_address_decoder : entity is "address_decoder";
 end embsys_axi_timebase_wdt_0_0_address_decoder;
 
 architecture STRUCTURE of embsys_axi_timebase_wdt_0_0_address_decoder is
@@ -1101,6 +1107,8 @@ entity embsys_axi_timebase_wdt_0_0_timebase_wdt_core is
     freeze : in STD_LOGIC;
     E : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_axi_timebase_wdt_0_0_timebase_wdt_core : entity is "timebase_wdt_core";
 end embsys_axi_timebase_wdt_0_0_timebase_wdt_core;
 
 architecture STRUCTURE of embsys_axi_timebase_wdt_0_0_timebase_wdt_core is
@@ -2463,6 +2471,8 @@ entity embsys_axi_timebase_wdt_0_0_slave_attachment is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_axi_timebase_wdt_0_0_slave_attachment : entity is "slave_attachment";
 end embsys_axi_timebase_wdt_0_0_slave_attachment;
 
 architecture STRUCTURE of embsys_axi_timebase_wdt_0_0_slave_attachment is
@@ -3494,6 +3504,8 @@ entity embsys_axi_timebase_wdt_0_0_axi_lite_ipif is
     s_axi_araddr : in STD_LOGIC_VECTOR ( 1 downto 0 );
     s_axi_awaddr : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_axi_timebase_wdt_0_0_axi_lite_ipif : entity is "axi_lite_ipif";
 end embsys_axi_timebase_wdt_0_0_axi_lite_ipif;
 
 architecture STRUCTURE of embsys_axi_timebase_wdt_0_0_axi_lite_ipif is
@@ -3600,6 +3612,8 @@ entity embsys_axi_timebase_wdt_0_0_axi_timebase_wdt is
     s_axi_rready : in STD_LOGIC;
     s_axi_wstrb : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_axi_timebase_wdt_0_0_axi_timebase_wdt : entity is "axi_timebase_wdt";
 end embsys_axi_timebase_wdt_0_0_axi_timebase_wdt;
 
 architecture STRUCTURE of embsys_axi_timebase_wdt_0_0_axi_timebase_wdt is
@@ -3837,6 +3851,8 @@ entity embsys_axi_timebase_wdt_0_0_axi_timebase_wdt_top is
   attribute C_WDT_ENABLE_ONCE of embsys_axi_timebase_wdt_0_0_axi_timebase_wdt_top : entity is 1;
   attribute C_WDT_INTERVAL : integer;
   attribute C_WDT_INTERVAL of embsys_axi_timebase_wdt_0_0_axi_timebase_wdt_top : entity is 30;
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_axi_timebase_wdt_0_0_axi_timebase_wdt_top : entity is "axi_timebase_wdt_top";
 end embsys_axi_timebase_wdt_0_0_axi_timebase_wdt_top;
 
 architecture STRUCTURE of embsys_axi_timebase_wdt_0_0_axi_timebase_wdt_top is

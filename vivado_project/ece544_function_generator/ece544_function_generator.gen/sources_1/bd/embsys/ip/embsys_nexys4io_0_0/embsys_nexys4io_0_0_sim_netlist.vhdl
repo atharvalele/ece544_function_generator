@@ -1,10 +1,10 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Sat May 28 18:47:24 2022
+-- Date        : Fri Jun  3 17:57:03 2022
 -- Host        : sentinel running 64-bit EndeavourOS Linux
--- Command     : write_vhdl -force -mode funcsim -rename_top embsys_nexys4io_0_0 -prefix
---               embsys_nexys4io_0_0_ embsys_nexys4io_0_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               /home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/vivado_project/ece544_function_generator/ece544_function_generator.gen/sources_1/bd/embsys/ip/embsys_nexys4io_0_0/embsys_nexys4io_0_0_sim_netlist.vhdl
 -- Design      : embsys_nexys4io_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -20,6 +20,8 @@ entity embsys_nexys4io_0_0_Digit is
     Q : in STD_LOGIC_VECTOR ( 5 downto 0 );
     s00_axi_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_nexys4io_0_0_Digit : entity is "Digit";
 end embsys_nexys4io_0_0_Digit;
 
 architecture STRUCTURE of embsys_nexys4io_0_0_Digit is
@@ -1832,6 +1834,8 @@ entity embsys_nexys4io_0_0_debounce is
     pbtn_in : in STD_LOGIC_VECTOR ( 4 downto 0 );
     sw : in STD_LOGIC_VECTOR ( 15 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_nexys4io_0_0_debounce : entity is "debounce";
 end embsys_nexys4io_0_0_debounce;
 
 architecture STRUCTURE of embsys_nexys4io_0_0_debounce is
@@ -4596,6 +4600,8 @@ entity embsys_nexys4io_0_0_rgbpwm is
     SR : in STD_LOGIC_VECTOR ( 0 to 0 );
     RGBLED_Clock : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_nexys4io_0_0_rgbpwm : entity is "rgbpwm";
 end embsys_nexys4io_0_0_rgbpwm;
 
 architecture STRUCTURE of embsys_nexys4io_0_0_rgbpwm is
@@ -5988,6 +5994,8 @@ entity embsys_nexys4io_0_0_sevensegment is
     s00_axi_aresetn : in STD_LOGIC;
     s00_axi_aclk : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_nexys4io_0_0_sevensegment : entity is "sevensegment";
 end embsys_nexys4io_0_0_sevensegment;
 
 architecture STRUCTURE of embsys_nexys4io_0_0_sevensegment is
@@ -7498,6 +7506,8 @@ entity embsys_nexys4io_0_0_nexys4io_v3_0_S00_AXI is
     RGBLED_Clock : in STD_LOGIC;
     s00_axi_aresetn : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_nexys4io_0_0_nexys4io_v3_0_S00_AXI : entity is "nexys4io_v3_0_S00_AXI";
 end embsys_nexys4io_0_0_nexys4io_v3_0_S00_AXI;
 
 architecture STRUCTURE of embsys_nexys4io_0_0_nexys4io_v3_0_S00_AXI is
@@ -14779,6 +14789,8 @@ entity embsys_nexys4io_0_0_nexys4io_v3_0 is
     s00_axi_bready : in STD_LOGIC;
     s00_axi_rready : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of embsys_nexys4io_0_0_nexys4io_v3_0 : entity is "nexys4io_v3_0";
 end embsys_nexys4io_0_0_nexys4io_v3_0;
 
 architecture STRUCTURE of embsys_nexys4io_0_0_nexys4io_v3_0 is

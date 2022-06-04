@@ -1,10 +1,10 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-// Date        : Sat May 28 18:47:14 2022
+// Date        : Fri Jun  3 17:56:55 2022
 // Host        : sentinel running 64-bit EndeavourOS Linux
-// Command     : write_verilog -force -mode funcsim -rename_top embsys_dlmb_v10_0 -prefix
-//               embsys_dlmb_v10_0_ embsys_dlmb_v10_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               /home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/vivado_project/ece544_function_generator/ece544_function_generator.gen/sources_1/bd/embsys/ip/embsys_dlmb_v10_0/embsys_dlmb_v10_0_sim_netlist.v
 // Design      : embsys_dlmb_v10_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -126,7 +126,7 @@ module embsys_dlmb_v10_0
 endmodule
 
 (* C_EXT_RESET_HIGH = "1" *) (* C_LMB_AWIDTH = "32" *) (* C_LMB_DWIDTH = "32" *) 
-(* C_LMB_NUM_SLAVES = "1" *) (* C_LMB_PROTOCOL = "0" *) 
+(* C_LMB_NUM_SLAVES = "1" *) (* C_LMB_PROTOCOL = "0" *) (* ORIG_REF_NAME = "lmb_v10" *) 
 module embsys_dlmb_v10_0_lmb_v10
    (LMB_Clk,
     SYS_Rst,
