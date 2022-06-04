@@ -50,7 +50,7 @@ always_ff @(posedge clk) begin
         end
         // Validate Signal Types
         if (set_sig_type != sig_type) begin
-            if (sig_type >= 0 && sig_type <= 3)
+            if (sig_type >= 0 && sig_type <= 3) 
                 set_sig_type <= sig_type;
             else 
                 set_sig_type <= set_sig_type;
@@ -103,7 +103,7 @@ always_ff @(posedge clk) begin
         
         // Sqaure Wave Logic
         if (set_sig_type == SQUARE) begin
-            if (counter == set_freq) begin
+            if (counter >= set_freq) begin
                 counter <= 0;
                 // Generate Sqaure wave
                 if (signal_data > 128)
@@ -118,7 +118,7 @@ always_ff @(posedge clk) begin
         // PWM Logic
         else if (set_sig_type == PWM) begin
         // Check frequency of signal
-            if (counter == set_freq) begin
+            if (counter >= set_freq) begin
                 counter <= 0;
                 duty_count <= duty_count + 1;
                 // Check for PWM duty cycle
@@ -141,7 +141,7 @@ always_ff @(posedge clk) begin
             end
             
             // Start incrementing address to traverse digitzed data
-            if (counter == set_freq) begin
+            if (counter >= set_freq) begin
                 counter <= 0;
                 if (addr >= addr_end)
                     addr <= addr_start;

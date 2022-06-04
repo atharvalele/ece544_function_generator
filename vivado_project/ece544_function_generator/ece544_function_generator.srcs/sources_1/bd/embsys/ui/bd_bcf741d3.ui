@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
    "Default View_ScaleFactor":"0.712166",
-   "Default View_TopLeft":"1779,38",
+   "Default View_TopLeft":"652,38",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
 #  -string -flagsOSRD
@@ -10,8 +10,8 @@ preplace port uart_rtl_0 -pg 1 -lvl 10 -x 3040 -y 1330 -defaultsOSRD
 preplace port Pmod_out_0 -pg 1 -lvl 10 -x 3040 -y 1000 -defaultsOSRD
 preplace port PmodOLEDrgb_out_0 -pg 1 -lvl 10 -x 3040 -y 830 -defaultsOSRD
 preplace port gpio_rtl_1 -pg 1 -lvl 10 -x 3040 -y 1490 -defaultsOSRD
-preplace port sysreset_n -pg 1 -lvl 0 -x -10 -y 1240 -defaultsOSRD
-preplace port sysclk -pg 1 -lvl 0 -x -10 -y 1330 -defaultsOSRD
+preplace port sysreset_n -pg 1 -lvl 0 -x -20 -y 1240 -defaultsOSRD
+preplace port sysclk -pg 1 -lvl 0 -x -20 -y 1330 -defaultsOSRD
 preplace port RGB2_Red_0 -pg 1 -lvl 10 -x 3040 -y 140 -defaultsOSRD
 preplace port RGB1_Blue_0 -pg 1 -lvl 10 -x 3040 -y 110 -defaultsOSRD
 preplace port RGB1_Green_0 -pg 1 -lvl 10 -x 3040 -y 80 -defaultsOSRD
@@ -19,19 +19,19 @@ preplace port RGB1_Red_0 -pg 1 -lvl 10 -x 3040 -y 50 -defaultsOSRD
 preplace port dp_0 -pg 1 -lvl 10 -x 3040 -y 260 -defaultsOSRD
 preplace port RGB2_Blue_0 -pg 1 -lvl 10 -x 3040 -y 200 -defaultsOSRD
 preplace port RGB2_Green_0 -pg 1 -lvl 10 -x 3040 -y 170 -defaultsOSRD
-preplace port btnC_0 -pg 1 -lvl 0 -x -10 -y 200 -defaultsOSRD
-preplace port btnL_0 -pg 1 -lvl 0 -x -10 -y 170 -defaultsOSRD
-preplace port btnR_0 -pg 1 -lvl 0 -x -10 -y 140 -defaultsOSRD
-preplace port btnD_0 -pg 1 -lvl 0 -x -10 -y 110 -defaultsOSRD
-preplace port btnU_0 -pg 1 -lvl 0 -x -10 -y 80 -defaultsOSRD
+preplace port btnC_0 -pg 1 -lvl 0 -x -20 -y 200 -defaultsOSRD
+preplace port btnL_0 -pg 1 -lvl 0 -x -20 -y 170 -defaultsOSRD
+preplace port btnR_0 -pg 1 -lvl 0 -x -20 -y 140 -defaultsOSRD
+preplace port btnD_0 -pg 1 -lvl 0 -x -20 -y 110 -defaultsOSRD
+preplace port btnU_0 -pg 1 -lvl 0 -x -20 -y 80 -defaultsOSRD
 preplace portBus seg_0 -pg 1 -lvl 10 -x 3040 -y 230 -defaultsOSRD
-preplace portBus sw_0 -pg 1 -lvl 0 -x -10 -y 230 -defaultsOSRD
+preplace portBus sw_0 -pg 1 -lvl 0 -x -20 -y 230 -defaultsOSRD
 preplace portBus an_0 -pg 1 -lvl 10 -x 3040 -y 290 -defaultsOSRD
 preplace portBus led_0 -pg 1 -lvl 10 -x 3040 -y 20 -defaultsOSRD
-preplace portBus dina_0 -pg 1 -lvl 0 -x -10 -y 340 -defaultsOSRD
-preplace portBus wea_0 -pg 1 -lvl 0 -x -10 -y 370 -defaultsOSRD
+preplace portBus dina_0 -pg 1 -lvl 0 -x -20 -y 340 -defaultsOSRD
+preplace portBus wea_0 -pg 1 -lvl 0 -x -20 -y 370 -defaultsOSRD
 preplace portBus signal_waveform_0 -pg 1 -lvl 10 -x 3040 -y 510 -defaultsOSRD
-preplace portBus addra_0 -pg 1 -lvl 0 -x -10 -y 310 -defaultsOSRD
+preplace portBus addra_0 -pg 1 -lvl 0 -x -20 -y 310 -defaultsOSRD
 preplace inst microblaze_0 -pg 1 -lvl 6 -x 1670 -y 1180 -defaultsOSRD
 preplace inst axi_gpio_0 -pg 1 -lvl 8 -x 2560 -y 1480 -defaultsOSRD
 preplace inst axi_uartlite_0 -pg 1 -lvl 8 -x 2560 -y 1340 -defaultsOSRD
@@ -62,7 +62,7 @@ preplace netloc axi_timer_0_generateout0 1 7 2 2400 300 2730
 preplace netloc clk_wiz_1_clk_out2 1 1 7 220J 1050 NJ 1050 NJ 1050 NJ 1050 NJ 1050 NJ 1050 2400
 preplace netloc clk_wiz_1_clk_out1 1 1 8 200 1210 630 1170 830J 1360 1090 1290 1410 1270 1910 390 2380 330 2760
 preplace netloc nexys4io_0_seg 1 8 2 NJ 200 3010J
-preplace netloc sw_0_1 1 0 8 20J 200 NJ 200 NJ 200 NJ 200 NJ 200 NJ 200 NJ 200 NJ
+preplace netloc sw_0_1 1 0 8 10J 200 NJ 200 NJ 200 NJ 200 NJ 200 NJ 200 NJ 200 NJ
 preplace netloc nexys4io_0_RGB2_Red 1 8 2 NJ 140 NJ
 preplace netloc nexys4io_0_RGB1_Blue 1 8 2 2730J 110 NJ
 preplace netloc nexys4io_0_RGB1_Green 1 8 2 2770J 80 NJ
@@ -70,8 +70,8 @@ preplace netloc nexys4io_0_RGB1_Red 1 8 2 2730J 50 NJ
 preplace netloc nexys4io_0_dp 1 8 2 NJ 220 3000J
 preplace netloc nexys4io_0_RGB2_Blue 1 8 2 NJ 180 3020J
 preplace netloc nexys4io_0_RGB2_Green 1 8 2 NJ 160 3020J
-preplace netloc btnC_0_1 1 0 8 10J 180 NJ 180 NJ 180 NJ 180 NJ 180 NJ 180 NJ 180 NJ
-preplace netloc btnL_0_1 1 0 8 10J 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ
+preplace netloc btnC_0_1 1 0 8 0J 180 NJ 180 NJ 180 NJ 180 NJ 180 NJ 180 NJ 180 NJ
+preplace netloc btnL_0_1 1 0 8 0J 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ 160 NJ
 preplace netloc btnR_0_1 1 0 8 NJ 140 NJ 140 NJ 140 NJ 140 NJ 140 NJ 140 NJ 140 NJ
 preplace netloc btnD_0_1 1 0 8 NJ 110 NJ 110 NJ 110 NJ 110 NJ 110 NJ 110 NJ 110 2390J
 preplace netloc nexys4io_0_an 1 8 2 2730J 230 2990J
@@ -88,29 +88,29 @@ preplace netloc microblaze_0_intr 1 4 1 1060 1180n
 preplace netloc axi_timer_0_interrupt 1 3 6 860 320 NJ 320 NJ 320 NJ 320 NJ 320 2720
 preplace netloc axi_timebase_wdt_0_wdt_interrupt 1 3 6 860 1330 1080J 1320 NJ 1320 NJ 1320 2310J 1260 2760
 preplace netloc fit_timer_0_Interrupt 1 3 1 850 1230n
-preplace netloc axi_uartlite_0_UART 1 8 2 NJ 1330 NJ
-preplace netloc axi_gpio_0_GPIO 1 8 2 2740J 1460 NJ
-preplace netloc microblaze_0_axi_periph_M02_AXI 1 7 1 2340 660n
-preplace netloc microblaze_0_mdm_axi 1 4 4 1110 1330 NJ 1330 NJ 1330 2290
+preplace netloc microblaze_0_axi_periph_M03_AXI 1 7 1 2360 680n
+preplace netloc PmodOLEDrgb_0_PmodOLEDrgb_out 1 8 2 NJ 830 NJ
+preplace netloc axi_gpio_0_GPIO2 1 8 2 NJ 1490 NJ
+preplace netloc microblaze_0_axi_periph_M10_AXI 1 7 1 2370 420n
 preplace netloc microblaze_0_axi_periph_M04_AXI 1 7 1 2350 580n
 preplace netloc microblaze_0_axi_periph_M08_AXI 1 7 1 N 780
 preplace netloc microblaze_0_axi_periph_M07_AXI 1 7 1 2330 760n
-preplace netloc microblaze_0_axi_periph_M10_AXI 1 7 1 2370 420n
-preplace netloc microblaze_0_axi_periph_M03_AXI 1 7 1 2360 680n
-preplace netloc PmodOLEDrgb_0_PmodOLEDrgb_out 1 8 2 NJ 830 NJ
-preplace netloc microblaze_0_ilmb_1 1 6 1 N 1180
-preplace netloc microblaze_0_axi_periph_M09_AXI 1 7 1 N 800
-preplace netloc microblaze_0_interrupt 1 5 1 1390 1150n
-preplace netloc microblaze_0_axi_dp 1 6 1 1900 460n
+preplace netloc microblaze_0_axi_periph_M02_AXI 1 7 1 2340 660n
+preplace netloc axi_gpio_0_GPIO 1 8 2 2740J 1460 NJ
+preplace netloc axi_uartlite_0_UART 1 8 2 NJ 1330 NJ
+preplace netloc microblaze_0_mdm_axi 1 4 4 1110 1330 NJ 1330 NJ 1330 2290
 preplace netloc microblaze_0_axi_periph_M05_AXI 1 7 1 2320 720n
-preplace netloc microblaze_0_dlmb_1 1 6 1 N 1160
-preplace netloc axi_gpio_0_GPIO2 1 8 2 NJ 1490 NJ
-preplace netloc microblaze_0_intc_axi 1 4 4 1090 1060 NJ 1060 NJ 1060 2300
-preplace netloc microblaze_0_debug 1 5 1 1400 1170n
-preplace netloc PmodENC_0_Pmod_out 1 8 2 NJ 1000 NJ
 preplace netloc microblaze_0_axi_periph_M06_AXI 1 7 1 2310 60n
-levelinfo -pg 1 -10 110 410 730 960 1250 1670 2140 2560 2880 3040
-pagesize -pg 1 -db -bbox -sgen -160 0 3250 1560
+preplace netloc microblaze_0_dlmb_1 1 6 1 N 1160
+preplace netloc microblaze_0_ilmb_1 1 6 1 N 1180
+preplace netloc PmodENC_0_Pmod_out 1 8 2 NJ 1000 NJ
+preplace netloc microblaze_0_debug 1 5 1 1400 1170n
+preplace netloc microblaze_0_intc_axi 1 4 4 1090 1060 NJ 1060 NJ 1060 2300
+preplace netloc microblaze_0_axi_periph_M09_AXI 1 7 1 N 800
+preplace netloc microblaze_0_axi_dp 1 6 1 1900 460n
+preplace netloc microblaze_0_interrupt 1 5 1 1390 1150n
+levelinfo -pg 1 -20 110 410 730 960 1250 1670 2140 2560 2880 3040
+pagesize -pg 1 -db -bbox -sgen -170 0 3250 1560
 "
 }
 {

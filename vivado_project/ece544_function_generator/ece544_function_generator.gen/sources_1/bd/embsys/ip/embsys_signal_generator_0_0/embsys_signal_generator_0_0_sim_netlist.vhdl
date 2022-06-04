@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Fri Jun  3 18:26:43 2022
+-- Date        : Sat Jun  4 15:38:55 2022
 -- Host        : sentinel running 64-bit EndeavourOS Linux
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/vivado_project/ece544_function_generator/ece544_function_generator.gen/sources_1/bd/embsys/ip/embsys_signal_generator_0_0/embsys_signal_generator_0_0_sim_netlist.vhdl
@@ -46,6 +46,10 @@ architecture STRUCTURE of embsys_signal_generator_0_0_func_gen is
   signal \addr1_carry__0_i_2_n_0\ : STD_LOGIC;
   signal \addr1_carry__0_i_3_n_0\ : STD_LOGIC;
   signal \addr1_carry__0_i_4_n_0\ : STD_LOGIC;
+  signal \addr1_carry__0_i_5_n_0\ : STD_LOGIC;
+  signal \addr1_carry__0_i_6_n_0\ : STD_LOGIC;
+  signal \addr1_carry__0_i_7_n_0\ : STD_LOGIC;
+  signal \addr1_carry__0_i_8_n_0\ : STD_LOGIC;
   signal \addr1_carry__0_n_0\ : STD_LOGIC;
   signal \addr1_carry__0_n_1\ : STD_LOGIC;
   signal \addr1_carry__0_n_2\ : STD_LOGIC;
@@ -53,13 +57,35 @@ architecture STRUCTURE of embsys_signal_generator_0_0_func_gen is
   signal \addr1_carry__1_i_1_n_0\ : STD_LOGIC;
   signal \addr1_carry__1_i_2_n_0\ : STD_LOGIC;
   signal \addr1_carry__1_i_3_n_0\ : STD_LOGIC;
+  signal \addr1_carry__1_i_4_n_0\ : STD_LOGIC;
+  signal \addr1_carry__1_i_5_n_0\ : STD_LOGIC;
+  signal \addr1_carry__1_i_6_n_0\ : STD_LOGIC;
+  signal \addr1_carry__1_i_7_n_0\ : STD_LOGIC;
+  signal \addr1_carry__1_i_8_n_0\ : STD_LOGIC;
+  signal \addr1_carry__1_n_0\ : STD_LOGIC;
   signal \addr1_carry__1_n_1\ : STD_LOGIC;
   signal \addr1_carry__1_n_2\ : STD_LOGIC;
   signal \addr1_carry__1_n_3\ : STD_LOGIC;
+  signal \addr1_carry__2_i_1_n_0\ : STD_LOGIC;
+  signal \addr1_carry__2_i_2_n_0\ : STD_LOGIC;
+  signal \addr1_carry__2_i_3_n_0\ : STD_LOGIC;
+  signal \addr1_carry__2_i_4_n_0\ : STD_LOGIC;
+  signal \addr1_carry__2_i_5_n_0\ : STD_LOGIC;
+  signal \addr1_carry__2_i_6_n_0\ : STD_LOGIC;
+  signal \addr1_carry__2_i_7_n_0\ : STD_LOGIC;
+  signal \addr1_carry__2_i_8_n_0\ : STD_LOGIC;
+  signal \addr1_carry__2_n_0\ : STD_LOGIC;
+  signal \addr1_carry__2_n_1\ : STD_LOGIC;
+  signal \addr1_carry__2_n_2\ : STD_LOGIC;
+  signal \addr1_carry__2_n_3\ : STD_LOGIC;
   signal addr1_carry_i_1_n_0 : STD_LOGIC;
   signal addr1_carry_i_2_n_0 : STD_LOGIC;
   signal addr1_carry_i_3_n_0 : STD_LOGIC;
   signal addr1_carry_i_4_n_0 : STD_LOGIC;
+  signal addr1_carry_i_5_n_0 : STD_LOGIC;
+  signal addr1_carry_i_6_n_0 : STD_LOGIC;
+  signal addr1_carry_i_7_n_0 : STD_LOGIC;
+  signal addr1_carry_i_8_n_0 : STD_LOGIC;
   signal addr1_carry_n_0 : STD_LOGIC;
   signal addr1_carry_n_1 : STD_LOGIC;
   signal addr1_carry_n_2 : STD_LOGIC;
@@ -250,8 +276,8 @@ architecture STRUCTURE of embsys_signal_generator_0_0_func_gen is
   signal NLW_addr0_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_addr1_carry_O_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_addr1_carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
-  signal \NLW_addr1_carry__1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   signal \NLW_addr1_carry__1_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
+  signal \NLW_addr1_carry__2_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_addr1_inferred__0/i__carry_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal \NLW_counter_reg[28]_i_1_CO_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 to 3 );
   signal \NLW_set_freq1_inferred__0/i__carry_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 0 );
@@ -263,6 +289,10 @@ architecture STRUCTURE of embsys_signal_generator_0_0_func_gen is
   signal \NLW_signal_data1_carry__0_O_UNCONNECTED\ : STD_LOGIC_VECTOR ( 3 downto 1 );
   attribute COMPARATOR_THRESHOLD : integer;
   attribute COMPARATOR_THRESHOLD of addr0_carry : label is 11;
+  attribute COMPARATOR_THRESHOLD of addr1_carry : label is 11;
+  attribute COMPARATOR_THRESHOLD of \addr1_carry__0\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \addr1_carry__1\ : label is 11;
+  attribute COMPARATOR_THRESHOLD of \addr1_carry__2\ : label is 11;
   attribute COMPARATOR_THRESHOLD of \addr1_inferred__0/i__carry\ : label is 11;
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \addr[0]_i_1\ : label is "soft_lutpair3";
@@ -385,12 +415,15 @@ addr1_carry: unisim.vcomponents.CARRY4
       CO(1) => addr1_carry_n_2,
       CO(0) => addr1_carry_n_3,
       CYINIT => '1',
-      DI(3 downto 0) => B"0000",
+      DI(3) => addr1_carry_i_1_n_0,
+      DI(2) => addr1_carry_i_2_n_0,
+      DI(1) => addr1_carry_i_3_n_0,
+      DI(0) => addr1_carry_i_4_n_0,
       O(3 downto 0) => NLW_addr1_carry_O_UNCONNECTED(3 downto 0),
-      S(3) => addr1_carry_i_1_n_0,
-      S(2) => addr1_carry_i_2_n_0,
-      S(1) => addr1_carry_i_3_n_0,
-      S(0) => addr1_carry_i_4_n_0
+      S(3) => addr1_carry_i_5_n_0,
+      S(2) => addr1_carry_i_6_n_0,
+      S(1) => addr1_carry_i_7_n_0,
+      S(0) => addr1_carry_i_8_n_0
     );
 \addr1_carry__0\: unisim.vcomponents.CARRY4
      port map (
@@ -400,168 +433,403 @@ addr1_carry: unisim.vcomponents.CARRY4
       CO(1) => \addr1_carry__0_n_2\,
       CO(0) => \addr1_carry__0_n_3\,
       CYINIT => '0',
-      DI(3 downto 0) => B"0000",
+      DI(3) => \addr1_carry__0_i_1_n_0\,
+      DI(2) => \addr1_carry__0_i_2_n_0\,
+      DI(1) => \addr1_carry__0_i_3_n_0\,
+      DI(0) => \addr1_carry__0_i_4_n_0\,
       O(3 downto 0) => \NLW_addr1_carry__0_O_UNCONNECTED\(3 downto 0),
-      S(3) => \addr1_carry__0_i_1_n_0\,
-      S(2) => \addr1_carry__0_i_2_n_0\,
-      S(1) => \addr1_carry__0_i_3_n_0\,
-      S(0) => \addr1_carry__0_i_4_n_0\
+      S(3) => \addr1_carry__0_i_5_n_0\,
+      S(2) => \addr1_carry__0_i_6_n_0\,
+      S(1) => \addr1_carry__0_i_7_n_0\,
+      S(0) => \addr1_carry__0_i_8_n_0\
     );
-\addr1_carry__0_i_1\: unisim.vcomponents.LUT6
+\addr1_carry__0_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"9009000000009009"
+      INIT => X"22B2"
     )
         port map (
-      I0 => set_freq(23),
-      I1 => counter_reg(23),
-      I2 => set_freq(22),
-      I3 => counter_reg(22),
-      I4 => counter_reg(21),
-      I5 => set_freq(21),
+      I0 => counter_reg(15),
+      I1 => set_freq(15),
+      I2 => counter_reg(14),
+      I3 => set_freq(14),
       O => \addr1_carry__0_i_1_n_0\
     );
-\addr1_carry__0_i_2\: unisim.vcomponents.LUT6
+\addr1_carry__0_i_2\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"9009000000009009"
+      INIT => X"22B2"
     )
         port map (
-      I0 => set_freq(20),
-      I1 => counter_reg(20),
-      I2 => set_freq(19),
-      I3 => counter_reg(19),
-      I4 => counter_reg(18),
-      I5 => set_freq(18),
+      I0 => counter_reg(13),
+      I1 => set_freq(13),
+      I2 => counter_reg(12),
+      I3 => set_freq(12),
       O => \addr1_carry__0_i_2_n_0\
     );
-\addr1_carry__0_i_3\: unisim.vcomponents.LUT6
+\addr1_carry__0_i_3\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"9009000000009009"
+      INIT => X"22B2"
     )
         port map (
-      I0 => set_freq(17),
-      I1 => counter_reg(17),
-      I2 => set_freq(16),
-      I3 => counter_reg(16),
-      I4 => counter_reg(15),
-      I5 => set_freq(15),
+      I0 => counter_reg(11),
+      I1 => set_freq(11),
+      I2 => counter_reg(10),
+      I3 => set_freq(10),
       O => \addr1_carry__0_i_3_n_0\
     );
-\addr1_carry__0_i_4\: unisim.vcomponents.LUT6
+\addr1_carry__0_i_4\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"9009000000009009"
+      INIT => X"22B2"
     )
         port map (
-      I0 => set_freq(14),
-      I1 => counter_reg(14),
-      I2 => set_freq(13),
-      I3 => counter_reg(13),
-      I4 => counter_reg(12),
-      I5 => set_freq(12),
+      I0 => counter_reg(9),
+      I1 => set_freq(9),
+      I2 => counter_reg(8),
+      I3 => set_freq(8),
       O => \addr1_carry__0_i_4_n_0\
     );
-\addr1_carry__1\: unisim.vcomponents.CARRY4
-     port map (
-      CI => \addr1_carry__0_n_0\,
-      CO(3) => \NLW_addr1_carry__1_CO_UNCONNECTED\(3),
-      CO(2) => \addr1_carry__1_n_1\,
-      CO(1) => \addr1_carry__1_n_2\,
-      CO(0) => \addr1_carry__1_n_3\,
-      CYINIT => '0',
-      DI(3 downto 0) => B"0000",
-      O(3 downto 0) => \NLW_addr1_carry__1_O_UNCONNECTED\(3 downto 0),
-      S(3) => '0',
-      S(2) => \addr1_carry__1_i_1_n_0\,
-      S(1) => \addr1_carry__1_i_2_n_0\,
-      S(0) => \addr1_carry__1_i_3_n_0\
-    );
-\addr1_carry__1_i_1\: unisim.vcomponents.LUT4
+\addr1_carry__0_i_5\: unisim.vcomponents.LUT4
     generic map(
       INIT => X"9009"
     )
         port map (
-      I0 => counter_reg(31),
-      I1 => set_freq(31),
-      I2 => counter_reg(30),
-      I3 => set_freq(30),
-      O => \addr1_carry__1_i_1_n_0\
+      I0 => set_freq(15),
+      I1 => counter_reg(15),
+      I2 => set_freq(14),
+      I3 => counter_reg(14),
+      O => \addr1_carry__0_i_5_n_0\
     );
-\addr1_carry__1_i_2\: unisim.vcomponents.LUT6
+\addr1_carry__0_i_6\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"9009000000009009"
+      INIT => X"9009"
     )
         port map (
-      I0 => set_freq(29),
-      I1 => counter_reg(29),
-      I2 => set_freq(28),
-      I3 => counter_reg(28),
-      I4 => counter_reg(27),
-      I5 => set_freq(27),
-      O => \addr1_carry__1_i_2_n_0\
+      I0 => set_freq(13),
+      I1 => counter_reg(13),
+      I2 => set_freq(12),
+      I3 => counter_reg(12),
+      O => \addr1_carry__0_i_6_n_0\
     );
-\addr1_carry__1_i_3\: unisim.vcomponents.LUT6
+\addr1_carry__0_i_7\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"9009000000009009"
-    )
-        port map (
-      I0 => set_freq(26),
-      I1 => counter_reg(26),
-      I2 => set_freq(25),
-      I3 => counter_reg(25),
-      I4 => counter_reg(24),
-      I5 => set_freq(24),
-      O => \addr1_carry__1_i_3_n_0\
-    );
-addr1_carry_i_1: unisim.vcomponents.LUT6
-    generic map(
-      INIT => X"9009000000009009"
+      INIT => X"9009"
     )
         port map (
       I0 => set_freq(11),
       I1 => counter_reg(11),
       I2 => set_freq(10),
       I3 => counter_reg(10),
-      I4 => counter_reg(9),
-      I5 => set_freq(9),
-      O => addr1_carry_i_1_n_0
+      O => \addr1_carry__0_i_7_n_0\
     );
-addr1_carry_i_2: unisim.vcomponents.LUT6
+\addr1_carry__0_i_8\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"9009000000009009"
+      INIT => X"9009"
     )
         port map (
-      I0 => set_freq(8),
-      I1 => counter_reg(8),
-      I2 => set_freq(7),
-      I3 => counter_reg(7),
-      I4 => counter_reg(6),
-      I5 => set_freq(6),
+      I0 => set_freq(9),
+      I1 => counter_reg(9),
+      I2 => set_freq(8),
+      I3 => counter_reg(8),
+      O => \addr1_carry__0_i_8_n_0\
+    );
+\addr1_carry__1\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \addr1_carry__0_n_0\,
+      CO(3) => \addr1_carry__1_n_0\,
+      CO(2) => \addr1_carry__1_n_1\,
+      CO(1) => \addr1_carry__1_n_2\,
+      CO(0) => \addr1_carry__1_n_3\,
+      CYINIT => '0',
+      DI(3) => \addr1_carry__1_i_1_n_0\,
+      DI(2) => \addr1_carry__1_i_2_n_0\,
+      DI(1) => \addr1_carry__1_i_3_n_0\,
+      DI(0) => \addr1_carry__1_i_4_n_0\,
+      O(3 downto 0) => \NLW_addr1_carry__1_O_UNCONNECTED\(3 downto 0),
+      S(3) => \addr1_carry__1_i_5_n_0\,
+      S(2) => \addr1_carry__1_i_6_n_0\,
+      S(1) => \addr1_carry__1_i_7_n_0\,
+      S(0) => \addr1_carry__1_i_8_n_0\
+    );
+\addr1_carry__1_i_1\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"22B2"
+    )
+        port map (
+      I0 => counter_reg(23),
+      I1 => set_freq(23),
+      I2 => counter_reg(22),
+      I3 => set_freq(22),
+      O => \addr1_carry__1_i_1_n_0\
+    );
+\addr1_carry__1_i_2\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"22B2"
+    )
+        port map (
+      I0 => counter_reg(21),
+      I1 => set_freq(21),
+      I2 => counter_reg(20),
+      I3 => set_freq(20),
+      O => \addr1_carry__1_i_2_n_0\
+    );
+\addr1_carry__1_i_3\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"22B2"
+    )
+        port map (
+      I0 => counter_reg(19),
+      I1 => set_freq(19),
+      I2 => counter_reg(18),
+      I3 => set_freq(18),
+      O => \addr1_carry__1_i_3_n_0\
+    );
+\addr1_carry__1_i_4\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"22B2"
+    )
+        port map (
+      I0 => counter_reg(17),
+      I1 => set_freq(17),
+      I2 => counter_reg(16),
+      I3 => set_freq(16),
+      O => \addr1_carry__1_i_4_n_0\
+    );
+\addr1_carry__1_i_5\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"9009"
+    )
+        port map (
+      I0 => set_freq(23),
+      I1 => counter_reg(23),
+      I2 => set_freq(22),
+      I3 => counter_reg(22),
+      O => \addr1_carry__1_i_5_n_0\
+    );
+\addr1_carry__1_i_6\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"9009"
+    )
+        port map (
+      I0 => set_freq(21),
+      I1 => counter_reg(21),
+      I2 => set_freq(20),
+      I3 => counter_reg(20),
+      O => \addr1_carry__1_i_6_n_0\
+    );
+\addr1_carry__1_i_7\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"9009"
+    )
+        port map (
+      I0 => set_freq(19),
+      I1 => counter_reg(19),
+      I2 => set_freq(18),
+      I3 => counter_reg(18),
+      O => \addr1_carry__1_i_7_n_0\
+    );
+\addr1_carry__1_i_8\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"8421"
+    )
+        port map (
+      I0 => set_freq(16),
+      I1 => set_freq(17),
+      I2 => counter_reg(16),
+      I3 => counter_reg(17),
+      O => \addr1_carry__1_i_8_n_0\
+    );
+\addr1_carry__2\: unisim.vcomponents.CARRY4
+     port map (
+      CI => \addr1_carry__1_n_0\,
+      CO(3) => \addr1_carry__2_n_0\,
+      CO(2) => \addr1_carry__2_n_1\,
+      CO(1) => \addr1_carry__2_n_2\,
+      CO(0) => \addr1_carry__2_n_3\,
+      CYINIT => '0',
+      DI(3) => \addr1_carry__2_i_1_n_0\,
+      DI(2) => \addr1_carry__2_i_2_n_0\,
+      DI(1) => \addr1_carry__2_i_3_n_0\,
+      DI(0) => \addr1_carry__2_i_4_n_0\,
+      O(3 downto 0) => \NLW_addr1_carry__2_O_UNCONNECTED\(3 downto 0),
+      S(3) => \addr1_carry__2_i_5_n_0\,
+      S(2) => \addr1_carry__2_i_6_n_0\,
+      S(1) => \addr1_carry__2_i_7_n_0\,
+      S(0) => \addr1_carry__2_i_8_n_0\
+    );
+\addr1_carry__2_i_1\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"22B2"
+    )
+        port map (
+      I0 => counter_reg(31),
+      I1 => set_freq(31),
+      I2 => counter_reg(30),
+      I3 => set_freq(30),
+      O => \addr1_carry__2_i_1_n_0\
+    );
+\addr1_carry__2_i_2\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"22B2"
+    )
+        port map (
+      I0 => counter_reg(29),
+      I1 => set_freq(29),
+      I2 => counter_reg(28),
+      I3 => set_freq(28),
+      O => \addr1_carry__2_i_2_n_0\
+    );
+\addr1_carry__2_i_3\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"22B2"
+    )
+        port map (
+      I0 => counter_reg(27),
+      I1 => set_freq(27),
+      I2 => counter_reg(26),
+      I3 => set_freq(26),
+      O => \addr1_carry__2_i_3_n_0\
+    );
+\addr1_carry__2_i_4\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"22B2"
+    )
+        port map (
+      I0 => counter_reg(25),
+      I1 => set_freq(25),
+      I2 => counter_reg(24),
+      I3 => set_freq(24),
+      O => \addr1_carry__2_i_4_n_0\
+    );
+\addr1_carry__2_i_5\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"9009"
+    )
+        port map (
+      I0 => set_freq(31),
+      I1 => counter_reg(31),
+      I2 => set_freq(30),
+      I3 => counter_reg(30),
+      O => \addr1_carry__2_i_5_n_0\
+    );
+\addr1_carry__2_i_6\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"9009"
+    )
+        port map (
+      I0 => set_freq(29),
+      I1 => counter_reg(29),
+      I2 => set_freq(28),
+      I3 => counter_reg(28),
+      O => \addr1_carry__2_i_6_n_0\
+    );
+\addr1_carry__2_i_7\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"9009"
+    )
+        port map (
+      I0 => set_freq(27),
+      I1 => counter_reg(27),
+      I2 => set_freq(26),
+      I3 => counter_reg(26),
+      O => \addr1_carry__2_i_7_n_0\
+    );
+\addr1_carry__2_i_8\: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"9009"
+    )
+        port map (
+      I0 => set_freq(25),
+      I1 => counter_reg(25),
+      I2 => set_freq(24),
+      I3 => counter_reg(24),
+      O => \addr1_carry__2_i_8_n_0\
+    );
+addr1_carry_i_1: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"22B2"
+    )
+        port map (
+      I0 => counter_reg(7),
+      I1 => set_freq(7),
+      I2 => counter_reg(6),
+      I3 => set_freq(6),
+      O => addr1_carry_i_1_n_0
+    );
+addr1_carry_i_2: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"22B2"
+    )
+        port map (
+      I0 => counter_reg(5),
+      I1 => set_freq(5),
+      I2 => counter_reg(4),
+      I3 => set_freq(4),
       O => addr1_carry_i_2_n_0
     );
-addr1_carry_i_3: unisim.vcomponents.LUT6
+addr1_carry_i_3: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"9009000000009009"
+      INIT => X"22B2"
+    )
+        port map (
+      I0 => counter_reg(3),
+      I1 => set_freq(3),
+      I2 => counter_reg(2),
+      I3 => set_freq(2),
+      O => addr1_carry_i_3_n_0
+    );
+addr1_carry_i_4: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"22B2"
+    )
+        port map (
+      I0 => counter_reg(1),
+      I1 => set_freq(1),
+      I2 => counter_reg(0),
+      I3 => set_freq(0),
+      O => addr1_carry_i_4_n_0
+    );
+addr1_carry_i_5: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"9009"
+    )
+        port map (
+      I0 => set_freq(7),
+      I1 => counter_reg(7),
+      I2 => set_freq(6),
+      I3 => counter_reg(6),
+      O => addr1_carry_i_5_n_0
+    );
+addr1_carry_i_6: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"9009"
     )
         port map (
       I0 => set_freq(5),
       I1 => counter_reg(5),
       I2 => set_freq(4),
       I3 => counter_reg(4),
-      I4 => counter_reg(3),
-      I5 => set_freq(3),
-      O => addr1_carry_i_3_n_0
+      O => addr1_carry_i_6_n_0
     );
-addr1_carry_i_4: unisim.vcomponents.LUT6
+addr1_carry_i_7: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"9009000000009009"
+      INIT => X"9009"
     )
         port map (
-      I0 => set_freq(2),
-      I1 => counter_reg(2),
-      I2 => set_freq(1),
-      I3 => counter_reg(1),
-      I4 => counter_reg(0),
-      I5 => set_freq(0),
-      O => addr1_carry_i_4_n_0
+      I0 => set_freq(3),
+      I1 => counter_reg(3),
+      I2 => set_freq(2),
+      I3 => counter_reg(2),
+      O => addr1_carry_i_7_n_0
+    );
+addr1_carry_i_8: unisim.vcomponents.LUT4
+    generic map(
+      INIT => X"9009"
+    )
+        port map (
+      I0 => set_freq(1),
+      I1 => counter_reg(1),
+      I2 => set_freq(0),
+      I3 => counter_reg(0),
+      O => addr1_carry_i_8_n_0
     );
 \addr1_inferred__0/i__carry\: unisim.vcomponents.CARRY4
      port map (
@@ -586,7 +854,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
       INIT => X"02"
     )
         port map (
-      I0 => \addr1_carry__1_n_1\,
+      I0 => \addr1_carry__2_n_0\,
       I1 => addr1,
       I2 => \^addr_reg[7]_0\(0),
       O => p_2_in(0)
@@ -598,7 +866,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
         port map (
       I0 => \^addr_reg[7]_0\(1),
       I1 => \^addr_reg[7]_0\(0),
-      I2 => \addr1_carry__1_n_1\,
+      I2 => \addr1_carry__2_n_0\,
       I3 => addr1,
       O => p_2_in(1)
     );
@@ -609,7 +877,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
         port map (
       I0 => \addr_start_reg_n_0_[6]\,
       I1 => addr1,
-      I2 => \addr1_carry__1_n_1\,
+      I2 => \addr1_carry__2_n_0\,
       I3 => \^addr_reg[7]_0\(1),
       I4 => \^addr_reg[7]_0\(0),
       I5 => \^addr_reg[7]_0\(2),
@@ -624,7 +892,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
       I1 => \^addr_reg[7]_0\(1),
       I2 => \^addr_reg[7]_0\(0),
       I3 => \^addr_reg[7]_0\(2),
-      I4 => \addr1_carry__1_n_1\,
+      I4 => \addr1_carry__2_n_0\,
       I5 => addr1,
       O => p_2_in(3)
     );
@@ -648,7 +916,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
         port map (
       I0 => \addr_start_reg_n_0_[6]\,
       I1 => addr1,
-      I2 => \addr1_carry__1_n_1\,
+      I2 => \addr1_carry__2_n_0\,
       I3 => \^addr_reg[7]_0\(4),
       I4 => \addr[7]_i_4_n_0\,
       I5 => \^addr_reg[7]_0\(5),
@@ -682,7 +950,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
         port map (
       I0 => addr0_carry_n_1,
       I1 => \set_sig_type_reg_n_0_[1]\,
-      I2 => \addr1_carry__1_n_1\,
+      I2 => \addr1_carry__2_n_0\,
       O => \addr[7]_i_2_n_0\
     );
 \addr[7]_i_3\: unisim.vcomponents.LUT6
@@ -715,7 +983,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => addr1,
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \addr[7]_i_5_n_0\
     );
 \addr_end[5]_i_1\: unisim.vcomponents.LUT2
@@ -723,8 +991,8 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
       INIT => X"1"
     )
         port map (
-      I0 => Q(1),
-      I1 => Q(0),
+      I0 => Q(0),
+      I1 => Q(1),
       O => \addr_end[5]_i_1_n_0\
     );
 \addr_end[6]_i_1\: unisim.vcomponents.LUT1
@@ -837,7 +1105,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
       INIT => X"1"
     )
         port map (
-      I0 => \addr1_carry__1_n_1\,
+      I0 => \addr1_carry__2_n_0\,
       O => \counter[0]_i_2_n_0\
     );
 \counter[0]_i_3\: unisim.vcomponents.LUT2
@@ -846,7 +1114,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(3),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[0]_i_3_n_0\
     );
 \counter[0]_i_4\: unisim.vcomponents.LUT2
@@ -855,7 +1123,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(2),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[0]_i_4_n_0\
     );
 \counter[0]_i_5\: unisim.vcomponents.LUT2
@@ -864,7 +1132,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(1),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[0]_i_5_n_0\
     );
 \counter[0]_i_6\: unisim.vcomponents.LUT2
@@ -873,7 +1141,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(0),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[0]_i_6_n_0\
     );
 \counter[12]_i_2\: unisim.vcomponents.LUT2
@@ -882,7 +1150,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(15),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[12]_i_2_n_0\
     );
 \counter[12]_i_3\: unisim.vcomponents.LUT2
@@ -891,7 +1159,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(14),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[12]_i_3_n_0\
     );
 \counter[12]_i_4\: unisim.vcomponents.LUT2
@@ -900,7 +1168,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(13),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[12]_i_4_n_0\
     );
 \counter[12]_i_5\: unisim.vcomponents.LUT2
@@ -909,7 +1177,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(12),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[12]_i_5_n_0\
     );
 \counter[16]_i_2\: unisim.vcomponents.LUT2
@@ -918,7 +1186,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(19),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[16]_i_2_n_0\
     );
 \counter[16]_i_3\: unisim.vcomponents.LUT2
@@ -927,7 +1195,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(18),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[16]_i_3_n_0\
     );
 \counter[16]_i_4\: unisim.vcomponents.LUT2
@@ -936,7 +1204,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(17),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[16]_i_4_n_0\
     );
 \counter[16]_i_5\: unisim.vcomponents.LUT2
@@ -945,7 +1213,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(16),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[16]_i_5_n_0\
     );
 \counter[20]_i_2\: unisim.vcomponents.LUT2
@@ -954,7 +1222,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(23),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[20]_i_2_n_0\
     );
 \counter[20]_i_3\: unisim.vcomponents.LUT2
@@ -963,7 +1231,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(22),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[20]_i_3_n_0\
     );
 \counter[20]_i_4\: unisim.vcomponents.LUT2
@@ -972,7 +1240,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(21),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[20]_i_4_n_0\
     );
 \counter[20]_i_5\: unisim.vcomponents.LUT2
@@ -981,7 +1249,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(20),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[20]_i_5_n_0\
     );
 \counter[24]_i_2\: unisim.vcomponents.LUT2
@@ -990,7 +1258,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(27),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[24]_i_2_n_0\
     );
 \counter[24]_i_3\: unisim.vcomponents.LUT2
@@ -999,7 +1267,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(26),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[24]_i_3_n_0\
     );
 \counter[24]_i_4\: unisim.vcomponents.LUT2
@@ -1008,7 +1276,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(25),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[24]_i_4_n_0\
     );
 \counter[24]_i_5\: unisim.vcomponents.LUT2
@@ -1017,7 +1285,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(24),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[24]_i_5_n_0\
     );
 \counter[28]_i_2\: unisim.vcomponents.LUT2
@@ -1026,7 +1294,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(31),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[28]_i_2_n_0\
     );
 \counter[28]_i_3\: unisim.vcomponents.LUT2
@@ -1035,7 +1303,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(30),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[28]_i_3_n_0\
     );
 \counter[28]_i_4\: unisim.vcomponents.LUT2
@@ -1044,7 +1312,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(29),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[28]_i_4_n_0\
     );
 \counter[28]_i_5\: unisim.vcomponents.LUT2
@@ -1053,7 +1321,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(28),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[28]_i_5_n_0\
     );
 \counter[4]_i_2\: unisim.vcomponents.LUT2
@@ -1062,7 +1330,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(7),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[4]_i_2_n_0\
     );
 \counter[4]_i_3\: unisim.vcomponents.LUT2
@@ -1071,7 +1339,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(6),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[4]_i_3_n_0\
     );
 \counter[4]_i_4\: unisim.vcomponents.LUT2
@@ -1080,7 +1348,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(5),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[4]_i_4_n_0\
     );
 \counter[4]_i_5\: unisim.vcomponents.LUT2
@@ -1089,7 +1357,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(4),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[4]_i_5_n_0\
     );
 \counter[8]_i_2\: unisim.vcomponents.LUT2
@@ -1098,7 +1366,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(11),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[8]_i_2_n_0\
     );
 \counter[8]_i_3\: unisim.vcomponents.LUT2
@@ -1107,7 +1375,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(10),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[8]_i_3_n_0\
     );
 \counter[8]_i_4\: unisim.vcomponents.LUT2
@@ -1116,7 +1384,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(9),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[8]_i_4_n_0\
     );
 \counter[8]_i_5\: unisim.vcomponents.LUT2
@@ -1125,7 +1393,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => counter_reg(8),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \counter[8]_i_5_n_0\
     );
 \counter_reg[0]\: unisim.vcomponents.FDRE
@@ -1609,7 +1877,7 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
     )
         port map (
       I0 => \set_sig_type_reg_n_0_[0]\,
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       I2 => \set_sig_type_reg_n_0_[1]\,
       O => \duty_count[7]_i_1_n_0\
     );
@@ -2013,10 +2281,10 @@ addr1_carry_i_4: unisim.vcomponents.LUT6
         port map (
       I0 => set_freq(14),
       I1 => \set_freq[31]_i_5_n_0\,
-      I2 => set_freq(17),
-      I3 => set_freq(18),
+      I2 => set_freq(16),
+      I3 => set_freq(17),
       I4 => set_freq(15),
-      I5 => set_freq(16),
+      I5 => set_freq(18),
       O => \set_freq[31]_i_4_n_0\
     );
 \set_freq[31]_i_5\: unisim.vcomponents.LUT6
@@ -2461,7 +2729,7 @@ signal_data1_carry_i_8: unisim.vcomponents.LUT4
     )
         port map (
       I0 => signal_data(6),
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       I2 => \set_sig_type_reg_n_0_[1]\,
       I3 => s00_axi_aresetn,
       O => \signal_data[6]_i_2_n_0\
@@ -2472,7 +2740,7 @@ signal_data1_carry_i_8: unisim.vcomponents.LUT4
     )
         port map (
       I0 => \set_sig_type_reg_n_0_[1]\,
-      I1 => \addr1_carry__1_n_1\,
+      I1 => \addr1_carry__2_n_0\,
       O => \signal_data[6]_i_3_n_0\
     );
 \signal_data[7]_i_1\: unisim.vcomponents.LUT6
@@ -2482,7 +2750,7 @@ signal_data1_carry_i_8: unisim.vcomponents.LUT4
         port map (
       I0 => s00_axi_aresetn,
       I1 => \set_sig_type_reg_n_0_[1]\,
-      I2 => \addr1_carry__1_n_1\,
+      I2 => \addr1_carry__2_n_0\,
       I3 => signal_data(7),
       I4 => signal_data(6),
       I5 => \set_sig_type_reg_n_0_[0]\,
