@@ -14,22 +14,22 @@ module func_gen
     input  logic [7:0]  duty_cycle,
     input  logic [1:0]  sig_type,
     input  logic [7:0]  din,
-    output logic [15:0] addr,
+    output logic [7:0] addr,
     output logic [7:0]  signal_waveform
 );
 
 logic [31:0] counter;
 logic [7:0]  duty_count;
-logic [15:0] addr_start;
-logic [15:0] addr_end;
+logic [7:0]  addr_start;
+logic [7:0]  addr_end;
 logic [7:0]  signal_data;
 logic [1:0]  set_sig_type;
 logic [31:0] set_freq;
 
 // Decide signal output
-assign signal_waveform = ((set_sig_type == SQUARE) || (set_sig_type == PWM)) ? signal_data: din;
+assign signal_waveform = ((sig_type == SQUARE) || (sig_type == PWM)) ? signal_data: din;
 
-always_ff @(posedge clk or negedge rst_n) begin
+always_ff @(posedge clk) begin
     if (rst_n == 0) begin
         addr <= 0;
         counter <= 0;
@@ -45,26 +45,6 @@ always_ff @(posedge clk or negedge rst_n) begin
                 set_sig_type <= sig_type;
             else 
                 set_sig_type <= set_sig_type;
-                
-            case (set_sig_type)
-                SINE: begin
-                    addr_start <= 16'h0000;
-                    addr_end <= 16'h03E7;
-                end
-                TRIANGLE: begin
-                    addr_start <= 16'h03E8;
-                    addr_end <= 16'h07CF;
-                end
-                SQUARE: begin
-                    addr_start <= 16'h0000;
-                    addr_end <= 16'h0000;
-                end
-                PWM: begin
-                    addr_start <= 16'h0000;
-                    addr_end <= 16'h0000;
-                end
-                
-            endcase
         end
         else 
             set_sig_type <= set_sig_type;
@@ -76,7 +56,7 @@ always_ff @(posedge clk or negedge rst_n) begin
         
         if (set_freq != set_count) begin
             if (set_sig_type == SINE && set_sig_type == TRIANGLE) begin
-                if (set_freq >= 0 && set_freq <= 999)
+                if (set_freq >= 0 && set_freq <= 9999)
                     set_freq <= set_count;
                 else 
                     set_freq <= set_freq;
@@ -90,6 +70,8 @@ always_ff @(posedge clk or negedge rst_n) begin
         end
         else 
             set_freq <= set_freq;
+        
+        
         
         // Sqaure Wave Logic
         if (set_sig_type == SQUARE) begin
