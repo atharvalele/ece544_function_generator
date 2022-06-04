@@ -37,6 +37,8 @@ always_ff @(posedge clk) begin
         duty_count <= 0;
         addr_start <= 0;
         addr_end <= 8'h63;
+        set_sig_type <= 0;
+        set_freq <= 999;
     end     
     else begin
         // Decide signal output
