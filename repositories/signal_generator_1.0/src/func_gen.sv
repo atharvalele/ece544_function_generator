@@ -1,9 +1,10 @@
 // Enum for Signal Types
-typedef enum logic [1:0]{
+typedef enum logic [2:0]{
         SINE,
         TRIANGLE,
         SQUARE,
-        PWM
+        PWM,
+        PATTERN
     } signal_t;
     
 module func_gen 
@@ -12,9 +13,10 @@ module func_gen
     input  logic        rst_n,
     input  logic [31:0] set_count,
     input  logic [7:0]  duty_cycle,
-    input  logic [1:0]  sig_type,
+    input  logic [2:0]  sig_type,
     input  logic [7:0]  din,
-    output logic [7:0] addr,
+    input  logic [15:0] pattern,
+    output logic [7:0]  addr,
     output logic [7:0]  signal_waveform
 );
 
@@ -23,11 +25,11 @@ logic [7:0]  duty_count;
 logic [7:0]  addr_start;
 logic [7:0]  addr_end;
 logic [7:0]  signal_data;
-logic [1:0]  set_sig_type;
+logic [2:0]  set_sig_type;
 logic [31:0] set_freq;
+logic [3:0]  pattern_bit;
 
-
-assign signal_waveform = ((sig_type == SQUARE) || (sig_type == PWM)) ? signal_data: din;
+assign signal_waveform = ((sig_type == SQUARE) || (sig_type == PWM) || (sig_type == PATTERN)) ? signal_data: din;
 
 always_ff @(posedge clk) begin
     if (rst_n == 0) begin
@@ -39,6 +41,7 @@ always_ff @(posedge clk) begin
         addr_end <= 8'h63;
         set_sig_type <= 0;
         set_freq <= 999;
+        pattern_bit <= 0;
     end     
     else begin
 //        // Decide signal output
@@ -55,7 +58,7 @@ always_ff @(posedge clk) begin
             else 
                 set_sig_type <= set_sig_type;
                 
-            case (sig_type)
+            unique case (sig_type)
                 SINE: begin
                     addr_start <= 8'h00;
                     addr_end <= 8'h63;
@@ -72,6 +75,11 @@ always_ff @(posedge clk) begin
                     addr_start <= 8'h00;
                     addr_end <= 8'h00;
                 end
+                PATTERN: begin
+                    addr_start <= 8'h00;
+                    addr_end <= 8'h00;
+                    pattern_bit <= 0;
+                end
             endcase
         end
         else 
@@ -85,6 +93,12 @@ always_ff @(posedge clk) begin
         if (set_freq != set_count) begin
             if (set_sig_type == SINE && set_sig_type == TRIANGLE) begin
                 if (set_freq >= 0 && set_freq <= 9999)
+                    set_freq <= set_count;
+                else 
+                    set_freq <= set_freq;
+            end
+            else if (set_sig_type == PATTERN) begin
+                if (set_freq >=0 && set_freq <= 62499)
                     set_freq <= set_count;
                 else 
                     set_freq <= set_freq;
@@ -130,6 +144,18 @@ always_ff @(posedge clk) begin
             else 
                 counter <= counter + 1;     
         end
+        else if (set_sig_type <= PATTERN) begin
+            if (counter >= set_freq) begin
+                counter <= 0;
+                pattern_bit <= pattern_bit + 1;
+                if (pattern[pattern_bit] === 1'b1)
+                    signal_data <= 255;
+                else 
+                    signal_data <= 0;
+             end
+             else
+                counter <= counter + 1;  
+        end 
         // Logic For Sine and Triangle Waves
         else begin
             // Repoint starting address if it is wrong

@@ -408,7 +408,8 @@
         .din(din),
         .duty_cycle(slv_reg1[7:0]),
         .signal_waveform(signal_waveform),
-        .sig_type(slv_reg2[1:0])
+        .sig_type(slv_reg2[2:0]),
+        .pattern(slv_reg3[15:0])
      );
 	// User logic ends
 

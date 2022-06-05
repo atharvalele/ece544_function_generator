@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Fri Jun  3 17:56:54 2022
+-- Date        : Sun Jun  5 14:43:57 2022
 -- Host        : sentinel running 64-bit EndeavourOS Linux
 -- Command     : write_vhdl -force -mode funcsim -rename_top embsys_ilmb_v10_0 -prefix
 --               embsys_ilmb_v10_0_ embsys_dlmb_v10_0_sim_netlist.vhdl
