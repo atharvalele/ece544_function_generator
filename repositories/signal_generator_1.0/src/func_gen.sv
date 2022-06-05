@@ -53,7 +53,7 @@ always_ff @(posedge clk) begin
 //        end
         // Validate Signal Types
         if (set_sig_type != sig_type) begin
-            if (sig_type >= 0 && sig_type <= 3) 
+            if (sig_type >= 0 && sig_type <= 4) 
                 set_sig_type <= sig_type;
             else 
                 set_sig_type <= set_sig_type;
@@ -151,7 +151,7 @@ always_ff @(posedge clk) begin
                 if (pattern[pattern_bit] === 1'b1)
                     signal_data <= 255;
                 else 
-                    signal_data <= 0;
+                    signal_data <= 128;
              end
              else
                 counter <= counter + 1;  

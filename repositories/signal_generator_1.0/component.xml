@@ -266,7 +266,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>a28e9ccb</spirit:value>
+            <spirit:value>6411512a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -282,7 +282,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>a28e9ccb</spirit:value>
+            <spirit:value>6411512a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -869,8 +869,8 @@
         <xilinx:taxonomy>AXI_Peripheral</xilinx:taxonomy>
       </xilinx:taxonomies>
       <xilinx:displayName>signal_generator_v1.0</xilinx:displayName>
-      <xilinx:coreRevision>15</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2022-06-05T21:38:53Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>16</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2022-06-05T22:12:07Z</xilinx:coreCreationDateTime>
       <xilinx:tags>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@223e50c9_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@2bfc0c96_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
@@ -1171,13 +1171,30 @@
         <xilinx:tag xilinx:name="ui.data.coregen.dd@2a6f01c2_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@c055e6d_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
         <xilinx:tag xilinx:name="ui.data.coregen.dd@eb18002_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@42cc60b2_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@1bf3a3bb_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@592fbd3c_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@2586119b_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@3c2e99ad_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@5dc95561_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4c13acfb_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@12149f9e_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@537e8fba_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@75f49340_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@21ef7a43_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@30f881a0_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@29f71813_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@760a6e3e_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@17649575_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@4b542894_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
+        <xilinx:tag xilinx:name="ui.data.coregen.dd@38ccba4f_ARCHIVE_LOCATION">/home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/repositories/signal_generator_1.0</xilinx:tag>
       </xilinx:tags>
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2020.2</xilinx:xilinxVersion>
       <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="7a63f3fc"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="ed1368d5"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="41b75835"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="bb5287ee"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="92a49d74"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="6992ea72"/>
       <xilinx:checksum xilinx:scope="parameters" xilinx:value="256931fe"/>
