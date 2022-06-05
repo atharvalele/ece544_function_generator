@@ -15,8 +15,6 @@
 	)
 	(
 		// Users to add ports here
-		input wire clk_dyn,
-		input wire pll_locked,
         input wire [7:0] din,
         output wire [7:0] addr,
         output wire [7:0] signal_waveform,
@@ -403,8 +401,7 @@
 
 	// Add user logic here
     func_gen sig_inst (
-        .clk(clk_dyn),
-        .pll_locked(pll_locked),
+        .clk(S_AXI_ACLK),
         .rst_n(S_AXI_ARESETN),
         .set_count(slv_reg0),
         .addr(addr),

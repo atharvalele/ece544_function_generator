@@ -15,8 +15,6 @@
 	)
 	(
 		// Users to add ports here
-		input wire clk_dyn,
-		input wire pll_locked,
         output wire [7:0] addr,
         input wire [7:0] din,
         output wire [7:0] signal_waveform,
@@ -52,8 +50,6 @@
 		.C_S_AXI_DATA_WIDTH(C_S00_AXI_DATA_WIDTH),
 		.C_S_AXI_ADDR_WIDTH(C_S00_AXI_ADDR_WIDTH)
 	) signal_generator_v1_0_S00_AXI_inst (
-	    .clk_dyn(clk_dyn),
-	    .pll_locked(pll_locked),
 	    .addr(addr),
 	    .din(din),
 	    .signal_waveform(signal_waveform),
