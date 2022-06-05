@@ -144,7 +144,7 @@ always_ff @(posedge clk) begin
             else 
                 counter <= counter + 1;     
         end
-        else if (set_sig_type <= PATTERN) begin
+        else if (set_sig_type == PATTERN) begin
             if (counter >= set_freq) begin
                 counter <= 0;
                 pattern_bit <= pattern_bit + 1;
