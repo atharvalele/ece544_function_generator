@@ -58,7 +58,7 @@ always_ff @(posedge clk) begin
             else 
                 set_sig_type <= set_sig_type;
                 
-            unique case (sig_type)
+            case (sig_type)
                 SINE: begin
                     addr_start <= 8'h00;
                     addr_end <= 8'h63;
