@@ -1,7 +1,7 @@
 -- Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
--- Date        : Sun Jun  5 16:03:39 2022
+-- Date        : Sun Jun  5 19:54:42 2022
 -- Host        : sentinel running 64-bit EndeavourOS Linux
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/ayush/Documents/Masters/ECE544/Projects/ece544_function_generator/vivado_project/ece544_function_generator/ece544_function_generator.gen/sources_1/bd/embsys/ip/embsys_signal_generator_0_0/embsys_signal_generator_0_0_sim_netlist.vhdl
@@ -2836,7 +2836,7 @@ signal_data1_carry: unisim.vcomponents.CARRY4
       CO(2) => signal_data1_carry_n_1,
       CO(1) => signal_data1_carry_n_2,
       CO(0) => signal_data1_carry_n_3,
-      CYINIT => '0',
+      CYINIT => '1',
       DI(3) => signal_data1_carry_i_1_n_0,
       DI(2) => signal_data1_carry_i_2_n_0,
       DI(1) => signal_data1_carry_i_3_n_0,

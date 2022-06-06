@@ -136,7 +136,7 @@ always_ff @(posedge clk) begin
                 counter <= 0;
                 duty_count <= duty_count + 1;
                 // Check for PWM duty cycle
-                if (duty_count > duty_cycle)
+                if (duty_count >= duty_cycle)
                     signal_data <= 128;
                 else 
                     signal_data <= 255;
