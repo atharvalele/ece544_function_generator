@@ -103,6 +103,12 @@ always_ff @(posedge clk) begin
                 else 
                     set_freq <= set_freq;
             end
+            else if (set_sig_type == PWM) begin
+                if (set_freq >= 0 && set_freq <= 3906)
+                    set_freq <= set_count;
+                else 
+                    set_freq <= set_freq;          
+            end
             else begin
                 if (set_freq >= 0 && set_freq <= 499999)
                     set_freq <= set_count;
