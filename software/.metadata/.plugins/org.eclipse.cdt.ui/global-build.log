@@ -1,0 +1,20 @@
+Nothing to build in platform 'function_gen_platform'
+
+15:16:35 **** Incremental Build of configuration Debug for project function_gen_app ****
+make all 
+Building file: ../src/input.c
+Invoking: MicroBlaze gcc compiler
+mb-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/input.o" -I/home/atharva/Work/function_gen_sw/function_gen_platform/export/function_gen_platform/sw/function_gen_platform/standalone_domain/bspinclude/include -mlittle-endian -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -ffunction-sections -fdata-sections -MMD -MP -MF"src/input.d" -MT"src/input.o" -o "src/input.o" "../src/input.c"
+Finished building: ../src/input.c
+ 
+Building target: function_gen_app.elf
+Invoking: MicroBlaze gcc linker
+mb-gcc -Wl,-T -Wl,../src/lscript.ld -L/home/atharva/Work/function_gen_sw/function_gen_platform/export/function_gen_platform/sw/function_gen_platform/standalone_domain/bsplib/lib -mlittle-endian -mno-xl-soft-div -mcpu=v11.0 -mno-xl-soft-mul -mhard-float -mxl-float-convert -mxl-float-sqrt -Wl,--no-relax -Wl,--gc-sections -o "function_gen_app.elf" ./src/display.o ./src/function_gen.o ./src/input.o ./src/main.o ./src/platform.o ./src/system.o ./src/system_interrupts.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: function_gen_app.elf
+ 
+Invoking: MicroBlaze Print Size
+mb-size function_gen_app.elf  |tee "function_gen_app.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  81520	   1808	   3856	  87184	  15490	function_gen_app.elf
+Finished building: function_gen_app.elf.size
+ 

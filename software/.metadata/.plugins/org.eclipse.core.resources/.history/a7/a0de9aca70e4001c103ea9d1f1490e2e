@@ -1,0 +1,92 @@
+/**
+*
+* @file function_gen.c
+*
+* @author Atharva Lele (atharva@pdx.edu)
+* @copyright Atharva Lele, 2021
+*
+* Function generator peripheral driver
+*******************************************************************************/
+
+#include "system.h"
+#include "xparameters.h"
+#include "ddynclk.h"
+
+#include "input.h"
+#include "function_gen.h"
+
+/* Peripheral functions */
+
+/* Init - Set sine wave @ 1kHz */
+void function_gen_init(void)
+{
+	function_gen_set_type(SINE_WAVE);
+	function_gen_set_freq(1000);
+}
+
+/* Set type - set wave type */
+void function_gen_set_type(wave_type_t type)
+{
+	SIGNAL_GENERATOR_mWriteReg(FUNCTION_GEN_BASE_ADDR,
+							   FUNCTION_GEN_SIG_TYPE_OFFSET,
+							   type);
+}
+
+/* Get Wave Name */
+const char* function_gen_get_wave_name(wave_type_t wave)
+{
+   switch (wave)
+   {
+      case SINE_WAVE: return "Sine";
+      case TRIANGULAR_WAVE: return "Triangular";
+      case SQUARE_WAVE: return "Square";
+      case PWM_WAVE: return "PWM";
+      default: return "Unknown";
+   }
+}
+
+/* Set frequency for generation */
+void function_gen_set_freq(uint32_t freq)
+{
+	/*
+	 * Calculate the divider value
+	 * Divider = Clock / (samples * desired freq) - 1
+	 *
+	 * -1 needed since counting starts from 0
+	 *
+	 * Square and PWM are generated, so the number of
+	 * samples is effectively two - 0 and 1
+	 */
+//	float divider;
+//	wave_type_t wave_type = input_get_sel_wave();
+//
+//	if ((wave_type == SINE_WAVE) || (wave_type == TRIANGULAR_WAVE))
+//		divider = (FUNCTION_GEN_FREQ / (freq * FUNCTION_GEN_NUM_OF_SAMPLES)) - 1;
+//	else
+//		divider = (FUNCTION_GEN_FREQ / (freq * 2)) - 1;
+//
+//	/* Write divider value to hardware */
+//	SIGNAL_GENERATOR_mWriteReg(FUNCTION_GEN_BASE_ADDR,
+//							   FUNCTION_GEN_FREQUENCY_OFFSET,
+//							   (uint32_t)divider);
+//
+//	xil_printf("Divider Value: %d\n", (uint32_t)divider);
+
+	uint32_t dyn_clk_freq;
+	wave_type_t wave_type = input_get_sel_wave();
+
+	if ((wave_type == SINE_WAVE) || (wave_type == TRIANGULAR_WAVE))
+		dyn_clk_freq = freq * FUNCTION_GEN_NUM_OF_SAMPLES;
+	else
+		dyn_clk_freq = freq * 2;
+
+	DDynClk_SetRate(&DynClkInst, dyn_clk_freq);
+}
+
+/* Set dutycycle for PWM */
+void function_gen_set_duty(uint8_t duty)
+{
+	SIGNAL_GENERATOR_mWriteReg(FUNCTION_GEN_BASE_ADDR,
+							   FUNCTION_GEN_DUTYCYCLE_OFFSET,
+							   duty);
+}

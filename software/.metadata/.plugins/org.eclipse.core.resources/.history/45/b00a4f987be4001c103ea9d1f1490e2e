@@ -1,0 +1,47 @@
+/**
+*
+* @file system_interrupts.c
+*
+* @author Atharva Lele (atharva@pdx.edu)
+* @copyright Atharva Lele, 2021
+*
+* @note This file contains all interrupt handlers
+*******************************************************************************/
+#include "system.h"
+#include "nexys4io.h"
+
+#include "input.h"
+
+volatile uint8_t ms100_flag = 0;
+volatile uint32_t ms = 0;
+volatile uint8_t sec_flag = 0;
+
+volatile uint8_t status = 0;
+
+/**************************** INTERRUPT HANDLERS ******************************/
+
+/****************************************************************************/
+/**
+* Fixed interval timer interrupt handler
+*
+* Measures milliseconds
+ *****************************************************************************/
+
+void FIT_Handler(void)
+{
+	ms++;
+
+	if (ms % 10 == 0)
+		ms100_flag = 1;
+
+	input_task();
+
+	// Blink every once in a while
+	if (ms >= 100) {
+		sec_flag = 1;
+		ms = 0;
+
+		status = !status;
+		NX4IO_SSEG_setDecPt(SSEGLO, DIGIT3, status);
+	}
+}

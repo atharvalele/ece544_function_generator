@@ -1,0 +1,146 @@
+/**
+*
+* @file main.c
+*
+* @author Atharva Lele (atharva@pdx.edu)
+* @copyright Atharva Lele, 2021
+*******************************************************************************/
+
+#include "platform.h"
+#include "system.h"
+#include "xparameters.h"
+
+#include "nexys4io.h"
+#include "xwdttb.h"
+
+#include "input.h"
+#include "display.h"
+#include "function_gen.h"
+
+/* Initialize the system */
+void system_init(void)
+{
+	uint32_t status;
+
+	/* Initialize the system */
+	init_platform();
+	status = do_init();
+
+	/* Enable global interrupts */
+	microblaze_enable_interrupts();
+
+	/* Init OK? */
+	if (status != XST_SUCCESS)
+		while (1);
+
+	xil_printf("Board INIT OK");
+}
+
+/* Initialize the application */
+void app_init(void)
+{
+	wave_type_t wave_type;
+	uint32_t freq;
+
+	/* Turn OFF all LEDs and displays onboard */
+	NX410_SSEG_setAllDigits(SSEGLO, CC_BLANK, CC_BLANK, CC_BLANK, CC_BLANK, 0);
+	NX410_SSEG_setAllDigits(SSEGHI, CC_BLANK, CC_BLANK, CC_BLANK, CC_BLANK, 0);
+	NX4IO_setLEDs(0);
+
+	/* Setup input and set startup values */
+	input_init();
+	wave_type = input_get_sel_wave();
+	freq = input_get_freq();
+
+	/* Setup function gen peripheral */
+	function_gen_set_type(wave_type);
+	function_gen_set_freq(freq);
+	function_gen_set_duty(50);
+
+	/* Set up the OLED */
+	display_init();
+	display_set_wavetype(wave_type);
+	display_set_freq(freq);
+
+	/* Set modifier at init */
+	display_set_modifier(input_get_modifier());
+}
+
+int main(void)
+{
+	wave_type_t wave_type;
+	uint32_t freq;
+	uint8_t duty;
+	uint16_t pattern;
+
+	/* Init */
+	system_init();
+	app_init();
+
+	/* Superloop */
+	while (1) {
+		/* Reset WDT if expired */
+		if (XWdtTb_IsWdtExpired(&WDTTimerInst)) {
+			XWdtTb_RestartWdt(&WDTTimerInst);
+		}
+
+		/* Input and Display Loop */
+		if (input_flag) {
+			input_task();
+
+			/* Did we change the frequency? */
+			if (freq_update) {
+				freq = input_get_freq();
+				display_set_freq(freq);
+				function_gen_set_freq(freq);
+
+				xil_printf("Frequency: %d\n", freq);
+				freq_update = 0;
+			}
+
+			/* Did we change the waveform type? */
+			if (wave_type_update) {
+				wave_type = input_get_sel_wave();
+				display_set_wavetype(wave_type);
+				function_gen_set_type(wave_type);
+
+				xil_printf("Waveform Type: %d: %s\n", wave_type, function_gen_get_wave_name(wave_type));
+				wave_type_update = 0;
+			}
+
+			/* Did we change the modifier value? */
+			if (modifier_update) {
+				display_set_modifier(input_get_modifier());
+				modifier_update = 0;
+			}
+
+			/* Did we change the dutycycle? */
+			if (duty_cycle_update) {
+				duty = input_get_dutycycle();
+				display_set_dutycycle(duty);
+				if (input_get_sel_wave() == PWM_WAVE)
+					display_set_duty_indicator(input_get_duty_sel());
+				else
+					display_set_duty_indicator(0);
+				function_gen_set_duty(duty);
+				duty_cycle_update = 0;
+			}
+
+			/* Did we change the pattern? */
+			if (pattern_update) {
+				pattern = input_get_pattern();
+				function_gen_set_pattern(pattern);
+				display_set_pattern(pattern);
+
+				pattern_update = 0;
+			}
+
+			/* Reset the flag */
+			input_flag = 0;
+		}
+
+		// Time handler
+		// Measures 1s and 100ms approx.
+		time_handler();
+	}
+}

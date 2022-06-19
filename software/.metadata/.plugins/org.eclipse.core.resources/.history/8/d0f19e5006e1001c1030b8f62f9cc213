@@ -1,0 +1,118 @@
+/**
+*
+* @file display
+*
+* @author Atharva Lele (atharva@pdx.edu)
+* @copyright Atharva Lele, 2021
+*
+* Contains display related functionality
+*******************************************************************************/
+
+#include "display.h"
+#include "system.h"
+#include "PmodOLEDrgb.h"
+#include "nexys4io.h"
+#include "function_gen.h"
+
+#include <stdio.h>
+#include <string.h>
+
+static char value_buf[15];
+
+void display_clear(void)
+{
+	OLEDrgb_Clear(&pmodOLEDrgb_inst);
+}
+
+void display_init(void)
+{
+	display_clear();
+
+	/* Set font color to white */
+	OLEDrgb_SetFontColor(&pmodOLEDrgb_inst, OLEDrgb_BuildRGB(255, 255, 255));
+
+	/* Print Waveform, red background */
+	OLEDrgb_SetFontBkColor(&pmodOLEDrgb_inst, OLEDrgb_BuildRGB(255, 0, 0));
+	OLEDrgb_SetCursor(&pmodOLEDrgb_inst, 2, 0);
+	OLEDrgb_PutString(&pmodOLEDrgb_inst, "Waveform");
+
+	/* Print Frequency green background */
+	OLEDrgb_SetFontBkColor(&pmodOLEDrgb_inst, OLEDrgb_BuildRGB(0, 0, 160));
+	OLEDrgb_SetCursor(&pmodOLEDrgb_inst, 1, 4);
+	OLEDrgb_PutString(&pmodOLEDrgb_inst, "Frequency");
+}
+
+void display_set_wavetype(wave_type_t type)
+{
+	/* Black background, white text */
+	OLEDrgb_SetFontBkColor(&pmodOLEDrgb_inst, OLEDrgb_BuildRGB(0, 0, 0));
+	OLEDrgb_SetFontColor(&pmodOLEDrgb_inst, OLEDrgb_BuildRGB(255, 255, 255));
+
+	/* Clear existing text */
+	OLEDrgb_SetCursor(&pmodOLEDrgb_inst, 0, 2);
+	OLEDrgb_PutString(&pmodOLEDrgb_inst, "          ");
+
+	switch (type) {
+	case SINE_WAVE:
+		OLEDrgb_SetCursor(&pmodOLEDrgb_inst, 4, 2);
+		OLEDrgb_PutString(&pmodOLEDrgb_inst, "Sine");
+		break;
+
+	case TRIANGULAR_WAVE:
+		OLEDrgb_SetCursor(&pmodOLEDrgb_inst, 2, 2);
+		OLEDrgb_PutString(&pmodOLEDrgb_inst, "Triangle");
+		break;
+
+	case SQUARE_WAVE:
+		OLEDrgb_SetCursor(&pmodOLEDrgb_inst, 3, 2);
+		OLEDrgb_PutString(&pmodOLEDrgb_inst, "Square");
+		break;
+
+	case PWM_WAVE:
+		OLEDrgb_SetCursor(&pmodOLEDrgb_inst, 4, 2);
+		OLEDrgb_PutString(&pmodOLEDrgb_inst, "PWM");
+		break;
+	}
+}
+
+void display_set_freq(uint32_t freq)
+{
+	float freq_float;
+	uint8_t printed;
+
+	/* Calculate floating point value */
+	switch (freq) {
+	case 0 ... 999:
+		freq_float = freq;
+		printed = sprintf(value_buf, "%.1f", freq_float);
+		sprintf(value_buf + printed, " Hz");
+	break;
+
+	case 1000 ... 999999:
+		freq_float = freq / 1000.0;
+		printed = sprintf(value_buf, "%.3f", freq_float);
+		sprintf(value_buf + printed, " kHz");
+	break;
+
+	case 1000000 ... 9999999:
+		freq_float = freq / 1000000.0;
+		printed = sprintf(value_buf, "%.2f", freq_float);
+		sprintf(value_buf + printed, " MHz");
+	break;
+	}
+
+	/* Black background, white text */
+	OLEDrgb_SetFontBkColor(&pmodOLEDrgb_inst, OLEDrgb_BuildRGB(0, 0, 0));
+	OLEDrgb_SetFontColor(&pmodOLEDrgb_inst, OLEDrgb_BuildRGB(255, 255, 255));
+
+	/* Clear existing text */
+	OLEDrgb_SetCursor(&pmodOLEDrgb_inst, 0, 6);
+	OLEDrgb_PutString(&pmodOLEDrgb_inst, "            ");
+	OLEDrgb_SetCursor(&pmodOLEDrgb_inst, 1, 6);
+	OLEDrgb_PutString(&pmodOLEDrgb_inst, value_buf);
+}
+
+void display_set_modifier(uint16_t modifier)
+{
+	NX4IO_SSEG_putU32Dec(modifier, 1);
+}

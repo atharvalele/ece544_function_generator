@@ -1,0 +1,121 @@
+/**
+*
+* @file main.c
+*
+* @author Atharva Lele (atharva@pdx.edu)
+* @copyright Atharva Lele, 2021
+*******************************************************************************/
+
+#include "platform.h"
+#include "system.h"
+#include "xparameters.h"
+
+#include "nexys4io.h"
+#include "xwdttb.h"
+
+#include "input.h"
+#include "display.h"
+#include "function_gen.h"
+
+/* Initialize the system */
+void system_init(void)
+{
+	uint32_t status;
+
+	/* Initialize the system */
+	init_platform();
+	status = do_init();
+
+	/* Enable global interrupts */
+	microblaze_enable_interrupts();
+
+	/* Init OK? */
+	if (status != XST_SUCCESS)
+		while (1);
+
+	xil_printf("Board INIT OK");
+}
+
+/* Initialize the application */
+void app_init(void)
+{
+	wave_type_t wave_type;
+	uint32_t freq;
+
+	/* Turn OFF all LEDs and displays onboard */
+	NX410_SSEG_setAllDigits(SSEGLO, CC_BLANK, CC_BLANK, CC_BLANK, CC_BLANK, 0);
+	NX410_SSEG_setAllDigits(SSEGHI, CC_BLANK, CC_BLANK, CC_BLANK, CC_BLANK, 0);
+	NX4IO_setLEDs(0);
+
+	/* Setup input and set startup values */
+	input_init();
+	wave_type = input_get_sel_wave();
+	freq = input_get_freq();
+
+	/* Setup function gen peripheral */
+	function_gen_set_type(wave_type);
+	function_gen_set_freq(freq);
+	function_gen_set_duty(50);
+
+	/* Set up the OLED */
+	display_init();
+	display_set_wavetype(wave_type);
+	display_set_freq(freq);
+
+	/* Set modifier at init */
+	display_set_modifier(input_get_modifier());
+}
+
+int main(void)
+{
+	wave_type_t wave_type;
+	uint32_t freq;
+
+	/* Init */
+	system_init();
+	app_init();
+
+	/* Superloop */
+	while (1) {
+		/* Reset WDT if expired */
+		if (XWdtTb_IsWdtExpired(&WDTTimerInst)) {
+			XWdtTb_RestartWdt(&WDTTimerInst);
+		}
+
+		if (ms100_flag) {
+			input_task();
+
+			if (freq_update) {
+				freq = input_get_freq();
+				display_set_freq(freq);
+				function_gen_set_freq(freq);
+				freq_update = 0;
+			}
+
+			if (wave_type_update) {
+				wave_type = input_get_sel_wave();
+				display_set_wavetype(wave_type);
+				function_gen_set_type(wave_type);
+				wave_type_update = 0;
+			}
+
+			if (modifier_update) {
+				display_set_modifier(input_get_modifier());
+				modifier_update = 0;
+			}
+
+			if (duty_cycle_update) {
+				display_set_dutycycle(input_get_dutycycle());
+				duty_cycle_update = 0;
+			}
+
+			ms100_flag = 0;
+		}
+
+		if (sec_flag) {
+			sec_flag = 0;
+		}
+
+		FIT_Handler();
+	}
+}

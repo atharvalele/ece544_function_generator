@@ -1,0 +1,143 @@
+/**
+*
+* @file input.c
+*
+* @author Atharva Lele (atharva@pdx.edu)
+* @copyright Atharva Lele, 2021
+*
+* Input related variables and tasks
+*******************************************************************************/
+
+#include "system.h"
+#include "xparameters.h"
+
+#include "nexys4io.h"
+#include "PmodENC.h"
+
+#include "input.h"
+#include "display.h"
+#include "function_gen.h"
+
+/* Static Variables */
+static uint8_t enc_state, enc_last_state;
+static uint8_t button_state = 0, button_last_state = 0;
+static uint16_t freq_modifier;
+static wave_type_t waveform_type;
+static int32_t waveform_freq, waveform_freq_temp;
+static uint8_t waveform_duty;
+static int16_t duty_sel;
+
+/* Volatile */
+volatile uint8_t freq_update = 0;
+volatile uint8_t duty_cycle_update = 0;
+volatile uint8_t wave_type_update = 0;
+volatile uint8_t modifier_update = 0;
+
+void input_init(void)
+{
+	/* 1 kHz Sine Wave at boot */
+	waveform_type = SINE_WAVE;
+	waveform_freq = 1000;
+
+	/* Set frequency modifier to 1 at boot */
+	freq_modifier = 1;
+}
+
+void input_task(void)
+{
+	/* Check for buttons */
+	button_state = NX4IO_getBtns();
+	if ((NX4IO_isPressed(BTNR)) && (button_state != button_last_state)) {
+		waveform_type = (waveform_type + 1) % 4;
+		freq_update = 1;
+		wave_type_update = 1;
+		duty_cycle_update = 1;
+
+		xil_printf("Waveform Type: %d: %s\n", waveform_type, function_gen_get_wave_name(waveform_type));
+	}
+	else if ((NX4IO_isPressed(BTNL)) && (button_state != button_last_state)) {
+		waveform_type = (waveform_type - 1) % 4;
+		freq_update = 1;
+		wave_type_update = 1;
+		duty_cycle_update = 1;
+
+		xil_printf("Waveform Type: %d: %s\n", waveform_type, function_gen_get_wave_name(waveform_type));
+	}
+	else if ((NX4IO_isPressed(BTNU)) && (button_state != button_last_state)) {
+		freq_modifier = freq_modifier * 10;
+		if (freq_modifier > 1000)
+			freq_modifier = 1000;
+
+		modifier_update = 1;
+	}
+	else if ((NX4IO_isPressed(BTND)) && (button_state != button_last_state)) {
+		freq_modifier = freq_modifier / 10;
+		if (freq_modifier < 1)
+			freq_modifier = 1;
+
+		modifier_update = 1;
+	}
+	else if ((NX4IO_isPressed(BTND)) && (button_state != button_last_state)) {
+		duty_sel = !duty_sel;
+	}
+
+	// Update push button state
+	button_last_state = button_state;
+
+	/* Get encoder state */
+	enc_state = ENC_getState(&pmodENC_inst);
+
+	/* Update freq value */
+	if (waveform_type == PWM_WAVE) {
+		if (duty_sel) {
+			waveform_duty += ENC_getRotation(enc_state, enc_last_state);
+			if (waveform_duty > 100)
+				waveform_duty = 100;
+			else if (waveform_duty < 0)
+				waveform_duty = 0;
+			duty_cycle_update = 1;
+		} else {
+			waveform_freq_temp = waveform_freq;
+			waveform_freq_temp += freq_modifier * ENC_getRotation(enc_state, enc_last_state);
+		}
+	} else {
+		waveform_freq_temp = waveform_freq;
+		waveform_freq_temp += freq_modifier * ENC_getRotation(enc_state, enc_last_state);
+	}
+
+	/* Limit to min-max freq range */
+	if (waveform_freq_temp < FUNCTION_GEN_FREQ_MIN)
+		waveform_freq_temp = FUNCTION_GEN_FREQ_MIN;
+	else if (waveform_freq_temp > FUNCTION_GEN_FREQ_MAX)
+		waveform_freq_temp = FUNCTION_GEN_FREQ_MAX;
+
+	/* Update display */
+	if (waveform_freq_temp != waveform_freq) {
+		waveform_freq = waveform_freq_temp;
+		freq_update = 1;
+		xil_printf("Frequency: %d\n", waveform_freq);
+	}
+
+	/* Update state */
+	enc_last_state = enc_state;
+}
+
+uint32_t input_get_freq(void)
+{
+	return waveform_freq;
+}
+
+wave_type_t input_get_sel_wave(void)
+{
+	return waveform_type;
+}
+
+uint16_t input_get_modifier(void)
+{
+	return freq_modifier;
+}
+
+int16_t input_get_dutycycle(void)
+{
+	return waveform_duty;
+}
